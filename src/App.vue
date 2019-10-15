@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- <router-link to="/automotive">
+      page 2
+    </router-link> -->
     <router-view/>
   </div>
 </template>
