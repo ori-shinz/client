@@ -6,10 +6,9 @@
       <FreeSample />
     </section>
     <!-- why choose us component -->
-    <section id="why-us">
+    <section id="key-benefit">
       <div class="container">
         <!-- why choose us -->
-        <ChooseUs />
         <!-- key benefits -->
         <KeyBenefits />
       </div>
@@ -17,7 +16,7 @@
     <!-- bottom sample component -->
     <section id="bottom">
       <div class="container pb-5">
-        <div class="row mask mb-5">
+        <!-- <div class="row mask mb-5">
           <div class="col-sm-8 text-left pl-5 pt-3 pb-2">
             <p class="free-title text-orange">Become Our Agent / Distributor / OEM</p>
             <p class="free-text text-white">Be your own Boss</p>
@@ -25,7 +24,7 @@
           <div class="col-sm-4 request-btn justify-content-center">
             <button class="Join-Now btn-orange">Join Now</button>
           </div>
-        </div>
+        </div> -->
         <BottomCarShine />
         <Footer />
       </div>
@@ -42,7 +41,7 @@ import Footer from '@/components/general/Footer'
 import KeyBenefits from '@/components/AutomotiveProfessional/KeyBenefits'
 
 export default {
-  name: 'AutomotiveProf',
+  name: 'ProductDetail',
   components: {
     MainBoard,
     FreeSample,
@@ -123,12 +122,7 @@ export default {
 #free-sample {
   background-color: black;
 }
-.now-text {
-  width: 82px;
-  height: 25px;
-  color: #ffffff;
-}
-#why-us {
+#key-benefit {
   background-image: url('~@/assets/images/newassets/group-13-copy.png');
   background-repeat: no-repeat;
 }
