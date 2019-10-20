@@ -29,9 +29,18 @@
   margin-bottom: 200px;
 }
 .mbc-lg-150 {
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 .mbc-lg-112 {
-  margin-bottom: 200px;
+  margin-bottom: 112px;
+}
+.mbc-lg-100 {
+  margin-bottom: 100px;
+}
+.mbc-lg-80 {
+  margin-bottom: 80px;
+}
+.mb-10 {
+  margin-bottom: 6rem !important;
 }
 </style>

@@ -10,6 +10,14 @@
   border-color: #f58220;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   background-image: linear-gradient(to left, #f58220, #f58220);
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 .btn-orange-lg {
   width: 255px;
@@ -89,4 +97,33 @@
     rgba(46, 21, 0, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b0d00', endColorstr='#2e1500', GradientType=1 );
+}
+.orange-title {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #f58220;
+}
+.white-card-content {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.adult-agent-banking{
+  opacity: 0.75 !important;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 30%, rgba(245, 130, 32, 0.53) 94%) !important;
+}
+@media screen and (min-width: 1240px) {
+  .card-mini-limit {
+    max-width: 600px !important;
+  }
 }
