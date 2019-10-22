@@ -6,7 +6,7 @@
       <Heading>Snow Wash Shampoo for Automotive Professional Use</Heading>
 
       <!-- Bucket Image -->
-      <DoubleBucket />
+      <DoubleBucket :bucket-img="bucketImg"/>
     </div>
   </section>
 </template>
@@ -14,10 +14,13 @@
 <script>
 import Navbar from '@/components/general/NavBar'
 import Heading from '@/components/general/Heading'
-import DoubleBucket from '@/components/AutomotiveProfessional/DoubleBucket'
+import DoubleBucket from '@/components/general/DoubleBucket'
 
 export default {
   name: 'MainBoard',
+  props: [
+    'bucketImg'
+  ],
   components: {
     Navbar, Heading, DoubleBucket
   }

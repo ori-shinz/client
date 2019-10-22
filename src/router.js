@@ -22,6 +22,22 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "home" */ './views/AutomotiveProf.vue')
+    },
+    {
+      path: '/productdetail',
+      name: 'productdetail',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "home" */ './views/ProductDetail.vue')
+    },
+    {
+      path: '/order',
+      name: 'order',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "home" */ './views/OrderPage.vue')
     }
   ]
 })
