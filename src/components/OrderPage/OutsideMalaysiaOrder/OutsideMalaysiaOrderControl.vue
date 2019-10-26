@@ -1,5 +1,5 @@
 <template>
-  <div class="row text-left justify-content-center" style="margin: 100px 100px 50px 100px !important">           
+  <div class="row text-left justify-content-center" style="margin: 100px 100px 50px 100px !important">
     <!-- Loose Order -->
     <div class="col-sm-4 d-flex flex-column">
       <p class="orange-title">Loose Order</p>
@@ -68,7 +68,7 @@ export default {
   color: #ffca65 !important;
 }
 .btn-loose-order {
-  width: 200px; 
+  width: 200px;
   border-radius: 5px;
   border: solid 1px #ffca65;
   background-color: var(--black);  font-size: 18px;

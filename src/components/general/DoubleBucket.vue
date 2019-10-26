@@ -27,8 +27,8 @@ export default {
     }
   },
   methods: {
-    getImg() {
-      if(this.bucketImg === 'text') {
+    getImg () {
+      if (this.bucketImg === 'text') {
         this.ecoImg = ecoImgText
         this.goldImg = goldImgText
       } else {

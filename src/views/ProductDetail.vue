@@ -18,7 +18,7 @@
 
         <section id="video-tutorial">
           <VideoTutorialPlayer />
-          <VideoTutorialStep /> 
+          <VideoTutorialStep />
         </section>
       </div>
     </div>
@@ -39,7 +39,6 @@
 <script>
 import MainBoard from '@/components/general/MainBoard'
 import FreeSample from '@/components/AutomotiveProfessional/FreeSample'
-import ChooseUs from '@/components/AutomotiveProfessional/ChooseUs'
 import BottomCarShine from '@/components/AutomotiveProfessional/BottomCarShine'
 import VideoTutorialPlayer from '@/components/ProductDetail/VideoTutorial/VideoTutorialPlayer'
 import VideoTutorialStep from '@/components/ProductDetail/VideoTutorial/VideoTutorialStep'
@@ -57,7 +56,6 @@ export default {
   components: {
     MainBoard,
     FreeSample,
-    ChooseUs,
     KeyBenefits,
     VideoTutorialPlayer,
     VideoTutorialStep,
@@ -65,7 +63,7 @@ export default {
     BottomCarShine,
     Footer
   }
-};
+}
 </script>
 
 <style scoped>
