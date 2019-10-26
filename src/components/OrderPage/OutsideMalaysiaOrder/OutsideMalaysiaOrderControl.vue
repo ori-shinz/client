@@ -25,9 +25,9 @@
         <pre class="col-sm-4 text-white mb-0 control-order-text"> -  <span class="text-orange">2</span>  +</pre>
         <div class="col-sm-2 text-orange">drum(s)</div>
       </div>
-      <button class="btn btn-bulk-order">
-          Bulk Order Now
-        </button>
+      <button @click="showOrderModal('bulk')" class="btn btn-bulk-order" data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-outside-modal'">
+        Bulk Order Now
+      </button>
     </div>
 
     <!-- Notes -->
@@ -43,7 +43,16 @@
 
 <script>
 export default {
-  name: 'OutMalayOrderControl'
+  name: 'OutMalayOrderControl',
+  props: [
+    'cardTitle'
+  ],
+  methods: {
+    showOrderModal(type) {
+      console.log('here')
+      this.$emit('show-modal', type)
+    }
+  }
 }
 </script>
 

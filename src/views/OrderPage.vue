@@ -7,7 +7,10 @@
       </section>
       <section id="pricing-details">
         <div class="container-fluid">
+
           <Heading>Pricing Details</Heading>
+
+          <!-- Select Region to Show Detail Price -->
           <div class="row mb-10 pricing-detail-card mx-3 py-4 justify-content-center">
             <div class="col-sm-3 region-select">Please Select Region:</div>
             <div class="col-sm-6 region-list text-left">
@@ -22,11 +25,13 @@
               </span> 
             </div>
           </div>
+
           <!-- West Malaysia Detail Pricing -->
           <Fragment v-if="region === 'westMalaysia'">
             <WestMalaysiaOrderCard :card-title="'eco'"/>
             <WestMalaysiaOrderCard :card-title="'gold'"/>
           </Fragment>
+
           <!-- Outside Malaysia Detail Pricing -->
           <Fragment v-if="region === 'outsideMalaysia'">
             <OutsideMalaysiaOrderCard :card-title="'eco'"/>
@@ -34,6 +39,7 @@
           </Fragment>
         </div>
       </section>
+
       <!-- bottom sample component -->
       <section id="bottom">
         <div class="container pb-5">
@@ -60,7 +66,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: ''
+      region: 'outsideMalaysia'
     }
   },
   methods: {
