@@ -19,7 +19,7 @@
               </span> |
               <span class="region-item px-2" @click="changeRegion('outsideMalaysia')">
                 Outside Malaysia
-              </span> 
+              </span>
             </div>
           </div>
           <!-- West Malaysia Detail Pricing -->
@@ -64,7 +64,7 @@ export default {
     }
   },
   methods: {
-    changeRegion(region) {
+    changeRegion (region) {
       this.region = region
     }
   },
@@ -78,7 +78,7 @@ export default {
     CardBecomeAgent,
     Footer
   }
-};
+}
 </script>
 
 <style>

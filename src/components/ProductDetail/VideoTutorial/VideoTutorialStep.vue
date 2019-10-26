@@ -64,16 +64,16 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import TutorialTable from "@/components/ProductDetail/VideoTutorial/TutorialTable";
+import { Fragment } from 'vue-fragment'
+import TutorialTable from '@/components/ProductDetail/VideoTutorial/TutorialTable'
 
 export default {
-  name: "VideoTutorialStep",
+  name: 'VideoTutorialStep',
   components: {
     Fragment,
     TutorialTable
   }
-};
+}
 </script>
 
 <style scoped>

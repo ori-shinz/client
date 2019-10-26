@@ -1,6 +1,6 @@
 <template>
   <Fragment>
-    <div class="row text-left" style="margin: 100px 100px 50px 100px !important">           
+    <div class="row text-left" style="margin: 100px 100px 50px 100px !important">
       <!-- Loose Order -->
       <p class="orange-title col-12">Loose Order</p>
       <div class="col-sm-4 col-md-5 control-order-text text-white">
@@ -89,8 +89,8 @@
           <div class="col-sm-8 col-md-5 control-order-text text-right">
             <pre class="text-white control-order-text "> - <span class="text-orange">2</span> + <span class="text-orange">carton(s)</span></pre>
             <p class="text-orange text-right">390.00</p>
-            <p class="text-orange text-right">FREE OF CHARGE</p> 
-            <button class="btn btn-block btn-bulk-order">Bulk Order Now</button>         
+            <p class="text-orange text-right">FREE OF CHARGE</p>
+            <button class="btn btn-block btn-bulk-order">Bulk Order Now</button>
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ export default {
   color: #ffca65 !important;
 }
 .btn-loose-order {
-  width: 100px !important; 
+  width: 100px !important;
   border-radius: 5px;
   border: solid 1px #ffca65 !important;
   background-color: black;

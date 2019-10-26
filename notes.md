@@ -12,19 +12,19 @@
 
 ## Component
 
-- Navbar: Wika
-- Sidebar: Wika
+X Navbar: Wika
+X Sidebar: Wika
 - Modal Order (Loose, Bulk, Free Sample, Overseas): Hardim
-- Footer: Hardim
-- Jumbotron (2 ember): Hardim
-- Free Sample: Hardim
+X Footer: Hardim
+X Jumbotron (2 ember): Hardim
+X Free Sample: Hardim
 
 
 
 ## Page (Similar)
 
-- 3: Front Page - About Us: Wika
-- 5: Automative Professional - Product Detail - Order: Hardim
+X 3: Front Page - About Us: Wika 
+X 5: Automative Professional - Product Detail - Order: Hardim
 - 2: Agent Distributor: Wika
 - 2: Enquery & Contact
 - 1: Term of Service - Privacy Policy
