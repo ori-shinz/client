@@ -9,7 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: '',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -17,7 +17,7 @@ export default new Router({
     },
     {
       path: '/automotive-professional',
-      name: 'automotive-professional',
+      name: 'Automotive Professional',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -25,7 +25,7 @@ export default new Router({
     },
     {
       path: '/product-detail',
-      name: 'product-detail',
+      name: 'Product Detail',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -33,7 +33,7 @@ export default new Router({
     },
     {
       path: '/order',
-      name: 'order',
+      name: 'Order',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -41,7 +41,7 @@ export default new Router({
     },
     {
       path: '/agent-distributor-oem',
-      name: 'agent-distributor-oem',
+      name: 'Agent/ Distributor/ Oem',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -49,7 +49,7 @@ export default new Router({
     },
     {
       path: '/about-us',
-      name: 'about-us',
+      name: 'About Us',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -57,7 +57,7 @@ export default new Router({
     },
     {
       path: '/privacy-policy',
-      name: 'privacy-policy',
+      name: 'Privacy Policy',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -65,7 +65,7 @@ export default new Router({
     },
     {
       path: '/terms-of-service',
-      name: 'terms-of-service',
+      name: 'Terms of Service',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
