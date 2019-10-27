@@ -106,8 +106,6 @@ export default {
   font-weight: bold;
   color: #e7e7e7;
 }
-</style>
-<style scoped>
 #main-board {
   background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.jpg');
   background-size: 100% 105%;
