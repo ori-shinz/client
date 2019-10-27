@@ -30,9 +30,9 @@
             </div>
           </div>
         </li>
-        <!-- <li class="nav-item">
-          <router-link to="/order" class="Order">Order</router-link>
-        </li> -->
+        <li class="nav-item">
+          <span class="page-name">{{ page }}</span>
+        </li>
       </ul>
     </div>
 
@@ -45,10 +45,10 @@
     <div class="collapse navbar-collapse" id="nav-right" style="flex-basis: 100%">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="https://www.facebook.com/ORISHINZsnowwashshampoo/" target="_blank"><img src="~@/assets/images/icons/fb.svg" alt="fb"></a>
+          <a class="nav-link" href="https://www.facebook.com/ORISHINZsnowwashshampoo/" target="_blank"><img src="~@/assets/images/icons/fb.svg" alt="fb" style="border-radius: 7px"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.instagram.com/orishinzsnowwashshampoo/?hl=id" target="_blank"><img src="~@/assets/images/icons/ig.svg" alt="ig"></a>
+          <a class="nav-link" href="https://www.instagram.com/orishinzsnowwashshampoo/?hl=id" target="_blank"><img src="~@/assets/images/icons/ig.svg" alt="ig" style="border-radius: 14px"></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)"><button type="button" class="Rectangle btn" @click="$router.push('/order')">Order Now</button></a>
@@ -65,6 +65,11 @@ export default {
   components: {
     SideBar
   },
+  data () {
+    return {
+      page: ''
+    }
+  },
   methods: {
     openNav () {
       document.getElementById('mySidenav').style.width = '400px'
@@ -72,6 +77,9 @@ export default {
     changeLanguage (country) {
       console.log(country)
     }
+  },
+  created () {
+    this.page = this.$route.name
   }
 }
 </script>
@@ -89,12 +97,13 @@ nav {
   align-items: center;
 }
 
-.Order {
+.page-name {
   font-family: GoogleSans;
   font-size: 25px;
   font-weight: bold;
   color: #ffffff;
 }
+
 .Rectangle {
   width: 220px;
   height: 40px;
