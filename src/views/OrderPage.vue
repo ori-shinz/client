@@ -22,7 +22,7 @@
               </span> |
               <span class="region-item px-2" @click="changeRegion('outsideMalaysia')">
                 Outside Malaysia
-              </span> 
+              </span>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default {
     }
   },
   methods: {
-    changeRegion(region) {
+    changeRegion (region) {
       this.region = region
     }
   },
@@ -97,7 +97,7 @@ export default {
     CardBecomeAgent,
     Footer
   }
-};
+}
 </script>
 
 <style>
@@ -125,8 +125,6 @@ export default {
   font-weight: bold;
   color: #e7e7e7;
 }
-</style>
-<style scoped>
 #main-board {
   background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.jpg');
   background-size: 100% 105%;

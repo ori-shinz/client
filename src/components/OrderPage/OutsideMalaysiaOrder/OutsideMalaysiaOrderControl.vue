@@ -1,5 +1,5 @@
 <template>
-  <div class="row text-left justify-content-center" style="margin: 100px 100px 50px 100px !important">           
+  <div class="row text-left justify-content-center" style="margin: 100px 100px 50px 100px !important">
     <!-- Loose Order -->
     <div class="col-sm-4 d-flex flex-column">
       <p class="orange-title">Loose Order</p>

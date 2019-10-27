@@ -16,20 +16,20 @@ export default new Router({
       component: () => import(/* webpackChunkName: "home" */ './views/Home.vue')
     },
     {
-      path: '/automotive',
-      name: 'automotive',
+      path: '/automotive-professional',
+      name: 'automotive-professional',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "home" */ './views/AutomotiveProf.vue')
+      component: () => import(/* webpackChunkName: "automotive-professional" */ './views/AutomotiveProf.vue')
     },
     {
-      path: '/productdetail',
-      name: 'productdetail',
+      path: '/product-detail',
+      name: 'product-detail',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "home" */ './views/ProductDetail.vue')
+      component: () => import(/* webpackChunkName: "product-detail" */ './views/ProductDetail.vue')
     },
     {
       path: '/order',
@@ -37,7 +37,39 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "home" */ './views/OrderPage.vue')
+      component: () => import(/* webpackChunkName: "order" */ './views/OrderPage.vue')
+    },
+    {
+      path: '/agent-distributor-oem',
+      name: 'agent-distributor-oem',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "agent-distributor-oem" */ './views/AgentDistributor.vue')
+    },
+    {
+      path: '/about-us',
+      name: 'about-us',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about-us" */ './views/AboutUs.vue')
+    },
+    {
+      path: '/privacy-policy',
+      name: 'privacy-policy',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "privacy-policy" */ './views/PrivacyPolicy.vue')
+    },
+    {
+      path: '/terms-of-service',
+      name: 'terms-of-service',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "terms-of-service" */ './views/TermsOfService.vue')
     }
   ]
 })

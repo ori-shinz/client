@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <!-- <router-link to="/automotive">
-      page 2
-    </router-link> -->
     <router-view/>
-    
   </div>
 </template>
 
@@ -25,6 +21,9 @@
 }
 
 /* custom margin bottom */
+.mbc-lg-400 {
+  margin-bottom: 400px;
+}
 .mbc-lg-200 {
   margin-bottom: 200px;
 }

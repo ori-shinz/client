@@ -1,6 +1,6 @@
 <template>
   <Fragment>
-    <div class="row text-left" style="margin: 100px 100px 50px 100px !important">           
+    <div class="row text-left" style="margin: 100px 100px 50px 100px !important">
       <!-- Loose Order -->
       <p class="orange-title col-12">Loose Order</p>
       <div class="col-sm-4 col-md-5 control-order-text text-white">
@@ -131,7 +131,7 @@ export default {
   color: #ffca65 !important;
 }
 .btn-loose-order {
-  width: 100px !important; 
+  width: 100px !important;
   border-radius: 5px;
   border: solid 1px #ffca65 !important;
   background-color: black;

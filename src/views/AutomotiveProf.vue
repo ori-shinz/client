@@ -50,9 +50,8 @@ export default {
     BottomCarShine,
     Footer
   }
-};
+}
 </script>
-
 
 <style scoped>
 #main-board {
