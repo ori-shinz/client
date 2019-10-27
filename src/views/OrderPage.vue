@@ -27,15 +27,28 @@
           </div>
 
           <!-- West Malaysia Detail Pricing -->
-          <Fragment v-if="region === 'westMalaysia'">
-            <WestMalaysiaOrderCard :card-title="'eco'"/>
-            <WestMalaysiaOrderCard :card-title="'gold'"/>
+          <Fragment >
+            <div v-if="region === 'westMalaysia'">
+              <!-- <WestMalaysiaOrderCard :card-title="'eco'"/>
+              <WestMalaysiaOrderCard :card-title="'gold'"/> -->
+              <MalaysiaOrderCard :card-title="'eco'" :region-type="'west'"/>
+              <MalaysiaOrderCard :card-title="'gold'" :region-type="'west'" />
+            </div>
+            <div v-else-if="region === 'eastMalaysia'">
+              <!-- <WestMalaysiaOrderCard :card-title="'eco'"/>
+              <WestMalaysiaOrderCard :card-title="'gold'"/> -->
+              <MalaysiaOrderCard :card-title="'eco'" :region-type="'east'"/>
+              <MalaysiaOrderCard :card-title="'gold'" :region-type="'east'" />
+            </div>
+            <div v-else-if="region === 'outsideMalaysia'">
+              <OutsideMalaysiaOrderCard :card-title="'eco'"/>
+              <OutsideMalaysiaOrderCard :card-title="'gold'"/>
+            </div>
           </Fragment>
 
           <!-- Outside Malaysia Detail Pricing -->
-          <Fragment v-if="region === 'outsideMalaysia'">
-            <OutsideMalaysiaOrderCard :card-title="'eco'"/>
-            <OutsideMalaysiaOrderCard :card-title="'gold'"/>
+          <Fragment >
+            
           </Fragment>
         </div>
       </section>
@@ -55,8 +68,8 @@
 import MainBoard from '@/components/general/MainBoard'
 import ChoosingBenefits from '@/components/OrderPage/ChoosingBenefits'
 import { Fragment } from 'vue-fragment'
-import WestMalaysiaOrderCard from '@/components/OrderPage/WestMalaysiaOrder/WestMalaysiaOrderCard'
 import OutsideMalaysiaOrderCard from '@/components/OrderPage/OutsideMalaysiaOrder/OutsideMalaysiaOrderCard'
+import MalaysiaOrderCard from '../components/OrderPage/MalaysiaOrder/MalaysiaOrderCard'
 import Heading from '@/components/general/Heading'
 import CardBecomeAgent from '@/components/AutomotiveProfessional/CardBecomeAgent'
 import Footer from '@/components/general/Footer'
@@ -66,7 +79,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: 'outsideMalaysia'
+      region: ''
     }
   },
   methods: {
@@ -77,7 +90,7 @@ export default {
   components: {
     MainBoard,
     OutsideMalaysiaOrderCard,
-    WestMalaysiaOrderCard,
+    MalaysiaOrderCard,
     ChoosingBenefits,
     Fragment,
     Heading,

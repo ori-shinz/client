@@ -9,7 +9,7 @@
         <div class="col-sm-2 text-orange">drum(s)</div>
       </div>
       <div class="row pl-3">
-        <button class="btn btn-loose-order">
+        <button class="btn btn-loose-order" @click="showOrderModal('loose')" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-outside-modal'">
           Order Now
         </button>
       </div>
@@ -77,10 +77,11 @@ export default {
   color: #ffca65 !important;
 }
 .btn-loose-order {
-  width: 200px; 
+  width: 12.5rem; 
   border-radius: 5px;
   border: solid 1px #ffca65;
-  background-color: var(--black);  font-size: 18px;
+  background-color: black;  
+  font-size: 1.25rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -90,9 +91,10 @@ export default {
   color: #ffca65;
 }
 .btn-bulk-order {
-  width: 200px;  border-radius: 5px;
+  width: 12.5rem;  
+  border-radius: 5px;
   border: solid 1px #ffca65;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
   border-radius: 5px;
