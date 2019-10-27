@@ -3,15 +3,15 @@
     <div>
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
       <router-link to="/">Main Page</router-link>
-      <router-link to="/automotive">Automotive Professional</router-link>
-      <router-link to="/productdetail">Product Details</router-link>
+      <router-link to="/automotive-professional">Automotive Professional</router-link>
+      <router-link to="/product-detail">Product Details</router-link>
       <router-link to="/order">Order</router-link>
-      <router-link to="/">Agent/ Distributor/ OEM</router-link>
-      <router-link to="/aboutus">About Us</router-link>
+      <router-link to="/agent-distributor-oem">Agent/ Distributor/ OEM</router-link>
+      <router-link to="/about-us">About Us</router-link>
       <router-link to="/">Enquiry & Contact</router-link>
     </div>
     <div>
-      <router-link to="/">Privacy Policy</router-link>
+      <router-link to="/privacy-policy">Privacy Policy</router-link>
       <router-link to="/">Terms of Service</router-link>
     </div>
   </div>
