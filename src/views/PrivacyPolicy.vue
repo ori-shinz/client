@@ -5,20 +5,20 @@
     <section id="container-content">
       <div class="container free-text">
         <div class="row">
-          <div class="col-sm-12 mb-5">
+          <div class="col-sm-12 mb-4">
             <p class="title">PRIVACY POLICY</p>
             <p>This is the privacy policy of ORI-SHINE and Diamond King (M) Sdn. Bhd. (hereinafter collectively referred to as “ORI-SHINE”, “Diamond King®”, "us", "we", or "our") operate https://www.ORISHINE.net/ (the “Site”). We may update this privacy policy from time to time by publishing the amended version on the Site. By using the Site, you agree to the collection and use of information in accordance with this privacy policy.</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 mb-5">
+          <div class="col-sm-12 mb-4">
             <p class="title">OUR WEBSITE</p>
             <p>We try to keep the Site secure. However, we ask you to recognise that when providing your information to us through the Site or when you send us or ask us to send you any of your confidential information by email, that the internet and email communications over the internet may not be secure. We cannot be responsible for any loss or unauthorised interception of information transmitted via the internet which is beyond our control.</p>
             <p>The Site may contain links to other websites outside of the Site. Our privacy policy only applies to the Site. We are not responsible for the content, privacy or security of other websites.</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 mb-5">
+          <div class="col-sm-12 mb-4">
             <p class="mb-3 title">DATA PROTECTION STATEMENT</p>
             <p>The confidentiality and integrity of your personal data is a matter of prime importance to us. We shall therefore process and use your personal data, which shall include, amongst others, your name, company name, contact number, email address and mailing address and all such personal information as you may have provided to us as stated below, with care and in accordance with the statutory provisions.</p>
             <p>Provision of your personal data is voluntary. However, if you do not provide us your personal data, we may not be able to provide you the products or services you request or process your personal data for the purposes set forth below.</p>
@@ -50,20 +50,20 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 mb-5">
+          <div class="col-sm-12 mb-4">
             <p class="title">COOKIES</p>
             <p>Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer's hard drive.</p>
             <p>Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of the Site.</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 mb-5">
+          <div class="col-sm-12 mb-4">
             <p class="title">CHANGES TO PRIVACY POLICY</p>
             <p>We reserve the right to update or change our privacy policy at any time and you should check this privacy policy periodically. Your continued use of the Site after we post any modifications to the privacy policy on the Site will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified privacy policy.</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 mb-5 contact">
+          <div class="col-sm-12 mb-4 contact">
             <p class="title">CONTACT US</p>
             <p>
               If you have any questions about this privacy policy, please contact us.<br>
