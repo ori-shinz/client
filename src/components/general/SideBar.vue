@@ -7,7 +7,7 @@
       <router-link to="/productdetail">Product Details</router-link>
       <router-link to="/order">Order</router-link>
       <router-link to="/">Agent/ Distributor/ OEM</router-link>
-      <router-link to="/">About Us</router-link>
+      <router-link to="/aboutus">About Us</router-link>
       <router-link to="/">Enquiry & Contact</router-link>
     </div>
     <div>
