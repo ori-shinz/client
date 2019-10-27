@@ -9,7 +9,7 @@
         <div class="col-sm-2 text-orange">drum(s)</div>
       </div>
       <div class="row pl-3">
-        <button class="btn btn-loose-order">
+        <button class="btn btn-loose-order" @click="showOrderModal('loose')" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-outside-modal'">
           Order Now
         </button>
       </div>
@@ -25,9 +25,9 @@
         <pre class="col-sm-4 text-white mb-0 control-order-text"> -  <span class="text-orange">2</span>  +</pre>
         <div class="col-sm-2 text-orange">drum(s)</div>
       </div>
-      <button class="btn btn-bulk-order">
-          Bulk Order Now
-        </button>
+      <button @click="showOrderModal('bulk')" class="btn btn-bulk-order" data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-outside-modal'">
+        Bulk Order Now
+      </button>
     </div>
 
     <!-- Notes -->
@@ -43,7 +43,16 @@
 
 <script>
 export default {
-  name: 'OutMalayOrderControl'
+  name: 'OutMalayOrderControl',
+  props: [
+    'cardTitle'
+  ],
+  methods: {
+    showOrderModal(type) {
+      console.log('here')
+      this.$emit('show-modal', type)
+    }
+  }
 }
 </script>
 
@@ -68,10 +77,11 @@ export default {
   color: #ffca65 !important;
 }
 .btn-loose-order {
-  width: 200px;
+  width: 12.5rem; 
   border-radius: 5px;
   border: solid 1px #ffca65;
-  background-color: var(--black);  font-size: 18px;
+  background-color: black;  
+  font-size: 1.25rem;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -81,9 +91,10 @@ export default {
   color: #ffca65;
 }
 .btn-bulk-order {
-  width: 200px;  border-radius: 5px;
+  width: 12.5rem;  
+  border-radius: 5px;
   border: solid 1px #ffca65;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
   border-radius: 5px;

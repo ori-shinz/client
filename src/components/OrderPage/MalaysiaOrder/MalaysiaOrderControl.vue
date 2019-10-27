@@ -52,27 +52,7 @@
           </tr>
         </table>
       </div>
-      <!-- <div class="col-sm-6 orange-title">
-        <p>
-          Bulk Order | <span class="font-italic">Best Price!</span>
-        </p>
-        <div class="row mb-3 control-order-text">
-          <div class="col-sm-3 text-white">Quantity</div>
-          <pre class="col-sm-4 text-white mb-0 control-order-text"> -  <span class="text-orange">2</span>  +</pre>
-          <div class="col-sm-2 text-orange">drum(s)</div>
-        </div>
-        <button class="btn btn-bulk-order">
-            Bulk Order Now
-          </button>
-      </div> -->
       <!-- Notes -->
-      <!-- <div class="col-sm-4 notes-order">
-        Note:
-        <ul class="pl-3">
-          <li>Maximum Quantity of Loose Order is 4 drums.</li>
-          <li>Minimum Quantity for Bulk Order is 1 carton (1 carton = 6 drums).</li>
-        </ul>
-      </div> -->
     </div>
     <div class="row text-left" style="margin: 0px 100px 50px 100px !important">
       <!-- Bulk Order -->
@@ -89,8 +69,8 @@
           <div class="col-sm-8 col-md-5 control-order-text text-right">
             <pre class="text-white control-order-text "> - <span class="text-orange">2</span> + <span class="text-orange">carton(s)</span></pre>
             <p class="text-orange text-right">390.00</p>
-            <p class="text-orange text-right">FREE OF CHARGE</p>
-            <button class="btn btn-block btn-bulk-order">Bulk Order Now</button>
+            <p class="text-orange text-right">FREE OF CHARGE</p> 
+            <button class="btn btn-block btn-bulk-order" @click="showOrderModal('bulk')"  data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-'+regionType+'-modal'">Bulk Order Now</button>         
           </div>
         </div>
       </div>
@@ -113,9 +93,19 @@
 <script>
 import { Fragment } from 'vue-fragment'
 export default {
-  name: 'WestMalayOrderControl',
+  name: 'MalayOrderControl',
+  props: [
+    'cardTitle',
+    'regionType'
+  ],
   components: {
     Fragment
+  },
+  methods: {
+    showOrderModal(type) {
+      console.log('here')
+      this.$emit('show-modal', type)
+    }
   }
 }
 </script>

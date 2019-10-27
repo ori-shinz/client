@@ -2,32 +2,33 @@
   <div class="pricing-detail-card mx-3 mb-10 py-4">
     <EcoTopViewImage v-if="cardTitle==='eco'"/>
     <GoldTopViewImage v-if="cardTitle==='gold'"/>
-    <OutsideMalaysiaOrderControl :card-title="cardTitle" @show-modal="showModal"/>
-    <OrderModal :card-title="cardTitle" :order-type="orderType" :region-type="'outside'"/>
+    <MalaysiaOrderControl :card-title="cardTitle" @show-modal="showModal" :region-type="regionType"/>
+    <OrderModal :card-title="cardTitle" :order-type="orderType" :region-type="regionType"/>
   </div>
 </template>
 
 <script>
-import OrderModal from '@/components/OrderPage/general/OrderModal'
 import EcoTopViewImage from '@/components/OrderPage/general/EcoTopViewImage'
 import GoldTopViewImage from '@/components/OrderPage/general/GoldTopViewImage'
-import OutsideMalaysiaOrderControl from '@/components/OrderPage/OutsideMalaysiaOrder/OutsideMalaysiaOrderControl'
+import MalaysiaOrderControl from '@/components/OrderPage/MalaysiaOrder/MalaysiaOrderControl'
+import OrderModal from '@/components/OrderPage/general/OrderModal'
 
 export default {
-  name: 'OutsideMalaysiaOrderCard',
-  props: [
-    'cardTitle'
-  ],
-  components: {
-    OrderModal,
-    EcoTopViewImage,
-    GoldTopViewImage,
-    OutsideMalaysiaOrderControl
-  },
+  name: 'MalaysiaOrderCard',
   data () {
     return {
       orderType: ''
     }
+  },
+  props: [
+    'cardTitle',
+    'regionType'
+  ],
+  components: {
+    EcoTopViewImage,
+    GoldTopViewImage,
+    MalaysiaOrderControl,
+    OrderModal
   },
   methods: {
     showModal (type) {
