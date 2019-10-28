@@ -25,11 +25,11 @@
         <Benefit></Benefit>
       </section>
 
-      <section id="form" class="mbc-lg-200">
+      <section id="form" class="mbc-lg-150">
         <FormAgent></FormAgent>
       </section>
 
-      <section id="contact" class="mbc-lg-200 ">
+      <section id="contact" class="mbc-lg-150 ">
         <Contact></Contact>
       </section>
 
@@ -103,5 +103,4 @@ export default {
   font-weight: bold;
   color: #0e1737;
 }
-
 </style>

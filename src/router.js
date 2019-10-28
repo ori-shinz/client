@@ -56,6 +56,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about-us" */ './views/AboutUs.vue')
     },
     {
+      path: '/enquiry-and-contact',
+      name: 'Enquiry & Contact',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "enquiry-and-contact" */ './views/EnquiryContact.vue')
+    },
+    {
       path: '/privacy-policy',
       name: 'Privacy Policy',
       // route level code-splitting

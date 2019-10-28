@@ -3,25 +3,24 @@
     <div class="container form-agent">
       <div class="row">
         <div class="col my-5">
-          <div class="free-title">Speak to Us Now & Be Your Own Boss.</div>
+          <div class="free-title">Leave us your message and we will get back to you soon.</div>
         </div>
       </div>
       <div class="row">
         <form class="text-white text-content px-5">
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
-              <input
-                type="text"
-                class="form-control md-input"
-                placeholder="Full Name"
-                required
-              />
+              <select class="form-control md-input text-content">
+                <option value="none" selected disable hidden>Select Enquiry</option>
+                <option>Enquiry</option>
+                <option>Contact</option>
+              </select>
             </div>
             <div class="col-md-6 pl-3">
               <input
                 type="text"
                 class="form-control md-input"
-                placeholder="Email Address"
+                placeholder="Contact Person"
                 required
               />
             </div>
@@ -46,6 +45,17 @@
                 type="text"
                 class="form-control md-input"
                 placeholder="Contact Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col-md-12 pr-3">
+              <textarea
+                rows="4" cols="50"
+                type="text"
+                class="form-control md-input"
+                placeholder="Type Your Message Here"
                 required
               />
             </div>
@@ -88,7 +98,7 @@ a:hover {
 
 .form-agent {
   width: 950px;
-  height: 438px;
+  height: 585px;
   border-radius: 30px;
   background-color: rgba(245, 130, 32, 0.2);
   margin: 0 auto;
