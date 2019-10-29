@@ -7,17 +7,22 @@
         <p class="free-text text-white">If you want to see the result of how great is our product, you can request free sample before you even buying.</p>
       </div>
       <div class="col-sm-3 request-btn">
-        <button class="Join-Now btn-orange">
+        <button class="Join-Now btn-orange" data-toggle="modal" :data-target="'#try-free-sample-modal'">
           Request Now
         </button>
       </div>
     </div>
+    <OrderModal :card-title="'try'" :order-type="'free'" :region-type="'sample'"/>
   </div>
 </template>
 
 <script>
+import OrderModal from '@/components/OrderPage/general/OrderModal'
 export default {
-  name: 'FreeSample'
+  name: 'FreeSample',
+  components: {
+    OrderModal
+  }
 }
 </script>
 

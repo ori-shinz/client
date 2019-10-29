@@ -103,7 +103,6 @@ export default {
   },
   methods: {
     showOrderModal(type) {
-      console.log('here')
       this.$emit('show-modal', type)
     }
   }
