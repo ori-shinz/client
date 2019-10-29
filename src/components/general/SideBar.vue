@@ -8,7 +8,7 @@
       <router-link to="/order">Order</router-link>
       <router-link to="/agent-distributor-oem">Agent/ Distributor/ OEM</router-link>
       <router-link to="/about-us">About Us</router-link>
-      <router-link to="/">Enquiry & Contact</router-link>
+      <router-link to="/enquiry-and-contact">Enquiry & Contact</router-link>
     </div>
     <div>
       <router-link to="/privacy-policy">Privacy Policy</router-link>
