@@ -20,12 +20,15 @@
           <h5 class="text-orange title mb-4 pl-3">Order Details</h5>
           <div class="container text-left text-content">
 
-            <!-- Order Summary -->
-            <OrderModalSummary :card-title="cardTitle" :order-type="orderType" :region-type="regionType" />
+            <!-- Order Summarys -->
+            <OrderModalSummary v-if="regionType != 'sample'" :card-title="cardTitle" :order-type="orderType" :region-type="regionType" />
             
             <!-- Total Price must be paid in Malaysia only -->
-            <OrderModalPriceTotal v-if="regionType != 'outside'" :card-title="cardTitle" :order-type="orderType" :region-type="regionType" />
+            <OrderModalPriceTotal v-if="regionType != 'outside' && regionType != 'sample'" :card-title="cardTitle" :order-type="orderType" :region-type="regionType" />
 
+            <!-- Free Sample -->
+            <FreeSampleRequest v-if="regionType == 'sample'" />
+            
             <!-- Transfer Instruction inside Malaysia only -->
             <OrderModalInstruction v-if="regionType != 'outside'" />
 
@@ -46,6 +49,7 @@ import OrderModalForm from '@/components/OrderPage/general/OrderModalForm'
 import OrderModalPriceTotal from '@/components/OrderPage/general/OrderModalPriceTotal'
 import OrderModalInstruction from '@/components/OrderPage/general/OrderModalInstruction'
 import OrderModalSummary from '@/components/OrderPage/general/OrderModalSummary'
+import FreeSampleRequest from '@/components/OrderPage/general/FreeSampleRequest'
 
 export default {
   name: "OrderModal",
@@ -54,7 +58,8 @@ export default {
     OrderModalForm,
     OrderModalPriceTotal,
     OrderModalSummary,
-    OrderModalInstruction
+    OrderModalInstruction,
+    FreeSampleRequest
   }
 };
 </script>
