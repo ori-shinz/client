@@ -13,17 +13,17 @@
         <div class="row">
           <div class="col-sm-12 mb-4">
             <p class="title">OUR WEBSITE</p>
-            <p>We try to keep the Site secure. However, we ask you to recognise that when providing your information to us through the Site or when you send us or ask us to send you any of your confidential information by email, that the internet and email communications over the internet may not be secure. We cannot be responsible for any loss or unauthorised interception of information transmitted via the internet which is beyond our control.</p>
-            <p>The Site may contain links to other websites outside of the Site. Our privacy policy only applies to the Site. We are not responsible for the content, privacy or security of other websites.</p>
+            <p>We try to keep the Site secure. However, we ask you to recognise that when providing your information to us through the Site or when you send us or ask us to send you any of your confidential information by email, that the internet and email communications over the internet may not be secure.
+            We cannot be responsible for any loss or unauthorised interception of information transmitted via the internet which is beyond our control. The Site may contain links to other websites outside of the Site. Our privacy policy only applies to the Site. We are not responsible for the content, privacy or security of other websites.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 mb-4">
             <p class="mb-3 title">DATA PROTECTION STATEMENT</p>
-            <p>The confidentiality and integrity of your personal data is a matter of prime importance to us. We shall therefore process and use your personal data, which shall include, amongst others, your name, company name, contact number, email address and mailing address and all such personal information as you may have provided to us as stated below, with care and in accordance with the statutory provisions.</p>
-            <p>Provision of your personal data is voluntary. However, if you do not provide us your personal data, we may not be able to provide you the products or services you request or process your personal data for the purposes set forth below.</p>
-            <p>Please understand that should you provide insufficient information, inaccurate information or decline to provide obligatory information that we request for, we may not be able to process your requirements and/or requests and ultimately be unable to provide you with your requirements and/or requests.</p>
-            <p>Personal data that we receive and process will vary, depending on the types of products and/or services requested by you and may include, amongst others:
+            <p>The confidentiality and integrity of your personal data is a matter of prime importance to us. We shall therefore process and use your personal data, which shall include, amongst others, your name, company name, contact number, email address and mailing address and all such personal information as you may have provided to us as stated below, with care and in accordance with the statutory provisions.
+            Provision of your personal data is voluntary. However, if you do not provide us your personal data, we may not be able to provide you the products or services you request or process your personal data for the purposes set forth below.
+            Please understand that should you provide insufficient information, inaccurate information or decline to provide obligatory information that we request for, we may not be able to process your requirements and/or requests and ultimately be unable to provide you with your requirements and/or requests.
+            Personal data that we receive and process will vary, depending on the types of products and/or services requested by you and may include, amongst others:
               <ul>
                 <li>data which are collected from your enquiries, sales orders, comments, personal information provided by you such as your name, company name, contact number, email address and mailing address and any other such information that may be relevant to your request;</li>
                 <li>data about your transactions with us such as sales orders, order records and payment details and records;</li>
@@ -52,8 +52,8 @@
         <div class="row">
           <div class="col-sm-12 mb-4">
             <p class="title">COOKIES</p>
-            <p>Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer's hard drive.</p>
-            <p>Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of the Site.</p>
+            <p>Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer's hard drive.
+            Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of the Site.</p>
           </div>
         </div>
         <div class="row">

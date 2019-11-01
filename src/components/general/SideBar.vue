@@ -2,17 +2,17 @@
   <div id="mySidenav" class="sidenav">
     <div>
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
-      <router-link to="/">Main Page</router-link>
-      <router-link to="/automotive-professional">Automotive Professional</router-link>
-      <router-link to="/product-detail">Product Details</router-link>
-      <router-link to="/order">Order</router-link>
-      <router-link to="/agent-distributor-oem">Agent/ Distributor/ OEM</router-link>
-      <router-link to="/about-us">About Us</router-link>
-      <router-link to="/enquiry-and-contact">Enquiry & Contact</router-link>
+      <router-link to="/">{{ $t('sidebar.mainPage') }}</router-link>
+      <router-link to="/automotive-professional">{{ $t('sidebar.automotiveProfessional') }}</router-link>
+      <router-link to="/product-detail">{{ $t('sidebar.productDetails') }}</router-link>
+      <router-link to="/order">{{ $t('sidebar.order') }}</router-link>
+      <router-link to="/agent-distributor-oem">{{ $t('sidebar.agentDistributorOEM') }}</router-link>
+      <router-link to="/about-us">{{ $t('sidebar.aboutUs') }}</router-link>
+      <router-link to="/enquiry-and-contact">{{ $t('sidebar.enquiryContact') }}</router-link>
     </div>
     <div>
-      <router-link to="/privacy-policy">Privacy Policy</router-link>
-      <router-link to="/terms-of-service">Terms of Service</router-link>
+      <router-link to="/privacy-policy">{{ $t('sidebar.privacyPolicy') }}</router-link>
+      <router-link to="/terms-of-service">{{ $t('sidebar.termsofService') }}</router-link>
     </div>
   </div>
 </template>
