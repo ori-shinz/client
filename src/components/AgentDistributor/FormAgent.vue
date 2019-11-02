@@ -52,7 +52,7 @@
       "text7": "和本",
       "text8": "服务条款"
     },
-    "Submit": "Hantar"
+    "Submit": "提交"
   }
 }
 </i18n>

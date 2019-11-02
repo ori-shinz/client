@@ -10,6 +10,19 @@
 6. Enquiry & Contact
 7. Privacy police & Term of Service
 
+# Translate
+1. Home Page (2), Form:
+   1. Free Sample
+2. Product Detail (4)
+3. Order, Form:
+   1. Loose Order
+   2. Bulk Order
+X 4. Agen Distributor
+X 5. About Us
+6. Enquiry & Contact
+X 7. Privacy police
+X 8. Term of Service
+
 ## Component
 
 X Navbar: Wika

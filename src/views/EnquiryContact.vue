@@ -1,3 +1,20 @@
+<i18n>
+{
+  "en": {
+    "header": "Get in Touch with Us",
+    "manufacture": "Manufactured in Malaysia by: <br>Diamond King (M) Sdn. Bhd. (472537-M)"
+  },
+  "my": {
+    "header": "Hubungi Kami",
+    "manufacture": "Dikilangkan di Malaysia oleh: <br>Diamond King (M) Sdn. Bhd. (472537-M)"
+  },
+  "cn": {
+    "header": "与我们联系",
+    "manufacture": "马来西亚生产厂家： <br>Diamond King (M) Sdn. Bhd. (472537-M)"
+  }
+}
+</i18n>
+
 <template>
   <div class="aboutus">
     <NavBar></NavBar>
@@ -7,7 +24,7 @@
         <div class="row">
           <div class="col-sm-12 boxcontent mb-5">
             <div class="header">
-              Get in Touch with Us
+              {{ $t('header') }}
             </div>
           </div>
         </div>
@@ -31,10 +48,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <div class="free-content">
-              Manufactured in Malaysia by: <br>
-              Diamond King (M) Sdn. Bhd. (472537-M)
-            </div>
+            <div class="free-content" v-html="$t('manufacture')"></div>
           </div>
         </div>
       </div>
