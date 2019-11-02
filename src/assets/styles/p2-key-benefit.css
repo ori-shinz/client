@@ -1,0 +1,37 @@
+.key-benefits {
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  font-size: 60px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #e7e7e7;
+}
+.benefit-title {
+  font-size: 50px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffca65;
+}
+.benefit-content {
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #e7e7e7;
+}
+ul li::before {
+  content: '\2022';
+  color: #ffca65;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}

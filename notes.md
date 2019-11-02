@@ -10,21 +10,34 @@
 6. Enquiry & Contact
 7. Privacy police & Term of Service
 
+# Translate
+X 1. Home Page (2), Form:
+   X 1. Free Sample
+2. Product Detail (4)
+3. Order, Form:
+   1. Loose Order
+   2. Bulk Order
+X 4. Agen Distributor
+X 5. About Us
+X 6. Enquiry & Contact
+X 7. Privacy police
+X 8. Term of Service
+
 ## Component
 
-- Navbar: Wika
-- Sidebar: Wika
+X Navbar: Wika
+X Sidebar: Wika
 - Modal Order (Loose, Bulk, Free Sample, Overseas): Hardim
-- Footer: Hardim
-- Jumbotron (2 ember): Hardim
-- Free Sample: Hardim
+X Footer: Hardim
+X Jumbotron (2 ember): Hardim
+X Free Sample: Hardim
 
 
 
 ## Page (Similar)
 
-- 3: Front Page - About Us: Wika
-- 5: Automative Professional - Product Detail - Order: Hardim
+X 3: Front Page - About Us: Wika 
+X 5: Automative Professional - Product Detail - Order: Hardim
 - 2: Agent Distributor: Wika
 - 2: Enquery & Contact
 - 1: Term of Service - Privacy Policy
