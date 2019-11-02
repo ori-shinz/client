@@ -19,7 +19,7 @@
    2. Bulk Order
 X 4. Agen Distributor
 X 5. About Us
-6. Enquiry & Contact
+X 6. Enquiry & Contact
 X 7. Privacy police
 X 8. Term of Service
 
