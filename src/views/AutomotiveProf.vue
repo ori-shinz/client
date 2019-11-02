@@ -55,8 +55,9 @@ export default {
 
 <style scoped>
 #main-board {
-  background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.jpg');
-  background-size: 100% 105%;
+  background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 #free-sample {
   background-color: black;

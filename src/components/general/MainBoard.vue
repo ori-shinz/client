@@ -1,9 +1,23 @@
+<i18n>
+{
+  "en": {
+    "heading": "Snow Wash Shampoo for <br> Automotive Professional Use"
+  },
+  "my": {
+    "heading": "Syampu Snow Wash untuk <br> Penggunaan Profesional Automotif"
+  },
+  "cn": {
+    "heading": "雪花洗车粉 <br> 适于汽车专业使用"
+  }
+}
+</i18n>
+
 <template>
   <section id="main-board">
     <Navbar />
     <div class="container pb-5">
       <!-- Snow wash shampoo text -->
-      <Heading>Snow Wash Shampoo for Automotive Professional Use</Heading>
+      <Heading :message="$t('heading')"></Heading>
 
       <!-- Bucket Image -->
       <DoubleBucket :bucket-img="bucketImg"/>

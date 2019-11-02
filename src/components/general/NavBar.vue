@@ -90,7 +90,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">
-            <button type="button" class="Rectangle btn" @click="$router.push('/order')">
+            <button type="button" class="Rectangle btn" @click="$router.push(`/${$i18n.locale}/order`)">
               {{ $t('Order Now') }}
             </button>
           </a>

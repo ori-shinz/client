@@ -1,3 +1,44 @@
+<i18n>
+{
+  "en": {
+    "bottomCardLeft": {
+      "title": "Key Benefits for Automotive Professional",
+      "content": "Save More Costs & Get More Business",
+      "buttonText": "See Product Details"
+    },
+    "bottomCardRight": {
+      "title": "Become Our Agent /Distributor / OEM",
+      "content": "Be Your Own Boss",
+      "buttonText": "Join Now"
+    }
+  },
+  "my": {
+    "bottomCardLeft": {
+      "title": "Faedah Utama kepada Profesional Automotif",
+      "content": "Menjimatkan Lebih Kos & Mendapatkan Lebih Banyak Pelanggan",
+      "buttonText": "Lihat Butiran Produk"
+    },
+    "bottomCardRight": {
+      "title": "Menjadi Agen / Pengedar Kami / OEM",
+      "content": "Jadilah Boss Anda Sendiri <br><br>",
+      "buttonText": "Sertai Sekarang"
+    }
+  },
+  "cn": {
+    "bottomCardLeft": {
+      "title": "汽车专业可享有 <br> 的主要优点",
+      "content": "节省更多成本 & 获得更多生意",
+      "buttonText": "查看产品详情"
+    },
+    "bottomCardRight": {
+      "title": "成为我们的代理商 / <br> 经销商 / OEM",
+      "content": "自己当老板",
+      "buttonText": "即刻加入"
+    }
+  }
+}
+</i18n>
+
 <template>
   <div style="background-color: black">
     <MainBoard :bucket-img="bucketImg"/>
@@ -26,8 +67,16 @@
     <section id="bottom">
       <div class="container pb-5">
         <div class="row mb-5 d-flex justify-content-between">
-          <BottomCard />
-          <BottomCard />
+          <BottomCard
+            :title="$t('bottomCardLeft.title')"
+            :content="$t('bottomCardLeft.content')"
+            :buttonText="$t('bottomCardLeft.buttonText')"
+          />
+          <BottomCard
+            :title="$t('bottomCardRight.title')"
+            :content="$t('bottomCardRight.content')"
+            :buttonText="$t('bottomCardRight.buttonText')"
+          />
         </div>
         <BottomCarShine />
         <Footer />
@@ -68,8 +117,9 @@ export default {
 
 <style scoped>
 #main-board {
-  background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.jpg');
-  background-size: 100% 105%;
+  background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 #free-sample {
   background-color: black;

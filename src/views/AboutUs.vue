@@ -44,6 +44,7 @@
   }
 }
 </i18n>
+
 <template>
   <div class="aboutus">
     <NavBar></NavBar>

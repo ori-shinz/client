@@ -11,8 +11,8 @@
 7. Privacy police & Term of Service
 
 # Translate
-1. Home Page (2), Form:
-   1. Free Sample
+X 1. Home Page (2), Form:
+   X 1. Free Sample
 2. Product Detail (4)
 3. Order, Form:
    1. Loose Order

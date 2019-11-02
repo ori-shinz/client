@@ -1,21 +1,24 @@
 <template>
   <div class="row justify-content-center mb-5">
-    <div class="col-sm-9 col-12">
-      <h1 class="text-white text-center moto">
-        <slot></slot>
-      </h1>
+    <div class="col-sm-12 col-12 d-flex justify-content-center">
+      <h1 class="text-white moto d-flex justify-content-center" v-html="message"></h1>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Heading'
+  name: 'Heading',
+  props: {
+    message: String
+  }
 }
 </script>
 
 <style scoped>
 .moto {
+  width: 100%;
+  margin: 0 auto;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
   font-size: 60px;
   font-weight: bold;
