@@ -33,6 +33,9 @@ export default {
     showModal (type) {
       this.orderType = type
     }
+  },
+  created () {
+    this.$store.commit('formOrder/RESET_ORDERS')
   }
 }
 </script>
