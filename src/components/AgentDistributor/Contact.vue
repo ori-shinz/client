@@ -1,3 +1,17 @@
+<i18n>
+{
+  "en": {
+    "qrcode": "WeChat QR Code"
+  },
+  "my": {
+    "qrcode": "Kod QR WeChat"
+  },
+  "cn": {
+    "qrcode": "微信二维码"
+  }
+}
+</i18n>
+
 <template>
   <div class="pb-5 mx-5">
     <div class="row">
@@ -15,7 +29,7 @@
       </div>
       <div class="col-sm-3">
         <img src="~@/assets/images/icons/cont4.png" class="img-fluid mb-5">
-        <div class="free-content">WeChat QR Code</div>
+        <div class="free-content">{{ $t('qrcode') }}</div>
       </div>
     </div>
   </div>

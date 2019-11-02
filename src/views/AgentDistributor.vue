@@ -1,3 +1,19 @@
+<i18n>
+{
+  "en": {
+    "title": "Become Our Agent / Distributor / OEM <br> & Be Your Own Boss",
+    "Join Now": "Join Now"
+  },
+  "my": {
+    "title": "Menjadi Agen / Pengedar / OEM Kami <br> & Jadilah Boss Anda Sendiri",
+    "Join Now": "Sertai Sekarang"
+  },
+  "cn": {
+    "title": "成为我们的代理商 / 经销商 / OEM <br> & 自己当老板",
+    "Join Now": "即刻加入"
+  }
+}
+</i18n>
 <template>
   <div class="aboutus">
     <NavBar></NavBar>
@@ -6,14 +22,12 @@
       <div class="container my-5">
         <div class="row">
           <div class="col-sm-12 boxcontent mb-5">
-            <div class="header">
-              Become Our Agent / Distributor / OEM <br> & Be Your Own Boss
-            </div>
+            <div class="header" v-html="$t('title')"></div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 boxcontent mb-5">
-            <button type="button" class="Rectangle btn" @click="$router.push('/')">Join Now</button>
+            <button type="button" class="Rectangle btn" @click="$router.push('/')">{{ $t('Join Now') }}</button>
           </div>
         </div>
       </div>
