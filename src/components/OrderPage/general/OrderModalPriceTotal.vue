@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
+import { Fragment } from 'vue-fragment'
 export default {
-  name: "OrderModalPriceTotal",
-  props: ["orderType", "regionType", "cardTitle"],
+  name: 'OrderModalPriceTotal',
+  props: ['orderType', 'regionType', 'cardTitle'],
   components: {
     Fragment
   },
@@ -37,7 +37,7 @@ export default {
     },
     getRegionType () {
       let area
-      if(this.regionType === 'west') {
+      if (this.regionType === 'west') {
         area = 'West '
       } else if (this.regionType === 'east') {
         area = 'East '
@@ -47,7 +47,7 @@ export default {
       return area + ' Malaysia'
     }
   }
-};
+}
 </script>
 
 <style scoped>

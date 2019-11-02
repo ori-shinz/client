@@ -53,47 +53,47 @@ export default {
     'cardTitle'
   ],
   methods: {
-    showOrderModal(type) {
+    showOrderModal (type) {
       this.$emit('show-modal', type)
     },
     changeOrderQuantity (op, type) {
-      let currentOrderQty , field
-      if(type === 'bulk') {
+      let currentOrderQty, field
+      if (type === 'bulk') {
         currentOrderQty = this.bulkQuantity
         field = this.cardTitle + 'BulkQuantity'
       } else {
         currentOrderQty = this.looseQuantity
         field = this.cardTitle + 'LooseQuantity'
       }
-      if(op === 'dec') {
-        if(currentOrderQty >1 ) {
+      if (op === 'dec') {
+        if (currentOrderQty > 1) {
           currentOrderQty--
-          this.$store.commit("formOrder/SET_GENERAL_STATE", {
+          this.$store.commit('formOrder/SET_GENERAL_STATE', {
             field,
             value: currentOrderQty
           })
         }
-      } else if (op === 'inc'){
-        if((type === 'loose' && currentOrderQty < 4) || type === 'bulk') {
+      } else if (op === 'inc') {
+        if ((type === 'loose' && currentOrderQty < 4) || type === 'bulk') {
           currentOrderQty++
-          this.$store.commit("formOrder/SET_GENERAL_STATE", {
+          this.$store.commit('formOrder/SET_GENERAL_STATE', {
             field,
             value: currentOrderQty
           })
         }
       }
-    } 
+    }
   },
   computed: {
     bulkQuantity () {
-      if(this.cardTitle === 'eco') {
+      if (this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoBulkQuantity
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkQuantity
       }
     },
     looseQuantity () {
-      if(this.cardTitle === 'eco') {
+      if (this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoLooseQuantity
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldLooseQuantity
@@ -124,10 +124,10 @@ export default {
   color: #ffca65 !important;
 }
 .btn-loose-order {
-  width: 12.5rem; 
+  width: 12.5rem;
   border-radius: 5px;
   border: solid 1px #ffca65;
-  background-color: black;  
+  background-color: black;
   font-size: 1.25rem;
   font-weight: 500;
   font-stretch: normal;
@@ -138,7 +138,7 @@ export default {
   color: #ffca65;
 }
 .btn-bulk-order {
-  width: 12.5rem;  
+  width: 12.5rem;
   border-radius: 5px;
   border: solid 1px #ffca65;
   font-size: 1.25rem;

@@ -35,7 +35,7 @@
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order" @click="looseOrderModal(21.00, tablePrice(2), 2)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'"> 
+              <button class="btn-loose-order" @click="looseOrderModal(21.00, tablePrice(2), 2)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 Order
               </button>
             </td>
@@ -55,7 +55,7 @@
       <!-- Notes -->
     </div>
     <div class="row text-left" style="margin: 0px 100px 50px 100px !important">
-      
+
       <!-- Bulk Order -->
       <div class="col-sm-6 orange-title">
         <p>
@@ -70,8 +70,8 @@
           <div class="col-sm-8 col-md-5 control-order-text text-right">
             <pre class="text-white control-order-text "> <span @click="changeOrderQuantity('dec')" class="minplus">-</span> <span class="text-orange">{{ bulkQuantity }}</span> <span @click="changeOrderQuantity('inc')" class="minplus">+</span> <span class="text-orange">carton(s)</span></pre>
             <p class="text-orange text-right">{{ orderPrice }}.00</p>
-            <p class="text-orange text-right">FREE OF CHARGE</p> 
-            <button class="btn btn-block btn-bulk-order" @click="bulkOrderModal"  data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-'+regionType+'-modal'">Bulk Order Now</button>         
+            <p class="text-orange text-right">FREE OF CHARGE</p>
+            <button class="btn btn-block btn-bulk-order" @click="bulkOrderModal"  data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-'+regionType+'-modal'">Bulk Order Now</button>
           </div>
         </div>
       </div>
@@ -102,21 +102,21 @@ export default {
   },
   computed: {
     loosePrice () {
-      if(this.cardTitle === 'eco') {
+      if (this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoLoosePrice
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldLoosePrice
       }
     },
     bulkPrice () {
-      if(this.cardTitle === 'eco') {
+      if (this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoBulkPrice
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkPrice
       }
     },
     bulkQuantity () {
-      if(this.cardTitle === 'eco') {
+      if (this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoBulkQuantity
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkQuantity
@@ -127,7 +127,7 @@ export default {
     }
   },
   methods: {
-    showOrderModal(type) {
+    showOrderModal (type) {
       this.$emit('show-modal', type)
     },
     tablePrice (qty) {
@@ -151,13 +151,13 @@ export default {
         value: qty
       })
     },
-    looseOrderModal(price, loosePrice, qty) {
+    looseOrderModal (price, loosePrice, qty) {
       this.setDeliveryPrice(price)
       this.setProductPrice(loosePrice)
       this.setLooseQuantity(qty)
       this.showOrderModal('loose')
     },
-    bulkOrderModal() {
+    bulkOrderModal () {
       this.setProductPrice(this.orderPrice)
       this.setDeliveryPrice(0)
       this.showOrderModal('bulk')
@@ -165,23 +165,23 @@ export default {
     changeOrderQuantity (op) {
       let currentOrderQty = this.bulkQuantity
       let field
-      if(this.cardTitle === 'eco') {
+      if (this.cardTitle === 'eco') {
         field = 'ecoBulkQuantity'
       } else {
         field = 'goldBulkQuantity'
       }
-      if(op === 'dec') {
-        if(currentOrderQty > 1 ) {
+      if (op === 'dec') {
+        if (currentOrderQty > 1) {
           currentOrderQty--
         }
-      } else if (op === 'inc'){
-          currentOrderQty++
+      } else if (op === 'inc') {
+        currentOrderQty++
       }
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
         field,
         value: currentOrderQty
       })
-    } 
+    }
   }
 }
 </script>
