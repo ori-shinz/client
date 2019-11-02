@@ -17,10 +17,10 @@
             <td>4 drum</td>
           </tr>
           <tr>
-            <td>65.00</td>
-            <td>130.00</td>
-            <td>195.00</td>
-            <td>26.00</td>
+            <td>{{ tablePrice(1) }}.00</td>
+            <td>{{ tablePrice(2) }}.00</td>
+            <td>{{ tablePrice(3) }}.00</td>
+            <td>{{ tablePrice(4) }}.00</td>
           </tr>
           <tr>
             <td>11.00</td>
@@ -30,22 +30,22 @@
           </tr>
           <tr>
             <td class="pr-0">
-              <button class="btn-loose-order">
+              <button class="btn-loose-order" @click="looseOrderModal(11.00, tablePrice(1), 1)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 Order
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order">
+              <button class="btn-loose-order" @click="looseOrderModal(21.00, tablePrice(2), 2)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'"> 
                 Order
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order">
+              <button class="btn-loose-order" @click="looseOrderModal(28.50, tablePrice(3), 3)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 Order
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order">
+              <button class="btn-loose-order" @click="looseOrderModal(32.00, tablePrice(4), 4)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 Order
               </button>
             </td>
@@ -55,6 +55,7 @@
       <!-- Notes -->
     </div>
     <div class="row text-left" style="margin: 0px 100px 50px 100px !important">
+      
       <!-- Bulk Order -->
       <div class="col-sm-6 orange-title">
         <p>
@@ -67,17 +68,15 @@
             <p>Delivery Charges</p>
           </div>
           <div class="col-sm-8 col-md-5 control-order-text text-right">
-            <pre class="text-white control-order-text "> - <span class="text-orange">2</span> + <span class="text-orange">carton(s)</span></pre>
-            <p class="text-orange text-right">390.00</p>
+            <pre class="text-white control-order-text "> <span @click="changeOrderQuantity('dec')" class="minplus">-</span> <span class="text-orange">{{ bulkQuantity }}</span> <span @click="changeOrderQuantity('inc')" class="minplus">+</span> <span class="text-orange">carton(s)</span></pre>
+            <p class="text-orange text-right">{{ orderPrice }}.00</p>
             <p class="text-orange text-right">FREE OF CHARGE</p> 
-            <button class="btn btn-block btn-bulk-order" @click="showOrderModal('bulk')"  data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-'+regionType+'-modal'">Bulk Order Now</button>         
+            <button class="btn btn-block btn-bulk-order" @click="bulkOrderModal"  data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-'+regionType+'-modal'">Bulk Order Now</button>         
           </div>
         </div>
       </div>
-      <div class="col-sm-1">
-        <!-- Just a Spacing since its not either around or between justify -_- -->
-      </div>
-      <div class="col-sm-4 notes-order">
+
+      <div class="col-sm-4 offset-sm-1 notes-order">
         <p>Notes :</p>
         <ul>
           <li>All Prices are in Ringgit Malaysia (RM).</li>
@@ -101,10 +100,88 @@ export default {
   components: {
     Fragment
   },
+  computed: {
+    loosePrice () {
+      if(this.cardTitle === 'eco') {
+        return this.$store.state.formOrder.ecoLoosePrice
+      } else if (this.cardTitle === 'gold') {
+        return this.$store.state.formOrder.goldLoosePrice
+      }
+    },
+    bulkPrice () {
+      if(this.cardTitle === 'eco') {
+        return this.$store.state.formOrder.ecoBulkPrice
+      } else if (this.cardTitle === 'gold') {
+        return this.$store.state.formOrder.goldBulkPrice
+      }
+    },
+    bulkQuantity () {
+      if(this.cardTitle === 'eco') {
+        return this.$store.state.formOrder.ecoBulkQuantity
+      } else if (this.cardTitle === 'gold') {
+        return this.$store.state.formOrder.goldBulkQuantity
+      }
+    },
+    orderPrice () {
+      return this.bulkPrice * this.bulkQuantity
+    }
+  },
   methods: {
     showOrderModal(type) {
       this.$emit('show-modal', type)
-    }
+    },
+    tablePrice (qty) {
+      return this.loosePrice * qty
+    },
+    setDeliveryPrice (price) {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'deliveryPrice',
+        value: price
+      })
+    },
+    setProductPrice (price) {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'productPrice',
+        value: price
+      })
+    },
+    setLooseQuantity (qty) {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: this.cardTitle + 'LooseQuantity',
+        value: qty
+      })
+    },
+    looseOrderModal(price, loosePrice, qty) {
+      this.setDeliveryPrice(price)
+      this.setProductPrice(loosePrice)
+      this.setLooseQuantity(qty)
+      this.showOrderModal('loose')
+    },
+    bulkOrderModal() {
+      this.setProductPrice(this.orderPrice)
+      this.setDeliveryPrice(0)
+      this.showOrderModal('bulk')
+    },
+    changeOrderQuantity (op) {
+      let currentOrderQty = this.bulkQuantity
+      let field
+      if(this.cardTitle === 'eco') {
+        field = 'ecoBulkQuantity'
+      } else {
+        field = 'goldBulkQuantity'
+      }
+      if(op === 'dec') {
+        if(currentOrderQty > 1 ) {
+          currentOrderQty--
+        }
+      } else if (op === 'inc'){
+          currentOrderQty++
+      }
+      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+        field,
+        value: currentOrderQty
+      })
+    } 
   }
 }
 </script>
@@ -158,5 +235,9 @@ export default {
 .borderless td, .borderless th {
   border: none;
   padding-top: 0;
+}
+.minplus:hover {
+  cursor: pointer;
+  color: #ffca65;
 }
 </style>

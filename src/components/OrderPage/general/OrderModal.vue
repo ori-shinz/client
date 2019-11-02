@@ -14,7 +14,7 @@
           data-dismiss="modal"
         >X</button>
         <div class="modal-header border-0 justify-content-center">
-          <h5 class="md-title mb-3">Order Request {{regionType}}</h5>
+          <h5 class="md-title mb-3">Order Request </h5>
         </div>
         <div class="modal-body md-content bg-brown d-flex flex-column align-items-start mx-5">
           <h5 class="text-orange title mb-4 pl-3">Order Details</h5>
@@ -60,6 +60,22 @@ export default {
     OrderModalSummary,
     OrderModalInstruction,
     FreeSampleRequest
+  },
+  methods: {
+    changeModalTitle () {
+      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+        field: 'title',
+        value: `${this.cardTitle}-${this.orderType}-${this.regionType}`
+      })
+    }
+  },
+  mounted() {
+    this.changeModalTitle()
+  },
+  watch: {
+    orderType: function (newVal, oldVal) {
+      this.changeModalTitle()
+    }
   }
 };
 </script>

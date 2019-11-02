@@ -1,6 +1,8 @@
 <template>
-  <form class="text-white text-content">
-    <div class="form-row mb-2">
+  <form class="text-white text-content" @submit.prevent="sendMail">
+    <!-- Tank Size Input FreeSample Only -->
+    {{ title }}
+    <div class="form-row mb-2" v-if="title === 'try-free-sample'">
       <div class="dropdown col-12">
         <button
           id="dLabel"
@@ -10,45 +12,100 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Select Size of Your Snow Wash Tank
+          {{ tankSize }}
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabel">
-          <li>Option 1</li>
-          <li>Option 2</li>
-          <li>Option 3</li>
-          <li>Option 4</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 60
+          })"
+          >60 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 70
+          })"
+          >70 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 80
+          })"
+          >80 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 200
+          })"
+          >200 L</li>
         </ul>
       </div>
     </div>
     <div class="form-row mb-2">
-      <div class="col-md-6 pr-3">
-        <input type="text" class="form-control md-input" placeholder="Contact Person" required />
+      <div class="col-md-6 ">
+        <input
+          type="text"
+          v-model.lazy="contactPerson"
+          class="form-control md-input"
+          placeholder="Contact Person"
+          required
+        />
       </div>
-      <div class="col-md-6 pl-3">
-        <input type="text" class="form-control md-input" placeholder="Company Name" required />
+      <div class="col-md-6">
+        <input
+          type="text"
+          v-model.lazy="companyName"
+          class="form-control md-input"
+          placeholder="Company Name"
+          required
+        />
       </div>
     </div>
     <div class="form-row mb-2">
-      <div class="col-md-6 pr-3">
-        <input type="email" class="form-control md-input" placeholder="Email Address" required />
+      <div class="col-md-6">
+        <input
+          type="email"
+          v-model.lazy="email"
+          class="form-control md-input"
+          placeholder="Email Address"
+          required
+        />
       </div>
-      <div class="col-md-2 pl-3 align-items-end d-flex justify-content-end">
-        <select class="form-control md-input text-content">
-          <option>( +60 ) MY</option>
-          <option>( +62 ) ID</option>
+      <div class="col-md-2 align-items-end d-flex justify-content-end">
+        <select class="form-control md-input text-content" v-model="countryCode">
+          <option value="+60">(+60) MY</option>
+          <option value="+62">(+62) ID</option>
+          <option value="+86">(+86) CHI</option>
         </select>
       </div>
-      <div class="col-md-4 pl-3">
-        <input type="text" class="form-control md-input" placeholder="Contact Number" required />
+      <div class="col-md-4">
+        <input
+          type="text"
+          v-model.lazy="contact"
+          class="form-control md-input"
+          placeholder="Contact Number"
+          required
+        />
       </div>
     </div>
     <div class="form-row mb-2">
-      <div class="col-6 pr-3">
-        <textarea class="form-control md-input" rows="4" placeholder="Delivery Address"></textarea>
+      <div class="col-md-6 px-2">
+        <textarea
+          class="form-control md-input"
+          v-model.lazy="deliveryAddress"
+          rows="4"
+          placeholder="Delivery Address"
+        ></textarea>
       </div>
-      <div class="col-6 pl-3">
-        <textarea class="form-control md-input" rows="4" placeholder="Company Address"></textarea>
+      <div class="col-6 px-2">
+        <textarea
+          class="form-control md-input"
+          rows="4"
+          v-model.lazy="companyAddress"
+          placeholder="Company Address"
+        ></textarea>
       </div>
     </div>
     <div class="form-row mb-4">
@@ -57,6 +114,7 @@
           type="text"
           class="form-control md-input"
           placeholder="Additional Information for Your Order (if any)"
+          v-model.lazy="information"
         />
       </div>
     </div>
@@ -68,7 +126,7 @@
     <div class="form-row mb-3">
       <div class="col-11 mx-auto text-center disclaimer-text pl-3">
         <div class="form-check">
-          <input class="form-check-input bg-brown" type="checkbox" value="true" id="defaultCheck1" />
+          <input class="form-check-input bg-brown" type="checkbox" id="defaultCheck1" required />
           <label
             class="form-check-label"
             for="defaultCheck1"
@@ -80,11 +138,9 @@
       <button class="btn btn-lg btn-orange form-submit col-4 mx-auto">Submit</button>
     </div>
     <div class="form-row mb-4 disclaimer-text text-left">
-      <p class="col-12">
-        Notes: 
-      </p>
+      <p class="col-12">Notes:</p>
       <ul>
-        <li>Incomplete information will not be entertained.</li> 
+        <li>Incomplete information will not be entertained.</li>
         <li>Free Samples may be discontinued at any time without prior notice.</li>
         <li>Every company or individual is only entitled to make one-time Free Sample request.</li>
       </ul>
@@ -93,15 +149,43 @@
 </template>
 
 <script>
+import computedCreator from "@/helpers/computedCreator.js";
 export default {
   name: "OrderModalForm",
   props: ["isFree"],
-  methods: {},
+  methods: {
+    changeState(payload) {
+      this.$store.commit("formOrder/SET_GENERAL_STATE", payload);
+    },
+    sendMail () {
+      console.log('im here guys')
+      /*
+        PUT YOUR EMAIL FUNCTION IN HERE
+      */
+    }
+  },
+  computed: {
+    ...computedCreator("formOrder", [
+      "contactPerson",
+      "companyName",
+      "email",
+      "tankSize",
+      "contact",
+      "countryCode",
+      "deliveryAddress",
+      "companyAddress",
+      "information",
+      "consent"
+    ]),
+    title () {
+      return this.$store.state.formOrder.title
+    }
+  },
   mounted() {
-    $(".dropdown-menu li").on("click", function() {
-      var getValue = $(this).text();
-      $(".dropdown-select").text(getValue);
-    });
+    // $(".dropdown-menu li").on("click", function() {
+    //   var getValue = $(this).text();
+    //   $(".dropdown-select").text(getValue);
+    // });
   }
 };
 </script>
@@ -221,7 +305,7 @@ textarea {
   height: 40px;
   border-bottom: solid 1px orange;
   text-align: left;
-  padding: 7.5px ;
+  padding: 7.5px;
   color: #ccc;
   letter-spacing: 0.7px;
   margin-top: 25px;
@@ -251,14 +335,12 @@ textarea {
   border: none;
   outline: 0;
 }
-
 .dropdown.open button#dLabel {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23);
   border-bottom: none;
 }
-
 .dropdown.open ul {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23);
   border: solid 1px #666;
@@ -266,7 +348,6 @@ textarea {
   height: 200px;
   overflow-y: scroll;
 }
-
 .dropdown-menu li {
   line-height: 1.5;
   letter-spacing: 0.7px;
@@ -276,12 +357,10 @@ textarea {
   padding: 7.5px 15px;
   border-top: solid 1px orange;
 }
-
 .dropdown-menu li:hover {
   background-color: #ccc;
 }
-
 button#dLabel {
-  padding: .25rem 0 !important;
+  padding: 0.25rem 0 !important;
 }
 </style>
