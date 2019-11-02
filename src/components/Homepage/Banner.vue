@@ -1,13 +1,28 @@
+<i18n>
+{
+  "en": {
+    "title": "Shampo Wash Shampoo <br> for Automotive <br> Professional Use",
+    "content": "Why Choose ORI-SHINZ? >>"
+  },
+  "my": {
+    "title": "Syampu Snow Wash <br> untuk Penggunaan <br> Profesional Automotif",
+    "content": "Kenapa Pilih ORI-SHINZ? >>"
+  },
+  "cn": {
+    "title": "雪花洗车粉 <br> 适于汽车专业使用",
+    "content": "为何选择 ORI-SHINZ? >>"
+  }
+}
+</i18n>
+
 <template>
   <div class="row justify-content-center mb-5">
     <div class="col-sm-6">
       <img src="~@/assets/images/newassets/group-6.png" class="img-fluid">
     </div>
     <div class="col-sm-6 align-self-end">
-      <h1 class="text-white text-left moto">
-        Shampo Wash Shampoo for Automotive Professional Use
-      </h1>
-      <h1 class="why-choose text-left">Why Choose ORI-SHINZ? >></h1>
+      <h1 class="text-white text-left moto mb-4" v-html="$t('title')"></h1>
+      <h1 class="why-choose text-left">{{ $t('content') }}</h1>
     </div>
   </div>
 </template>

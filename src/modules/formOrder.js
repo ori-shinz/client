@@ -17,17 +17,17 @@ export default {
     goldBulkQuantity: 1,
     ecoLooseQuantity: 1,
     goldLooseQuantity: 1,
-    ecoLoosePrice: 65,  //this is just constant state to set price
-    ecoBulkPrice: 390,  //this is just constant state to set price
-    goldLoosePrice: 75, //this is just constant state to set price
-    goldBulkPrice: 450, //this is just constant state to set price
+    ecoLoosePrice: 65, // this is just constant state to set price
+    ecoBulkPrice: 390, // this is just constant state to set price
+    goldLoosePrice: 75, // this is just constant state to set price
+    goldBulkPrice: 450, // this is just constant state to set price
     productPrice: 0, // price all qty * base price
     consent: false
   },
   mutations: {
     SET_GENERAL_STATE (state, payload) {
       state[payload.field] = payload.value
-      console.log(state);
+      console.log(state)
     },
     RESET_ORDERS (state) {
       state.deliveryPrice = 0

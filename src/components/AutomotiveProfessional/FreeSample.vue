@@ -1,14 +1,42 @@
+<i18n>
+{
+  "en": {
+    "Get": "Get",
+    "FREE": "FREE",
+    "Sample": "Sample",
+    "Content": "If you want to see the result of how great is our product, you can request free sample before you even buying.",
+    "buttonText": "Request Now"
+  },
+  "my": {
+    "Get": "Dapatkan Sampel ",
+    "FREE": "PERCUMA",
+    "Sample": " ",
+    "Content": "Sekiranya anda ingin melihat kehandalan produk kami, anda boleh meminta sampel percuma sebelum membeli.",
+    "buttonText": "Dapatkan Sekarang"
+  },
+  "cn": {
+    "Get": "获取免费样品",
+    "FREE": " ",
+    "Sample": " ",
+    "Content": "如果您想查看我们的产品有多优秀，您可以在购买产品之前申请免费样品。",
+    "buttonText": "即刻申请"
+  }
+}
+</i18n>
+
 <template>
   <div class="container mbc-lg-200">
     <div class="row border mask">
       <div class="col-sm-9 text-left pl-5 pt-3 pb-2">
-        <h5 class="free-title"><span class="text-orange">Get</span>
-        <span class="text-fire"> FREE </span> <span class="text-orange">Sample</span></h5>
-        <p class="free-text text-white">If you want to see the result of how great is our product, you can request free sample before you even buying.</p>
+        <h5 class="free-title"><span class="text-orange">{{ $t('Get') }}</span>
+        <span class="text-fire"> {{ $t('FREE') }} </span> <span class="text-orange">{{ $t('Sample') }}</span></h5>
+        <p class="free-text text-white">
+          {{ $t('Content') }}
+        </p>
       </div>
       <div class="col-sm-3 request-btn">
         <button class="Join-Now btn-orange" data-toggle="modal" :data-target="'#try-free-sample-modal'">
-          Request Now
+          {{ $t('buttonText') }}
         </button>
       </div>
     </div>

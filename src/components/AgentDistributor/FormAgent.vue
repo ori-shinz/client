@@ -1,19 +1,78 @@
+<i18n>
+{
+  "en": {
+    "titleForm": "Speak to Us Now & Be Your Own Boss.",
+    "Full Name": "Full Name",
+    "Email Address": "Email Address",
+    "Company Name": "Company Name",
+    "Contact Number": "Contact Number",
+    "label": {
+      "text1": "I hereby confirm that I have read and understand the",
+      "text2": "Privacy Policy",
+      "text3": "and the",
+      "text4": "Terms of Service",
+      "text5": "and I agree and consent to the",
+      "text6": "Privacy Policy",
+      "text7": "and the",
+      "text8": "Terms of Service"
+    },
+    "Submit": "Submit"
+  },
+  "my": {
+    "titleForm": "Hubungi Kami Sekarang & Jadilah Boss Anda Sendiri",
+    "Full Name": "Nama Penuh",
+    "Email Address": "Alamat Email",
+    "Company Name": "Nama Syarikat (jika berkenaan)",
+    "Contact Number": "Nombor Telefon",
+    "label": {
+      "text1": "Saya dengan ini mengesahkan bahawa saya telah membaca dan memahami",
+      "text2": "Dasar Privasi",
+      "text3": "dan",
+      "text4": "Syarat Perkhidmatan",
+      "text5": "Saya menerima dan bersetuju untuk terikat dengan",
+      "text6": "Dasar Privasi",
+      "text7": "dan",
+      "text8": "Syarat Perkhidmatan"
+    },
+    "Submit": "Hantar"
+  },
+  "cn": {
+    "titleForm": "现在联络我们 & 自己当老板",
+    "Full Name": "全名",
+    "Email Address": "电子邮件地址",
+    "Company Name": "公司名字 (如适用)",
+    "Contact Number": "联系电话号码",
+    "label": {
+      "text1": "我在此确认已阅读并理解本",
+      "text2": "隐私政策",
+      "text3": "和本",
+      "text4": "服务条款",
+      "text5": "我同意并接受本",
+      "text6": "隐私政策",
+      "text7": "和本",
+      "text8": "服务条款"
+    },
+    "Submit": "提交"
+  }
+}
+</i18n>
+
 <template>
   <div>
     <div class="container form-agent">
       <div class="row">
         <div class="col my-5">
-          <div class="free-title">Speak to Us Now & Be Your Own Boss.</div>
+          <div class="free-title">{{ $t('titleForm') }}</div>
         </div>
       </div>
-      <div class="row">
-        <form class="text-white text-content px-5">
+      <div class="row justify-content-center">
+        <form class="text-white text-content px-5" style="width: 100%">
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
               <input
                 type="text"
                 class="form-control md-input"
-                placeholder="Full Name"
+                :placeholder="$t('Full Name')"
                 required
               />
             </div>
@@ -21,7 +80,7 @@
               <input
                 type="text"
                 class="form-control md-input"
-                placeholder="Email Address"
+                :placeholder="$t('Email Address')"
                 required
               />
             </div>
@@ -31,7 +90,7 @@
               <input
                 type="email"
                 class="form-control md-input"
-                placeholder="Company Name"
+                :placeholder="$t('Company Name')"
                 required
               />
             </div>
@@ -45,7 +104,7 @@
               <input
                 type="text"
                 class="form-control md-input"
-                placeholder="Contact Number"
+                :placeholder="$t('Contact Number')"
                 required
               />
             </div>
@@ -55,14 +114,21 @@
               <div class="form-check">
                 <input class="form-check-input bg-brown" type="checkbox" value="true" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
-                I hereby confirm that I have read and understand the <router-link to="/privacy-policy">Privacy Policy</router-link> and the <router-link to="/terms-of-service">Terms of Service</router-link> and I agree and consent to the <router-link to="/privacy-policy">Privacy Policy</router-link> and the <router-link to="/terms-of-service">Terms of Service</router-link>.
+                  {{ $t('label.text1') }}
+                  <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text2') }}</router-link>
+                   {{ $t('label.text3') }}
+                   <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>.
+                   {{ $t('label.text5') }}
+                   <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
+                   {{ $t('label.text7') }}
+                   <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
                 </label>
               </div>
             </div>
           </div>
           <div class="form-row mb-2">
             <button class="btn btn-lg btn-orange form-submit col-4 mx-auto">
-              Submit
+              {{ $t('Submit') }}
             </button>
           </div>
         </form>

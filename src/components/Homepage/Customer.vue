@@ -1,8 +1,22 @@
+<i18n>
+{
+  "en": {
+    "title": "What Our Customers Say"
+  },
+  "my": {
+    "title": "Apa yang Pelanggan-pelanggan Kami Cerita"
+  },
+  "cn": {
+    "title": "我們客戶的评语"
+  }
+}
+</i18n>
+
 <template>
   <div>
     <div class="row justify-content-center moto mb-5">
       <div class="col-sm-12">
-        <span>What Our Customers Say</span>
+        <span>{{ $t('title') }}</span>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -65,7 +79,7 @@ export default {
 <style scoped>
 .moto {
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
   color: #e7e7e7;
