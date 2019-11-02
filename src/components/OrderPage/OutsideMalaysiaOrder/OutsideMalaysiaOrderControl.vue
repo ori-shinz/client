@@ -5,7 +5,7 @@
       <p class="orange-title">Loose Order</p>
       <div class="row mb-3 control-order-text">
         <div class="col-sm-3 text-white">Quantity</div>
-        <pre class="col-sm-4 text-white mb-0 control-order-text"> -  <span class="text-orange">2</span>  +</pre>
+        <pre class="col-sm-4 text-white mb-0 control-order-text"> <span @click="changeOrderQuantity('dec', 'loose')" class="minplus">-</span>  <span class="text-orange">{{ looseQuantity }}</span>  <span @click="changeOrderQuantity('inc', 'loose')" class="minplus">+</span></pre>
         <div class="col-sm-2 text-orange">drum(s)</div>
       </div>
       <div class="row pl-3">
@@ -20,10 +20,15 @@
       <p>
         Bulk Order | <span class="font-italic">Best Price!</span>
       </p>
-      <div class="row mb-3 control-order-text">
-        <div class="col-sm-3 text-white">Quantity</div>
-        <pre class="col-sm-4 text-white mb-0 control-order-text"> -  <span class="text-orange">2</span>  +</pre>
-        <div class="col-sm-2 text-orange">drum(s)</div>
+      <div class="row control-order-text">
+        <div class="col-lg-3 text-white pr-0">
+          <p>Quantity</p>
+        </div>
+        <!-- <div class="col-lg-1 text-white text-center">-</div>
+        <div class="col-lg-2 text-center px-0">2</div>
+        <div class="col-lg-1 text-center">+</div> -->
+        <pre class="col-lg-5 text-center text-white mb-0 control-order-text"> <span @click="changeOrderQuantity('dec', 'bulk')" class="minplus">-</span>  <span class="text-orange">{{ bulkQuantity }}</span>  <span @click="changeOrderQuantity('inc', 'bulk')" class="minplus">+</span></pre>
+        <div class="col-lg-2 text-orange px-0">drum(s)</div>
       </div>
       <button @click="showOrderModal('bulk')" class="btn btn-bulk-order" data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-outside-modal'">
         Bulk Order Now
@@ -49,8 +54,50 @@ export default {
   ],
   methods: {
     showOrderModal(type) {
-      console.log('here')
       this.$emit('show-modal', type)
+    },
+    changeOrderQuantity (op, type) {
+      let currentOrderQty , field
+      if(type === 'bulk') {
+        currentOrderQty = this.bulkQuantity
+        field = this.cardTitle + 'BulkQuantity'
+      } else {
+        currentOrderQty = this.looseQuantity
+        field = this.cardTitle + 'LooseQuantity'
+      }
+      if(op === 'dec') {
+        if(currentOrderQty >1 ) {
+          currentOrderQty--
+          this.$store.commit("formOrder/SET_GENERAL_STATE", {
+            field,
+            value: currentOrderQty
+          })
+        }
+      } else if (op === 'inc'){
+        if((type === 'loose' && currentOrderQty < 4) || type === 'bulk') {
+          currentOrderQty++
+          this.$store.commit("formOrder/SET_GENERAL_STATE", {
+            field,
+            value: currentOrderQty
+          })
+        }
+      }
+    } 
+  },
+  computed: {
+    bulkQuantity () {
+      if(this.cardTitle === 'eco') {
+        return this.$store.state.formOrder.ecoBulkQuantity
+      } else if (this.cardTitle === 'gold') {
+        return this.$store.state.formOrder.goldBulkQuantity
+      }
+    },
+    looseQuantity () {
+      if(this.cardTitle === 'eco') {
+        return this.$store.state.formOrder.ecoLooseQuantity
+      } else if (this.cardTitle === 'gold') {
+        return this.$store.state.formOrder.goldLooseQuantity
+      }
     }
   }
 }
@@ -109,5 +156,9 @@ export default {
   line-height: normal;
   letter-spacing: normal;
   color: #e7e7e7;
+}
+.minplus:hover {
+  cursor: pointer;
+  color: #ffca65;
 }
 </style>

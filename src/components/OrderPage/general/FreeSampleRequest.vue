@@ -25,14 +25,14 @@
           <tr>
             <td>Select Region</td>
             <td class="text-right">
-              <span class="region-btn">West Malaysia</span>
+              <span class="region-btn" @click="changeRegion('west')" :class="active('west')">West Malaysia</span>
                | 
-              <span class="region-btn">East Malaysia</span>
+              <span class="region-btn" @click="changeRegion('east')" :class="active('east')">East Malaysia</span>
             </td>
           </tr>
           <tr>
             <td>Delivery Charges</td>
-            <td class="text-right">RM 9.00</td>
+            <td class="text-right">RM {{ deliveryPrice }}</td>
           </tr>
         </tbody>
       </table>
@@ -46,6 +46,35 @@ export default {
   name: 'FreeSampleRequest',
   components: {
     Fragment
+  },
+  computed: {
+    region () {
+      return this.$store.state.formOrder.region
+    },
+    deliveryPrice () {
+      if(!!this.$store.state.formOrder.deliveryPrice) {
+        return this.$store.state.formOrder.deliveryPrice + '.00'
+      } else {
+        return ''
+      }
+    }
+  },
+  methods: {
+    changeRegion(value) {
+      let deliveryPrice = 0
+      value === 'west' ? deliveryPrice = 9 : deliveryPrice = 12
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'region',
+        value
+      })
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'deliveryPrice',
+        value: deliveryPrice
+      })
+    },
+    active (reg) {
+      return this.region === reg ? 'text-orange' : null
+    }
   }
 }
 </script>
@@ -78,6 +107,9 @@ export default {
   line-height: normal;
   letter-spacing: normal;
   text-align: right;
+  color: #ffca65;
+}
+.text-orange {
   color: #ffca65;
 }
 </style>
