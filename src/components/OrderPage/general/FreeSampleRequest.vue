@@ -19,14 +19,14 @@
         ORI-SHINZ GOLD
       </div>
     </div>
-    <div class="row justify-content-center">  
+    <div class="row justify-content-center">
       <table class="table text-content col-md-6 table-borderless">
         <tbody>
           <tr>
             <td>Select Region</td>
             <td class="text-right">
               <span class="region-btn" @click="changeRegion('west')" :class="active('west')">West Malaysia</span>
-               | 
+               |
               <span class="region-btn" @click="changeRegion('east')" :class="active('east')">East Malaysia</span>
             </td>
           </tr>
@@ -52,7 +52,7 @@ export default {
       return this.$store.state.formOrder.region
     },
     deliveryPrice () {
-      if(!!this.$store.state.formOrder.deliveryPrice) {
+      if (this.$store.state.formOrder.deliveryPrice) {
         return this.$store.state.formOrder.deliveryPrice + '.00'
       } else {
         return ''
@@ -60,7 +60,7 @@ export default {
     }
   },
   methods: {
-    changeRegion(value) {
+    changeRegion (value) {
       let deliveryPrice = 0
       value === 'west' ? deliveryPrice = 9 : deliveryPrice = 12
       this.$store.commit('formOrder/SET_GENERAL_STATE', {

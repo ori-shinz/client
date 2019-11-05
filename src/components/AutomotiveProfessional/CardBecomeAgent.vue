@@ -5,7 +5,7 @@
       <p class="free-text text-white">Be your own Boss</p>
     </div>
     <div class="col-sm-4 request-btn justify-content-center">
-      <button class="Join-Now btn-orange">Join Now</button>
+      <button class="Join-Now btn-orange" @click="$router.push(`/${$i18n.locale}/agent-distributor-oem`)">Join Now</button>
     </div>
   </div>
 </template>

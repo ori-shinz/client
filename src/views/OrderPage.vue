@@ -48,7 +48,7 @@
 
           <!-- Outside Malaysia Detail Pricing -->
           <Fragment >
-            
+
           </Fragment>
         </div>
       </section>

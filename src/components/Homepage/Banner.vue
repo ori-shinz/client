@@ -22,7 +22,9 @@
     </div>
     <div class="col-sm-6 align-self-end">
       <h1 class="text-white text-left moto mb-4" v-html="$t('title')"></h1>
-      <h1 class="why-choose text-left">{{ $t('content') }}</h1>
+      <h1 class="why-choose text-left">
+        <router-link :to="`/${$i18n.locale}/automotive-professional`">{{ $t('content') }}</router-link>
+      </h1>
     </div>
   </div>
 </template>
@@ -49,6 +51,15 @@ export default {
 .why-choose {
   font-size: 30px;
   font-weight: bold;
+  color: #ffca65;
+}
+a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #F1823B
+}
+a:hover {
   color: #ffca65;
 }
 </style>

@@ -82,11 +82,13 @@
             :title="$t('bottomCardLeft.title')"
             :content="$t('bottomCardLeft.content')"
             :buttonText="$t('bottomCardLeft.buttonText')"
+            @triggerroute="triggerroute"
           />
           <BottomCard
             :title="$t('bottomCardRight.title')"
             :content="$t('bottomCardRight.content')"
             :buttonText="$t('bottomCardRight.buttonText')"
+            @triggerroute="triggerroute"
           />
         </div>
         <BottomCarShine />
@@ -111,6 +113,16 @@ export default {
     BottomCard,
     Footer,
     BottomCarShine
+  },
+  methods: {
+    triggerroute (page) {
+      console.log(page)
+      if (page === 'See Product Details') {
+        this.$router.push(`/${this.$i18n.locale}/product-detail`)
+      } else if (page === 'Join Now') {
+        this.$router.push(`/${this.$i18n.locale}/agent-distributor-oem`)
+      }
+    }
   }
 }
 </script>
