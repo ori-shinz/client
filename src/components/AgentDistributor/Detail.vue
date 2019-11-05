@@ -26,7 +26,7 @@
         <p class="free-text">{{ $t('content') }}</p>
       </div>
       <div class="col-sm-3 request-btn">
-        <button class="Join-Now btn-orange">
+        <button class="Join-Now btn-orange" @click="$router.push(`/${$i18n.locale}/product-detail`)">
           {{ $t('buttonText') }}
         </button>
       </div>
