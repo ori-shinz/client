@@ -8,7 +8,7 @@
     </div>
     <div class="col-sm-4 request-btn flex-column d-flex align-items-center justify-content-center">
       <img src="~@/assets/images/orishine-logo.svg" alt="orishine-logo" class="mb-3 ori-logo" />
-      <button type="button" class="btn-orange-lg">Order Now</button>
+      <button type="button" class="btn-orange-lg" @click="$router.push(`/${$i18n.locale}/order`)">Order Now</button>
     </div>
   </div>
 </template>

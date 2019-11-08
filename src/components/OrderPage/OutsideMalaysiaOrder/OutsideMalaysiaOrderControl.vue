@@ -90,6 +90,8 @@ export default {
         return this.$store.state.formOrder.ecoBulkQuantity
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkQuantity
+      } else {
+        return ''
       }
     },
     looseQuantity () {
@@ -97,6 +99,8 @@ export default {
         return this.$store.state.formOrder.ecoLooseQuantity
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldLooseQuantity
+      } else {
+        return ''
       }
     }
   }

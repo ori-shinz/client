@@ -44,6 +44,8 @@ export default {
         return this.$store.state.formOrder.goldBulkQuantity
       } else if (this.orderType === 'loose' && this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldLooseQuantity
+      } else {
+        return ''
       }
     },
     basePrice () {
@@ -52,13 +54,19 @@ export default {
           return this.$store.state.formOrder.ecoBulkPrice
         } else if (this.orderType === 'loose') {
           return this.$store.state.formOrder.ecoLoosePrice
+        } else {
+          return ''
         }
       } else if (this.cardTitle === 'gold') {
         if (this.orderType === 'bulk') {
           return this.$store.state.formOrder.goldBulkPrice
         } else if (this.orderType === 'loose') {
           return this.$store.state.formOrder.goldLoosePrice
+        } else {
+          return ''
         }
+      } else {
+        return ''
       }
     },
     productName () {

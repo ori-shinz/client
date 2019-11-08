@@ -106,6 +106,8 @@ export default {
         return this.$store.state.formOrder.ecoLoosePrice
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldLoosePrice
+      } else {
+        return ''
       }
     },
     bulkPrice () {
@@ -113,6 +115,8 @@ export default {
         return this.$store.state.formOrder.ecoBulkPrice
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkPrice
+      } else {
+        return ''
       }
     },
     bulkQuantity () {
@@ -120,6 +124,8 @@ export default {
         return this.$store.state.formOrder.ecoBulkQuantity
       } else if (this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkQuantity
+      } else {
+        return ''
       }
     },
     orderPrice () {

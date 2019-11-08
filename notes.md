@@ -74,3 +74,13 @@ src
 		home.vue
 		about.vue
 ```
+
+TODO:
+- Translate Order Page
+- Activve links, page: Please Select Region
+- Animation supaya posisi route di atas
+- Kirim Email
+
+- Konfirmasi gambar yang tidak ada
+- Konfirmasi Video yang tidak ada
+- Detail form order
