@@ -3,20 +3,38 @@
     <div class="row justify-content-center">
       <p>Select Sample you want to request</p>
     </div>
-    <div class="row  mb-3 justify-content-center">
+    <div class="row mb-3 justify-content-center">
       <div class="col-3 p-2 bg-black mr-4">
-        <img src="~@/assets/images/package-sample-eco.png" class="img-fluid" alt="package-sample-eco">
+        <img
+          src="~@/assets/images/package-sample-eco.png"
+          class="img-fluid"
+          alt="package-sample-eco"
+        />
       </div>
       <div class="col-3 p-2 bg-black">
-        <img src="~@/assets/images/package-sample-gold.png" class="img-fluid" alt="package-sample-gold">
+        <img
+          src="~@/assets/images/package-sample-gold.png"
+          class="img-fluid"
+          alt="package-sample-gold"
+        />
       </div>
     </div>
-    <div class="row  mb-3 justify-content-center text-orange-sample">
+    <div class="row mb-3 justify-content-center text-orange-sample">
       <div class="col-3 p-2 text-center">
-        ORI-SHINZ ECO
+        <input id="radio1" type="radio" name="radio" @click="changeProductType('eco')" />
+        <label for="radio1">
+          <span>
+            <span></span>
+          </span>ORI-SHINZ ECO
+        </label>
       </div>
       <div class="col-3 p-2 text-center">
-        ORI-SHINZ GOLD
+        <input id="radio2" type="radio" name="radio" @click="changeProductType('gold')" />
+        <label for="radio2">
+          <span>
+            <span></span>
+          </span>ORI-SHINZ GOLD
+        </label>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -25,9 +43,17 @@
           <tr>
             <td>Select Region</td>
             <td class="text-right">
-              <span class="region-btn" @click="changeRegion('west')" :class="active('west')">West Malaysia</span>
-               |
-              <span class="region-btn" @click="changeRegion('east')" :class="active('east')">East Malaysia</span>
+              <span
+                class="region-btn"
+                @click="changeRegion('west')"
+                :class="active('west')"
+              >West Malaysia</span>
+              |
+              <span
+                class="region-btn"
+                @click="changeRegion('east')"
+                :class="active('east')"
+              >East Malaysia</span>
             </td>
           </tr>
           <tr>
@@ -41,42 +67,53 @@
 </template>
 
 <script>
-import { Fragment } from 'vue-fragment'
+import { Fragment } from "vue-fragment";
+import computedCreator from "@/helpers/computedCreator"
+
 export default {
-  name: 'FreeSampleRequest',
+  name: "FreeSampleRequest",
   components: {
     Fragment
   },
   computed: {
-    region () {
-      return this.$store.state.formOrder.region
+    region() {
+      return this.$store.state.formOrder.region;
     },
-    deliveryPrice () {
+    deliveryPrice() {
       if (this.$store.state.formOrder.deliveryPrice) {
-        return this.$store.state.formOrder.deliveryPrice + '.00'
+        return this.$store.state.formOrder.deliveryPrice + ".00";
       } else {
-        return ''
+        return "";
       }
-    }
+    },
+    ...computedCreator('formOrder', [
+      'productType'
+    ])
   },
   methods: {
-    changeRegion (value) {
-      let deliveryPrice = 0
-      value === 'west' ? deliveryPrice = 9 : deliveryPrice = 12
-      this.$store.commit('formOrder/SET_GENERAL_STATE', {
-        field: 'region',
+    changeRegion(value) {
+      let deliveryPrice = 0;
+      value === "west" ? (deliveryPrice = 9) : (deliveryPrice = 12);
+      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+        field: "region",
         value
       })
-      this.$store.commit('formOrder/SET_GENERAL_STATE', {
-        field: 'deliveryPrice',
+      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+        field: "deliveryPrice",
         value: deliveryPrice
       })
     },
-    active (reg) {
-      return this.region === reg ? 'text-orange' : null
+    active(reg) {
+      return this.region === reg ? "text-orange" : null;
+    },
+    changeProductType(value) {
+      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+        field: "productType",
+        value
+      })
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -111,5 +148,70 @@ export default {
 }
 .text-orange {
   color: #ffca65;
+}
+
+input[type="radio"]:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  opacity: 0;
+}
+
+input[type="radio"]:not(old) + label {
+  display: inline-block;
+  margin-left: -2em;
+  line-height: 1.5em;
+}
+
+input[type="radio"]:not(old) + label > span {
+  display: inline-block;
+  width: 0.875em;
+  height: 0.875em;
+  margin: 0.25em 0.5em 0.25em 0.25em;
+  border: 0.0625em solid rgb(192, 192, 192);
+  border-radius: 0.25em;
+  background: rgb(224, 224, 224);
+  background-image: -moz-linear-gradient(
+    rgb(240, 240, 240),
+    rgb(224, 224, 224)
+  );
+  background-image: -ms-linear-gradient(rgb(240, 240, 240), rgb(224, 224, 224));
+  background-image: -o-linear-gradient(rgb(240, 240, 240), rgb(224, 224, 224));
+  background-image: -webkit-linear-gradient(
+    rgb(240, 240, 240),
+    rgb(224, 224, 224)
+  );
+  background-image: linear-gradient(rgb(240, 240, 240), rgb(224, 224, 224));
+  vertical-align: bottom;
+}
+
+input[type="radio"]:not(old):checked + label > span {
+  background-image: -moz-linear-gradient(
+    rgb(224, 224, 224),
+    rgb(240, 240, 240)
+  );
+  background-image: -ms-linear-gradient(rgb(224, 224, 224), rgb(240, 240, 240));
+  background-image: -o-linear-gradient(rgb(224, 224, 224), rgb(240, 240, 240));
+  background-image: -webkit-linear-gradient(
+    rgb(224, 224, 224),
+    rgb(240, 240, 240)
+  );
+  background-image: linear-gradient(rgb(224, 224, 224), rgb(240, 240, 240));
+}
+
+input[type="radio"]:not(old):checked + label > span > span {
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  margin: 0.125em;
+  border: 0.0625em solid #ffca65;
+  border-radius: 0.125em;
+  background: #ffca65;
+  background-image: #ffca65;
+  background-image: #ffca65;
+  background-image: #ffca65;
+  background-image: #ffca65;
+  background-image: #ffca65;
 }
 </style>

@@ -14,13 +14,13 @@
           <div class="row mb-10 pricing-detail-card mx-3 py-4 justify-content-center">
             <div class="col-sm-3 region-select">Please Select Region:</div>
             <div class="col-sm-6 region-list text-left">
-              <span class="region-item pr-2" @click="changeRegion('westMalaysia')">
+              <span class="region-item pr-2" @click="changeRegion('westMalaysia')" :class="region === 'westMalaysia' ? 'text-orange' : null">
                 West Malaysia
               </span> |
-              <span class="region-item px-2" @click="changeRegion('eastMalaysia')">
+              <span class="region-item px-2" @click="changeRegion('eastMalaysia')" :class="region === 'eastMalaysia' ? 'text-orange' : null">
                 East Malaysia
               </span> |
-              <span class="region-item px-2" @click="changeRegion('outsideMalaysia')">
+              <span class="region-item px-2" @click="changeRegion('outsideMalaysia')" :class="region === 'outsideMalaysia' ? 'text-orange' : null">
                 Outside Malaysia
               </span>
             </div>
@@ -79,7 +79,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: ''
+      region: 'westMalaysia'
     }
   },
   methods: {
@@ -124,6 +124,9 @@ export default {
   font-size: 25px;
   font-weight: bold;
   color: #e7e7e7;
+}
+.text-orange {
+  color: #ffca65;
 }
 #main-board {
   background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.png');
