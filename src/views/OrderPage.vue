@@ -1,3 +1,29 @@
+<i18n>
+{
+  "en": {
+    "Pricing Details": "Pricing Details",
+    "Please Select Region:": "Please Select Region:",
+    "West Malaysia": "West Malaysia",
+    "East Malaysia": "East Malaysia",
+    "Outside Malaysia": "Outside Malaysia"
+  },
+  "my": {
+    "Pricing Details": "Butiran Harga",
+    "Please Select Region:": "Sila Pilih Kawasan:",
+    "West Malaysia": "Semenanjung Malaysia ",
+    "East Malaysia": "Sabah & Sarawak ",
+    "Outside Malaysia": "Luar Malaysia"
+  },
+  "cn": {
+    "Pricing Details": "价格细节",
+    "Please Select Region:": "请选择地区:",
+    "West Malaysia": "西马",
+    "East Malaysia": "东马 (沙巴 & 砂拉越)",
+    "Outside Malaysia": "马来西亚以外"
+  }
+}
+</i18n>
+
 <template>
   <div style="background-color: black">
     <MainBoard :bucket-img="bucketImg"/>
@@ -8,20 +34,20 @@
       <section id="pricing-details">
         <div class="container-fluid">
 
-          <Heading>Pricing Details</Heading>
+          <Heading>{{ $t('Pricing Details') }}</Heading>
 
           <!-- Select Region to Show Detail Price -->
           <div class="row mb-10 pricing-detail-card mx-3 py-4 justify-content-center">
-            <div class="col-sm-3 region-select">Please Select Region:</div>
+            <div class="col-sm-3 region-select">{{ $t('Please Select Region:') }}</div>
             <div class="col-sm-6 region-list text-left">
               <span class="region-item pr-2" @click="changeRegion('westMalaysia')">
-                West Malaysia
+                {{ $t('West Malaysia') }}
               </span> |
               <span class="region-item px-2" @click="changeRegion('eastMalaysia')">
-                East Malaysia
+                {{ $t('East Malaysia') }}
               </span> |
               <span class="region-item px-2" @click="changeRegion('outsideMalaysia')">
-                Outside Malaysia
+                {{ $t('Outside Malaysia') }}
               </span>
             </div>
           </div>
@@ -48,7 +74,7 @@
 
           <!-- Outside Malaysia Detail Pricing -->
           <Fragment >
-            
+
           </Fragment>
         </div>
       </section>
@@ -79,7 +105,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: ''
+      region: 'westMalaysia'
     }
   },
   methods: {
@@ -124,6 +150,9 @@ export default {
   font-size: 25px;
   font-weight: bold;
   color: #e7e7e7;
+}
+.text-orange {
+  color: #ffca65;
 }
 #main-board {
   background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.png');

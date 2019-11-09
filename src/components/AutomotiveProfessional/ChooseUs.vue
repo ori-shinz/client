@@ -5,21 +5,21 @@
     </div>
     <div class="col-sm-10 mx-auto mbc-lg-112">
       <img
-        src="~@/assets/images/combined/USP1-en.png"
+        :src="image1"
         alt="top-notch-quality"
         class="why-choose-img"
       />
     </div>
     <div class="col-sm-10 mx-auto mbc-lg-112">
       <img
-        src="~@/assets/images/combined/USP2-en.png"
+        :src="image2"
         alt="top-notch-quality"
         class="why-choose-img"
       />
     </div>
     <div class="col-sm-10 mx-auto mbc-lg-112">
       <img
-        src="~@/assets/images/combined/USP3-en.png"
+        :src="image3"
         alt="top-notch-quality"
         class="why-choose-img"
       />
@@ -28,8 +28,73 @@
 </template>
 
 <script>
+import image1en from '@/assets/images/combined/USP1-en.png'
+import image2en from '@/assets/images/combined/USP2-en.png'
+import image3en from '@/assets/images/combined/USP3-en.png'
+import image1my from '@/assets/images/combined/USP1-my.png'
+import image2my from '@/assets/images/combined/USP2-my.png'
+import image3my from '@/assets/images/combined/USP3-my.png'
+import image1cn from '@/assets/images/combined/USP1-cn.png'
+import image2cn from '@/assets/images/combined/USP2-cn.png'
+import image3cn from '@/assets/images/combined/USP3-cn.png'
+
 export default {
-  name: 'ChooseUs'
+  name: 'ChooseUs',
+  data () {
+    return {
+      image1: image1en,
+      image2: image2en,
+      image3: image3en
+    }
+  },
+  watch: {
+    '$route' (pre, post) {
+      const locale = this.$i18n.locale
+      switch (locale) {
+        case 'en': {
+          this.image1 = image1en
+          this.image2 = image2en
+          this.image3 = image3en
+          break
+        }
+        case 'my': {
+          this.image1 = image1my
+          this.image2 = image2my
+          this.image3 = image3my
+          break
+        }
+        case 'cn': {
+          this.image1 = image1cn
+          this.image2 = image2cn
+          this.image3 = image3cn
+          break
+        }
+      }
+    }
+  },
+  created () {
+    const locale = this.$i18n.locale
+    switch (locale) {
+      case 'en': {
+        this.image1 = image1en
+        this.image2 = image2en
+        this.image3 = image3en
+        break
+      }
+      case 'my': {
+        this.image1 = image1my
+        this.image2 = image2my
+        this.image3 = image3my
+        break
+      }
+      case 'cn': {
+        this.image1 = image1cn
+        this.image2 = image2cn
+        this.image3 = image3cn
+        break
+      }
+    }
+  }
 }
 </script>
 

@@ -32,7 +32,7 @@
 <script>
 export default {
   name: 'OrderModalInstruction'
-};
+}
 </script>
 
 <style scoped>

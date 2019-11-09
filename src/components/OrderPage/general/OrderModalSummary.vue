@@ -31,34 +31,42 @@ export default {
   },
   data () {
     return {
-      deliPrice : [11,21,28.5,32]
+      deliPrice: [11, 21, 28.5, 32]
     }
   },
   computed: {
     quantity () {
-      if(this.orderType === 'loose' && this.cardTitle === 'eco') {
+      if (this.orderType === 'loose' && this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoLooseQuantity
       } else if (this.orderType === 'bulk' && this.cardTitle === 'eco') {
         return this.$store.state.formOrder.ecoBulkQuantity
       } else if (this.orderType === 'bulk' && this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldBulkQuantity
-      } else if(this.orderType === 'loose' && this.cardTitle === 'gold') {
+      } else if (this.orderType === 'loose' && this.cardTitle === 'gold') {
         return this.$store.state.formOrder.goldLooseQuantity
+      } else {
+        return ''
       }
     },
     basePrice () {
-      if(this.cardTitle === 'eco') {
-        if(this.orderType === 'bulk') {
+      if (this.cardTitle === 'eco') {
+        if (this.orderType === 'bulk') {
           return this.$store.state.formOrder.ecoBulkPrice
         } else if (this.orderType === 'loose') {
           return this.$store.state.formOrder.ecoLoosePrice
+        } else {
+          return ''
         }
       } else if (this.cardTitle === 'gold') {
-        if(this.orderType === 'bulk') {
+        if (this.orderType === 'bulk') {
           return this.$store.state.formOrder.goldBulkPrice
         } else if (this.orderType === 'loose') {
           return this.$store.state.formOrder.goldLoosePrice
+        } else {
+          return ''
         }
+      } else {
+        return ''
       }
     },
     productName () {
@@ -72,24 +80,24 @@ export default {
     changeOrderQuantity (op, type) {
       let currentOrderQty = this.quantity
       let field
-      if(type === 'bulk') {
+      if (type === 'bulk') {
         field = this.cardTitle + 'BulkQuantity'
       } else {
         field = this.cardTitle + 'LooseQuantity'
       }
-      if(op === 'dec') {
-        if(currentOrderQty > 1 ) {
+      if (op === 'dec') {
+        if (currentOrderQty > 1) {
           currentOrderQty--
-          this.$store.commit("formOrder/SET_GENERAL_STATE", {
+          this.$store.commit('formOrder/SET_GENERAL_STATE', {
             field,
             value: currentOrderQty
           })
           this.setProductPrice()
         }
-      } else if (op === 'inc'){
-        if((type === 'loose' && currentOrderQty < 4) || type === 'bulk') {
+      } else if (op === 'inc') {
+        if ((type === 'loose' && currentOrderQty < 4) || type === 'bulk') {
           currentOrderQty++
-          this.$store.commit("formOrder/SET_GENERAL_STATE", {
+          this.$store.commit('formOrder/SET_GENERAL_STATE', {
             field,
             value: currentOrderQty
           })
@@ -97,9 +105,9 @@ export default {
         }
       }
 
-      //change delivery price if order loose qty
+      // change delivery price if order loose qty
       if (field.includes('LooseQuantity')) {
-        let price = this.deliPrice[currentOrderQty-1]
+        let price = this.deliPrice[currentOrderQty - 1]
         this.setDeliveryPrice(price)
       }
     },

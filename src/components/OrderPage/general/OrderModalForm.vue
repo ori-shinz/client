@@ -1,7 +1,7 @@
 <template>
   <form class="text-white text-content" @submit.prevent="sendMail">
     <!-- Tank Size Input FreeSample Only -->
-    {{ title }}
+
     <div class="form-row mb-2" v-if="title === 'try-free-sample'">
       <div class="dropdown col-12">
         <button
@@ -149,13 +149,13 @@
 </template>
 
 <script>
-import computedCreator from "@/helpers/computedCreator.js";
+import computedCreator from '@/helpers/computedCreator.js'
 export default {
-  name: "OrderModalForm",
-  props: ["isFree"],
+  name: 'OrderModalForm',
+  props: ['isFree'],
   methods: {
-    changeState(payload) {
-      this.$store.commit("formOrder/SET_GENERAL_STATE", payload);
+    changeState (payload) {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', payload)
     },
     sendMail () {
       console.log('im here guys')
@@ -165,29 +165,29 @@ export default {
     }
   },
   computed: {
-    ...computedCreator("formOrder", [
-      "contactPerson",
-      "companyName",
-      "email",
-      "tankSize",
-      "contact",
-      "countryCode",
-      "deliveryAddress",
-      "companyAddress",
-      "information",
-      "consent"
+    ...computedCreator('formOrder', [
+      'contactPerson',
+      'companyName',
+      'email',
+      'tankSize',
+      'contact',
+      'countryCode',
+      'deliveryAddress',
+      'companyAddress',
+      'information',
+      'consent'
     ]),
     title () {
       return this.$store.state.formOrder.title
     }
   },
-  mounted() {
+  mounted () {
     // $(".dropdown-menu li").on("click", function() {
     //   var getValue = $(this).text();
     //   $(".dropdown-select").text(getValue);
     // });
   }
-};
+}
 </script>
 
 <style scoped>

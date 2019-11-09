@@ -22,13 +22,13 @@
 
             <!-- Order Summarys -->
             <OrderModalSummary v-if="regionType != 'sample'" :card-title="cardTitle" :order-type="orderType" :region-type="regionType" />
-            
+
             <!-- Total Price must be paid in Malaysia only -->
             <OrderModalPriceTotal v-if="regionType != 'outside' && regionType != 'sample'" :card-title="cardTitle" :order-type="orderType" :region-type="regionType" />
 
             <!-- Free Sample -->
             <FreeSampleRequest v-if="regionType == 'sample'" />
-            
+
             <!-- Transfer Instruction inside Malaysia only -->
             <OrderModalInstruction v-if="regionType != 'outside'" />
 
@@ -52,8 +52,8 @@ import OrderModalSummary from '@/components/OrderPage/general/OrderModalSummary'
 import FreeSampleRequest from '@/components/OrderPage/general/FreeSampleRequest'
 
 export default {
-  name: "OrderModal",
-  props: ["cardTitle", "orderType", "regionType"],
+  name: 'OrderModal',
+  props: ['cardTitle', 'orderType', 'regionType'],
   components: {
     OrderModalForm,
     OrderModalPriceTotal,
@@ -63,13 +63,13 @@ export default {
   },
   methods: {
     changeModalTitle () {
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
         field: 'title',
         value: `${this.cardTitle}-${this.orderType}-${this.regionType}`
       })
     }
   },
-  mounted() {
+  mounted () {
     this.changeModalTitle()
   },
   watch: {
@@ -77,7 +77,7 @@ export default {
       this.changeModalTitle()
     }
   }
-};
+}
 </script>
 
 <style scoped>
