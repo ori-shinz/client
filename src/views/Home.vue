@@ -79,12 +79,14 @@
             :title="$t('bottomCardLeft.title')"
             :content="$t('bottomCardLeft.content')"
             :buttonText="$t('bottomCardLeft.buttonText')"
+            directPage='one'
             @triggerroute="triggerroute"
           />
           <BottomCard
             :title="$t('bottomCardRight.title')"
             :content="$t('bottomCardRight.content')"
             :buttonText="$t('bottomCardRight.buttonText')"
+            directPage='two'
             @triggerroute="triggerroute"
           />
         </div>
@@ -119,9 +121,9 @@ export default {
   },
   methods: {
     triggerroute (page) {
-      if (page === 'See Product Details') {
+      if (page === 'one') {
         this.$router.push(`/${this.$i18n.locale}/product-detail`)
-      } else if (page === 'Join Now') {
+      } else if (page === 'two') {
         this.$router.push(`/${this.$i18n.locale}/agent-distributor-oem`)
       }
     }

@@ -2,7 +2,7 @@
   <div class="col-sm-12 mask p-5 col-md-6 text-left flex-column card-mini-limit">
     <p class="orange-title" v-html="title"></p>
     <p class="text-white white-card-content" v-html="content"></p>
-    <button type="button" class="btn-orange text-white" v-html="buttonText" @click="$emit('triggerroute', buttonText)"></button>
+    <button type="button" class="btn-orange text-white" v-html="buttonText" @click="$emit('triggerroute', directPage)"></button>
   </div>
 </template>
 
@@ -12,7 +12,8 @@ export default {
   props: {
     title: String,
     content: String,
-    buttonText: String
+    buttonText: String,
+    directPage: String
   }
 }
 </script>
