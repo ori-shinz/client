@@ -1,7 +1,7 @@
 <template>
   <form class="text-white text-content" @submit.prevent="sendMail">
     <!-- Tank Size Input FreeSample Only -->
-    {{ title }}
+
     <div class="form-row mb-2" v-if="title === 'try-free-sample'">
       <div class="dropdown col-12">
         <button

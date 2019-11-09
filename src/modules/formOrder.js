@@ -13,6 +13,7 @@ export default {
     information: '',
     region: '',
     deliveryPrice: 0,
+    productType: '',
     ecoBulkQuantity: 1,
     goldBulkQuantity: 1,
     ecoLooseQuantity: 1,

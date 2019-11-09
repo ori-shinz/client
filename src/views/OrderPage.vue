@@ -105,7 +105,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: ''
+      region: 'westMalaysia'
     }
   },
   methods: {
@@ -150,6 +150,9 @@ export default {
   font-size: 25px;
   font-weight: bold;
   color: #e7e7e7;
+}
+.text-orange {
+  color: #ffca65;
 }
 #main-board {
   background-image: url('~@/assets/images/backgrounds/bg-automotive-professional.png');
