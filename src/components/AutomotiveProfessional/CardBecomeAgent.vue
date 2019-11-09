@@ -1,11 +1,31 @@
+<i18n>
+{
+  "en": {
+    "title": "Become Our Agent / Distributor / OEM",
+    "desc": "Be your own Boss",
+    "button": "Join Now"
+  },
+  "my": {
+    "title": "Menjadi Agen / Pengedar Kami / OEM",
+    "desc": "Jadilah Boss Anda Sendiri",
+    "button": "Sertai Sekarang"
+  },
+  "cn": {
+    "title": "成为我们的代理商 / 经销商 / OEM",
+    "desc": "自己当老板",
+    "button": "即刻加入"
+  }
+}
+</i18n>
+
 <template>
   <div class="row mask mb-5">
     <div class="col-sm-8 text-left pl-5 pt-3 pb-2">
-      <p class="free-title text-orange">Become Our Agent / Distributor / OEM</p>
-      <p class="free-text text-white">Be your own Boss</p>
+      <p class="free-title text-orange">{{ $t('title') }}</p>
+      <p class="free-text text-white">{{ $t('desc') }}</p>
     </div>
     <div class="col-sm-4 request-btn justify-content-center">
-      <button class="Join-Now btn-orange" @click="$router.push(`/${$i18n.locale}/agent-distributor-oem`)">Join Now</button>
+      <button class="Join-Now btn-orange" @click="$router.push(`/${$i18n.locale}/agent-distributor-oem`)">{{ $t('button') }}</button>
     </div>
   </div>
 </template>
