@@ -3,7 +3,7 @@
     <EcoTopViewImage v-if="cardTitle==='eco'"/>
     <GoldTopViewImage v-if="cardTitle==='gold'"/>
     <MalaysiaOrderControl :card-title="cardTitle" @show-modal="showModal" :region-type="regionType"/>
-    <OrderModal :card-title="cardTitle" :order-type="orderType" :region-type="regionType"/>
+    <OrderModal :card-title="cardTitle" :order-type="orderType" :region-type="regionType" title-modal="Order Confirmation" desc-modal="Order Details" />
   </div>
 </template>
 

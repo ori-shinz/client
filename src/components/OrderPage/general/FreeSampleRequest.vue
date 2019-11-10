@@ -67,23 +67,23 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import computedCreator from "@/helpers/computedCreator"
+import { Fragment } from 'vue-fragment'
+import computedCreator from '@/helpers/computedCreator'
 
 export default {
-  name: "FreeSampleRequest",
+  name: 'FreeSampleRequest',
   components: {
     Fragment
   },
   computed: {
-    region() {
-      return this.$store.state.formOrder.region;
+    region () {
+      return this.$store.state.formOrder.region
     },
-    deliveryPrice() {
+    deliveryPrice () {
       if (this.$store.state.formOrder.deliveryPrice) {
-        return this.$store.state.formOrder.deliveryPrice + ".00";
+        return this.$store.state.formOrder.deliveryPrice + '.00'
       } else {
-        return "";
+        return ''
       }
     },
     ...computedCreator('formOrder', [
@@ -91,29 +91,29 @@ export default {
     ])
   },
   methods: {
-    changeRegion(value) {
-      let deliveryPrice = 0;
-      value === "west" ? (deliveryPrice = 9) : (deliveryPrice = 12);
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
-        field: "region",
+    changeRegion (value) {
+      let deliveryPrice = 0
+      value === 'west' ? (deliveryPrice = 9) : (deliveryPrice = 12)
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'region',
         value
       })
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
-        field: "deliveryPrice",
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'deliveryPrice',
         value: deliveryPrice
       })
     },
-    active(reg) {
-      return this.region === reg ? "text-orange" : null;
+    active (reg) {
+      return this.region === reg ? 'text-orange' : null
     },
-    changeProductType(value) {
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
-        field: "productType",
+    changeProductType (value) {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'productType',
         value
       })
     }
   }
-};
+}
 </script>
 
 <style scoped>
