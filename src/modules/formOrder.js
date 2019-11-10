@@ -28,7 +28,6 @@ export default {
   mutations: {
     SET_GENERAL_STATE (state, payload) {
       state[payload.field] = payload.value
-      console.log(state)
     },
     RESET_ORDERS (state) {
       state.deliveryPrice = 0
@@ -45,6 +44,41 @@ export default {
     }
   },
   actions: {
-
+    orderProduct ({ state }) {
+      console.log('YOU ARE ORDERING')
+      const { title, contactPerson, companyAddress, companyName, countryCode, deliveryAddress, email, contact, information} = state
+      let formData = {
+        contactPerson,
+        companyAddress,
+        companyName,
+        countryCode,
+        deliveryAddress,
+        email,
+        contact,
+        information
+      }
+      if(title === 'try-free-sample') {
+        formData = {
+          ...formData,
+          region: state.region,
+          productType: state.productType,
+          deliveryPrice: state.deliveryPrice,
+          tankSize: state.tankSize
+        }
+        console.log(formData)
+      }
+      // console.log(state.title)
+      // console.log(state.deliveryPrice, ' DELIVERY PRICE')
+      // console.log(state.tankSize, 'your tank size')
+      // console.log(state.productType, 'product that you order')
+      // console.log(state.contactPerson)
+      // console.log(state.companyAddress)
+      // console.log(state.companyName)
+      // console.log(state.countryCode)
+      // console.log(state.deliveryAddress)
+      // console.log(state.email)
+      // console.log(state.contact)
+      // console.log(state.information)
+    } 
   }
 }

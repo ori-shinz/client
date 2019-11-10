@@ -159,9 +159,7 @@ export default {
     },
     sendMail () {
       console.log('im here guys')
-      /*
-        PUT YOUR EMAIL FUNCTION IN HERE
-      */
+      this.$store.dispatch('formOrder/orderProduct')
     }
   },
   computed: {
