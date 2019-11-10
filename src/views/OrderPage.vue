@@ -40,13 +40,13 @@
           <div class="row mb-10 pricing-detail-card mx-3 py-4 justify-content-center">
             <div class="col-sm-3 region-select">{{ $t('Please Select Region:') }}</div>
             <div class="col-sm-6 region-list text-left">
-              <span class="region-item pr-2" @click="changeRegion('westMalaysia')">
+              <span class="region-item pr-2" @click="changeRegion('westMalaysia')" :class="region === 'westMalaysia' ? 'text-orange' : null">
                 {{ $t('West Malaysia') }}
               </span> |
-              <span class="region-item px-2" @click="changeRegion('eastMalaysia')">
+              <span class="region-item px-2" @click="changeRegion('eastMalaysia')" :class="region === 'eastMalaysia' ? 'text-orange' : null">
                 {{ $t('East Malaysia') }}
               </span> |
-              <span class="region-item px-2" @click="changeRegion('outsideMalaysia')">
+              <span class="region-item px-2" @click="changeRegion('outsideMalaysia')" :class="region === 'outsideMalaysia' ? 'text-orange' : null">
                 {{ $t('Outside Malaysia') }}
               </span>
             </div>

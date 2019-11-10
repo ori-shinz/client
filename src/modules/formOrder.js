@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   namespaced: true,
   state: {
@@ -14,6 +16,7 @@ export default {
     region: '',
     deliveryPrice: 0,
     productType: '',
+    orderType: '',
     ecoBulkQuantity: 1,
     goldBulkQuantity: 1,
     ecoLooseQuantity: 1,
@@ -44,7 +47,7 @@ export default {
     }
   },
   actions: {
-    orderProduct ({ state }) {
+    orderProduct ({ state }, payload) {
       console.log('YOU ARE ORDERING')
       const { title, contactPerson, companyAddress, companyName, countryCode, deliveryAddress, email, contact, information} = state
       let formData = {
@@ -65,20 +68,59 @@ export default {
           deliveryPrice: state.deliveryPrice,
           tankSize: state.tankSize
         }
-        console.log(formData)
+        
+      } else if (title.includes('west') || title.includes('east')) {
+        let quantity, singlePrice
+        if(state.orderType === 'loose') {
+          if(state.productType === 'eco') {
+            quantity = state.ecoLooseQuantity
+            singlePrice = state.ecoLoosePrice
+          } else if (state.productType === 'gold') {
+            quantity = state.goldLooseQuantity
+            singlePrice = state.goldLoosePrice
+          }
+        } else if (state.orderType === 'bulk') {
+          if(state.productType === 'eco') {
+            quantity = state.ecoBulkQuantity
+            singlePrice = state.ecoBulkPrice
+          } else if (state.productType === 'gold') {
+            quantity = state.goldBulkQuantity
+            singlePrice = state.goldBulkPrice
+          }
+        }
+        formData = {
+          ...formData,
+          orderType: state.orderType,
+          productType: state.productType,
+          deliveryPrice: state.deliveryPrice,
+          quantity,
+          singlePrice,
+          region: state.region,
+          productPrice: state.productPrice,
+          totalPrice: state.deliveryPrice + state.productPrice
+        }
+      } else if (title.includes('outside')) {
+          formData = {
+            ...formData,
+            orderType: state.orderType,
+            productType: state.productType,
+            quantity,
+            region: state.region
+          }
       }
-      // console.log(state.title)
-      // console.log(state.deliveryPrice, ' DELIVERY PRICE')
-      // console.log(state.tankSize, 'your tank size')
-      // console.log(state.productType, 'product that you order')
-      // console.log(state.contactPerson)
-      // console.log(state.companyAddress)
-      // console.log(state.companyName)
-      // console.log(state.countryCode)
-      // console.log(state.deliveryAddress)
-      // console.log(state.email)
-      // console.log(state.contact)
-      // console.log(state.information)
+      axios({
+        method: 'POST',
+        url: 'https://us-central1-firefun-orishinz.cloudfunctions.net/helloWorld', //route asli sendMail tapi belom gw publish
+        data: {
+          ...formData
+        }
+      })
+        .then(({ data }) => {
+          console.log(data , "<<")
+        })
+        .catch(err =>{
+          console.log(err , ">><<")
+        })
     } 
   }
 }

@@ -67,14 +67,47 @@ export default {
         field: 'title',
         value: `${this.cardTitle}-${this.orderType}-${this.regionType}`
       })
+    },
+    changeRegionType () {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'region',
+        value: `${this.regionType}`
+      })
+    },
+    changeProductType () {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'productType',
+        value: `${this.cardTitle}`
+      })
+    },
+    changeOrderType () {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'orderType',
+        value: `${this.orderType}`
+      })
+      console.log('called', this.orderType)
     }
   },
   mounted () {
     this.changeModalTitle()
+    this.changeOrderType()
+    if(this.regionType !== 'sample') {
+      this.changeRegionType()
+    }
+    if(this.cardTitle !== 'try') {
+      this.changeProductType()
+    }
   },
   watch: {
     orderType: function (newVal, oldVal) {
-      this.changeModalTitle()
+      this.changeModalTitle(),
+      this.changeOrderType()
+      if(this.regionType !== 'sample') {
+        this.changeRegionType()
+      }
+      if(this.cardTitle !== 'try') {
+        this.changeProductType()
+      }
     }
   }
 }
