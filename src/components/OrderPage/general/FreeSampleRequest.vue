@@ -1,7 +1,33 @@
+<i18n>
+{
+  "en": {
+    "title": "Select Sample you want to request",
+    "Select Region": "Select Region",
+    "West Malaysia": "West Malaysia",
+    "East Malaysia": "East Malaysia",
+    "Delivery Charges": "Delivery Charges"
+  },
+  "my": {
+    "title": "Pilih Sampel Anda",
+    "Select Region": "Pilih Kawasan",
+    "West Malaysia": "Semenanjung Malaysia ",
+    "East Malaysia": "Sabah & Sarawak ",
+    "Delivery Charges": "Caj Penghantaran"
+  },
+  "cn": {
+    "title": "选择您申请的样本",
+    "Select Region": "选定地区",
+    "West Malaysia": "西马",
+    "East Malaysia": "东马 (沙巴 & 砂拉越)",
+    "Delivery Charges": "运输费"
+  }
+}
+</i18n>
+
 <template>
   <Fragment>
     <div class="row justify-content-center">
-      <p>Select Sample you want to request</p>
+      <p>{{ $t('title') }}</p>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col-3 p-2 bg-black mr-4">
@@ -41,23 +67,23 @@
       <table class="table text-content col-md-6 table-borderless">
         <tbody>
           <tr>
-            <td>Select Region</td>
+            <td>{{ $t('Select Region') }}</td>
             <td class="text-right">
               <span
                 class="region-btn"
                 @click="changeRegion('west')"
                 :class="active('west')"
-              >West Malaysia</span>
+              >{{ $t('West Malaysia') }}</span>
               |
               <span
                 class="region-btn"
                 @click="changeRegion('east')"
                 :class="active('east')"
-              >East Malaysia</span>
+              >{{ ('East Malaysia') }}</span>
             </td>
           </tr>
           <tr>
-            <td>Delivery Charges</td>
+            <td>{{ $t('Delivery Charges') }}</td>
             <td class="text-right">RM {{ deliveryPrice }}</td>
           </tr>
         </tbody>
