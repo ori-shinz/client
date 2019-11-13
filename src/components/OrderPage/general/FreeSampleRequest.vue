@@ -1,7 +1,33 @@
+<i18n>
+{
+  "en": {
+    "title": "Select Sample you want to request",
+    "Select Region": "Select Region",
+    "West Malaysia": "West Malaysia",
+    "East Malaysia": "East Malaysia",
+    "Delivery Charges": "Delivery Charges"
+  },
+  "my": {
+    "title": "Pilih Sampel Anda",
+    "Select Region": "Pilih Kawasan",
+    "West Malaysia": "Semenanjung Malaysia ",
+    "East Malaysia": "Sabah & Sarawak ",
+    "Delivery Charges": "Caj Penghantaran"
+  },
+  "cn": {
+    "title": "选择您申请的样本",
+    "Select Region": "选定地区",
+    "West Malaysia": "西马",
+    "East Malaysia": "东马 (沙巴 & 砂拉越)",
+    "Delivery Charges": "运输费"
+  }
+}
+</i18n>
+
 <template>
   <Fragment>
     <div class="row justify-content-center">
-      <p>Select Sample you want to request</p>
+      <p>{{ $t('title') }}</p>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col-3 p-2 bg-black mr-4">
@@ -21,7 +47,7 @@
     </div>
     <div class="row mb-3 justify-content-center text-orange-sample">
       <div class="col-3 p-2 text-center">
-        <input id="radio1" type="radio" name="radio" @click="changeProductType('eco')" />
+        <input id="radio1" type="radio" name="radio" @click="changeProductType('eco')" checked/>
         <label for="radio1">
           <span>
             <span></span>
@@ -41,23 +67,23 @@
       <table class="table text-content col-md-6 table-borderless">
         <tbody>
           <tr>
-            <td>Select Region</td>
+            <td>{{ $t('Select Region') }}</td>
             <td class="text-right">
               <span
                 class="region-btn"
                 @click="changeRegion('west')"
                 :class="active('west')"
-              >West Malaysia</span>
+              >{{ $t('West Malaysia') }}</span>
               |
               <span
                 class="region-btn"
                 @click="changeRegion('east')"
                 :class="active('east')"
-              >East Malaysia</span>
+              >{{ $t('East Malaysia') }}</span>
             </td>
           </tr>
           <tr>
-            <td>Delivery Charges</td>
+            <td>{{ $t('Delivery Charges') }}</td>
             <td class="text-right">RM {{ deliveryPrice }}</td>
           </tr>
         </tbody>
@@ -67,23 +93,23 @@
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import computedCreator from "@/helpers/computedCreator"
+import { Fragment } from 'vue-fragment'
+import computedCreator from '@/helpers/computedCreator'
 
 export default {
-  name: "FreeSampleRequest",
+  name: 'FreeSampleRequest',
   components: {
     Fragment
   },
   computed: {
-    region() {
-      return this.$store.state.formOrder.region;
+    region () {
+      return this.$store.state.formOrder.region
     },
-    deliveryPrice() {
+    deliveryPrice () {
       if (this.$store.state.formOrder.deliveryPrice) {
-        return this.$store.state.formOrder.deliveryPrice + ".00";
+        return this.$store.state.formOrder.deliveryPrice + '.00'
       } else {
-        return "";
+        return ''
       }
     },
     ...computedCreator('formOrder', [
@@ -91,29 +117,33 @@ export default {
     ])
   },
   methods: {
-    changeRegion(value) {
-      let deliveryPrice = 0;
-      value === "west" ? (deliveryPrice = 9) : (deliveryPrice = 12);
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
-        field: "region",
+    changeRegion (value) {
+      let deliveryPrice = 0
+      value === 'west' ? (deliveryPrice = 9) : (deliveryPrice = 12)
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'region',
         value
       })
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
-        field: "deliveryPrice",
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'deliveryPrice',
         value: deliveryPrice
       })
     },
-    active(reg) {
-      return this.region === reg ? "text-orange" : null;
+    active (reg) {
+      return this.region === reg ? 'text-orange' : null
     },
-    changeProductType(value) {
-      this.$store.commit("formOrder/SET_GENERAL_STATE", {
-        field: "productType",
+    changeProductType (value) {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'productType',
         value
       })
     }
+  },
+  created () {
+    this.changeProductType('eco')
+    this.changeRegion('west')
   }
-};
+}
 </script>
 
 <style scoped>

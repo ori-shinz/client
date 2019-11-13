@@ -1,3 +1,29 @@
+<i18n>
+{
+  "en": {
+    "Order Confirmation": "Order Confirmation",
+    "Order Request": "Order Request",
+    "Order Details": "Order Details",
+    "Free Sample Confirmation": "Free Sample Confirmation",
+    "Free Sample Requirements": "Free Sample Requirements"
+  },
+  "my": {
+    "Order Confirmation": "Pengesahan Pesanan",
+    "Order Request": "Permintaan Pesanan",
+    "Order Details": "Butiran Pesanan",
+    "Free Sample Confirmation": "Pengesahan Sampel Percuma",
+    "Free Sample Requirements": "Butiran Untuk Sampel Percuma"
+  },
+  "cn": {
+    "Order Confirmation": "订单确认",
+    "Order Request": "订单请求",
+    "Order Details": "订单详情",
+    "Free Sample Confirmation": "免费样品确认",
+    "Free Sample Requirements": "免费样品申请资料"
+  }
+}
+</i18n>
+
 <template>
   <div
     class="modal fade bg-brown"
@@ -14,10 +40,16 @@
           data-dismiss="modal"
         >X</button>
         <div class="modal-header border-0 justify-content-center">
-          <h5 class="md-title mb-3">Order Request </h5>
+
+          <!-- CHANGE WITH PROPS -->
+          <h5 class="md-title mb-3">{{ $t(titleModal) }}</h5>
+
         </div>
         <div class="modal-body md-content bg-brown d-flex flex-column align-items-start mx-5">
-          <h5 class="text-orange title mb-4 pl-3">Order Details</h5>
+
+          <!-- TEXT WARNA KUNING -->
+          <h5 class="text-orange title mb-4 pl-3">{{ $t(descModal) }}</h5>
+
           <div class="container text-left text-content">
 
             <!-- Order Summarys -->
@@ -53,7 +85,7 @@ import FreeSampleRequest from '@/components/OrderPage/general/FreeSampleRequest'
 
 export default {
   name: 'OrderModal',
-  props: ['cardTitle', 'orderType', 'regionType'],
+  props: ['cardTitle', 'orderType', 'regionType', 'titleModal', 'descModal'],
   components: {
     OrderModalForm,
     OrderModalPriceTotal,
@@ -67,14 +99,47 @@ export default {
         field: 'title',
         value: `${this.cardTitle}-${this.orderType}-${this.regionType}`
       })
+    },
+    changeRegionType () {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'region',
+        value: `${this.regionType}`
+      })
+    },
+    changeProductType () {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'productType',
+        value: `${this.cardTitle}`
+      })
+    },
+    changeOrderType () {
+      this.$store.commit('formOrder/SET_GENERAL_STATE', {
+        field: 'orderType',
+        value: `${this.orderType}`
+      })
+      console.log('called', this.orderType)
     }
   },
   mounted () {
     this.changeModalTitle()
+    this.changeOrderType()
+    if (this.regionType !== 'sample') {
+      this.changeRegionType()
+    }
+    if (this.cardTitle !== 'try') {
+      this.changeProductType()
+    }
   },
   watch: {
     orderType: function (newVal, oldVal) {
       this.changeModalTitle()
+      this.changeOrderType()
+      if (this.regionType !== 'sample') {
+        this.changeRegionType()
+      }
+      if (this.cardTitle !== 'try') {
+        this.changeProductType()
+      }
     }
   }
 }

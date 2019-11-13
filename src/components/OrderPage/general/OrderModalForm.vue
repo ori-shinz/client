@@ -1,3 +1,56 @@
+<i18n>
+{
+  "en": {
+    "Contact Person": "Contact Person",
+    "Company Name": "Company Name",
+    "Email Address": "Email Address",
+    "Contact Number": "Contact Number",
+    "Delivery Address": "Delivery Address",
+    "Company Address": "Company Address",
+    "Additional": "Additional Information for Your Order (if any)",
+    "After": "After submitting this Order Request, we will contact you and provide you information on pricing and payment instruction to complete your Order.",
+    "Hereby": "I hereby confirm that I have read and understand the Privacy Policy and the Terms of Service and I agree and consent to the Privacy Policy and the Terms of Service.",
+    "Submit": "Submit",
+    "Notes:": "Notes:",
+    "note1": "Incomplete information will not be entertained.",
+    "note2": "Free Samples may be discontinued at any time without prior notice.",
+    "note3": "Every company or individual is only entitled to make one-time Free Sample request."
+  },
+  "my": {
+    "Contact Person": "Orang untuk Dihubungi",
+    "Company Name": "Nama Syarikat",
+    "Email Address": "Alamat Emel",
+    "Contact Number": "Nombor Telefon",
+    "Delivery Address": "Alamat Penghantaran",
+    "Company Address": "Alamat Syarikat",
+    "Additional": "Butiran Tambahan untuk Permintaan Sampel Anda (jika ada)",
+    "After": "Selepas mengemukakan Permintaan Pesanan ini, kami akan menghubungi anda dan memberi anda maklumat harga produk dan arahan pembayaran untuk melengkapkan Pesanan anda.",
+    "Hereby": "Saya dengan ini mengesahkan bahawa saya telah membaca dan memahami Dasar Privasi dan Syarat Perkhidmatan. Saya menerima dan bersetuju untuk terikat dengan Dasar Privasi dan Syarat Perkhidmatan.",
+    "Submit": "Hantar",
+    "Notes:": "Notes:",
+    "note1": "Butiran yang tidak lengkap tidak akan dilayan.",
+    "note2": "Sampel Percuma akan dihentikan pada bila-bila masa tanpa notis terdahulu.",
+    "note3": "Permintaan sampel percuma adalah terhad untuk setiap syarikat atau individu sahaja."
+  },
+  "cn": {
+    "Contact Person": "联系人",
+    "Company Name": "公司名字",
+    "Email Address": "电子邮件地址",
+    "Contact Number": "联系电话号码",
+    "Delivery Address": "邮寄地址",
+    "Company Address": "公司地址",
+    "Additional": "您样品申请的其他信息 (如有)",
+    "After": "在提交此订单请求后，我们将与您联系并向您提供有关产品价格和付款说明的信息，以完成您的订单。",
+    "Hereby": "我在此确认已阅读并理解本隐私政策和本服务条款。我同意并接受本隐私政策和本服务条款。",
+    "Submit": "提交",
+    "Notes:": "注意:",
+    "note1": "不完整的信息将不予受理。",
+    "note2": "我们保留随时终止免费样本的权利，恕不另行通知。",
+    "note3": "每个公司或个人仅有权进行一次性免费样品申请。"
+  }
+}
+</i18n>
+
 <template>
   <form class="text-white text-content" @submit.prevent="sendMail">
     <!-- Tank Size Input FreeSample Only -->
@@ -49,7 +102,7 @@
           type="text"
           v-model.lazy="contactPerson"
           class="form-control md-input"
-          placeholder="Contact Person"
+          :placeholder="$t('Contact Person')"
           required
         />
       </div>
@@ -58,7 +111,7 @@
           type="text"
           v-model.lazy="companyName"
           class="form-control md-input"
-          placeholder="Company Name"
+          :placeholder="$t('Company Name')"
           required
         />
       </div>
@@ -69,7 +122,7 @@
           type="email"
           v-model.lazy="email"
           class="form-control md-input"
-          placeholder="Email Address"
+          :placeholder="$t('Email Address')"
           required
         />
       </div>
@@ -85,7 +138,7 @@
           type="text"
           v-model.lazy="contact"
           class="form-control md-input"
-          placeholder="Contact Number"
+          :placeholder="$t('Contact Number')"
           required
         />
       </div>
@@ -96,7 +149,7 @@
           class="form-control md-input"
           v-model.lazy="deliveryAddress"
           rows="4"
-          placeholder="Delivery Address"
+          :placeholder="$t('Delivery Address')"
         ></textarea>
       </div>
       <div class="col-6 px-2">
@@ -104,7 +157,7 @@
           class="form-control md-input"
           rows="4"
           v-model.lazy="companyAddress"
-          placeholder="Company Address"
+          :placeholder="$t('Company Address')"
         ></textarea>
       </div>
     </div>
@@ -113,7 +166,7 @@
         <input
           type="text"
           class="form-control md-input"
-          placeholder="Additional Information for Your Order (if any)"
+          :placeholder="$t('Additional')"
           v-model.lazy="information"
         />
       </div>
@@ -121,7 +174,7 @@
     <div class="form-row mb-3">
       <div
         class="col-10 mx-auto text-center disclaimer-text"
-      >After submitting this Order Request, we will contact you and provide you information on pricing and payment instruction to complete your Order.</div>
+      >{{ $t('After') }}</div>
     </div>
     <div class="form-row mb-3">
       <div class="col-11 mx-auto text-center disclaimer-text pl-3">
@@ -130,19 +183,19 @@
           <label
             class="form-check-label"
             for="defaultCheck1"
-          >I hereby confirm that I have read and understand the Privacy Policy and the Terms of Service and I agree and consent to the Privacy Policy and the Terms of Service.</label>
+          >{{ $t('Hereby') }}</label>
         </div>
       </div>
     </div>
     <div class="form-row mb-5">
-      <button class="btn btn-lg btn-orange form-submit col-4 mx-auto">Submit</button>
+      <button class="btn btn-lg btn-orange form-submit col-4 mx-auto">{{ $t('Submit') }}</button>
     </div>
     <div class="form-row mb-4 disclaimer-text text-left">
-      <p class="col-12">Notes:</p>
+      <p class="col-12">{{ $t('Notes:') }}</p>
       <ul>
-        <li>Incomplete information will not be entertained.</li>
-        <li>Free Samples may be discontinued at any time without prior notice.</li>
-        <li>Every company or individual is only entitled to make one-time Free Sample request.</li>
+        <li>{{ $t('note1') }}</li>
+        <li>{{ $t('note2') }}</li>
+        <li>{{ $t('note3') }}</li>
       </ul>
     </div>
   </form>
@@ -159,9 +212,7 @@ export default {
     },
     sendMail () {
       console.log('im here guys')
-      /*
-        PUT YOUR EMAIL FUNCTION IN HERE
-      */
+      this.$store.dispatch('formOrder/orderProduct')
     }
   },
   computed: {
