@@ -47,7 +47,7 @@
     </div>
     <div class="row mb-3 justify-content-center text-orange-sample">
       <div class="col-3 p-2 text-center">
-        <input id="radio1" type="radio" name="radio" @click="changeProductType('eco')" />
+        <input id="radio1" type="radio" name="radio" @click="changeProductType('eco')" checked/>
         <label for="radio1">
           <span>
             <span></span>
@@ -138,6 +138,10 @@ export default {
         value
       })
     }
+  },
+  created() {
+    this.changeProductType('eco')
+    this.changeRegion('west')
   }
 }
 </script>
