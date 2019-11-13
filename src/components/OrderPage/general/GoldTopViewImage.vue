@@ -1,3 +1,20 @@
+<i18n>
+{
+  "en": {
+    "On Average": "On Average",
+    "desc": "Weight / Drum : 2.7 KG"
+  },
+  "my": {
+    "On Average": "Anggaran",
+    "desc": "Berat / Dram : 2.7 KG"
+  },
+  "cn": {
+    "On Average": "大约",
+    "desc": "重量 / 桶 : 2.7 公斤"
+  }
+}
+</i18n>
+
 <template>
   <div class="row justify-content-center my-5 mx-3">
     <div class="col-lg-3 region-select">
@@ -6,8 +23,8 @@
     <div class="col-lg-5 region-list text-left d-flex flex-column justify-content-center">
       <img src="~@/assets/images/newassets/gold-logo.png" style="max-width:264px !important" height="auto" alt="eco-logo" class="mb-2">
       <img src="~@/assets/images/newassets/text-gold.png" style="max-width:500px !important" height="auto" class="mb-2"  alt="text-eco">
-      <p class="top-view-text">*On Average</p>
-      <p class="top-view-text"> Weight / Drum : 2.7 KG </p>
+      <p class="top-view-text">*{{ $t('On Average') }}</p>
+      <p class="top-view-text">{{ $t('desc') }}</p>
     </div>
   </div>
 </template>

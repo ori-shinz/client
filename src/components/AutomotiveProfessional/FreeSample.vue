@@ -40,7 +40,7 @@
         </button>
       </div>
     </div>
-    <OrderModal :card-title="'try'" :order-type="'free'" :region-type="'sample'"/>
+    <OrderModal card-title="try" order-type="free" region-type="sample" title-modal="Free Sample Confirmation" desc-modal="Free Sample Requirements" />
   </div>
 </template>
 

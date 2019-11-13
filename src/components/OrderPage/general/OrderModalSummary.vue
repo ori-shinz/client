@@ -1,15 +1,47 @@
+<i18n>
+{
+  "en": {
+    "Product": "Product",
+    "Weight / drum": "Weight / drum",
+    "KG": "KG",
+    "Order Type": "Order Type",
+    "Quantity": "Quantity",
+    "Loose Order": "Loose Order",
+    "Bulk Order": "Bulk Order"
+  },
+  "my": {
+    "Product": "Produk",
+    "Weight / drum": "Berat / Dram ",
+    "KG": "KG",
+    "Order Type": "Jenis Pesanan",
+    "Quantity": "Kuantiti",
+    "Loose Order": "Pesanan Kecil",
+    "Bulk Order": "Pesanan Pukal"
+  },
+  "cn": {
+    "Product": "产品",
+    "Weight / drum": "重量 / 桶",
+    "KG": "公斤",
+    "Order Type": "订单类型",
+    "Quantity": "数量",
+    "Loose Order": "散订购",
+    "Bulk Order": "批量订购"
+  }
+}
+</i18n>
+
 <template>
   <Fragment>
     <div class="row text-content mb-3">
-      <div class="col-3">Product</div>
+      <div class="col-3">{{ $t('Product') }}</div>
       <div class="col-3">{{ productName }}</div>
-      <div class="col-3">Weight / drum</div>
-      <div class="col-3 text-right">2.7 KG</div>
+      <div class="col-3">{{ $t('Weight / drum') }}</div>
+      <div class="col-3 text-right">2.7 {{ $t('KG') }}</div>
     </div>
     <div class="row text-content mb-3">
-      <div class="col-3">Order Type</div>
-      <div class="col-3">{{ getOrderType }}</div>
-      <div class="col-3">Quantity</div>
+      <div class="col-3">{{ $t('Order Type') }}</div>
+      <div class="col-3">{{ $t(getOrderType) }}</div>
+      <div class="col-3">{{ $t('Quantity') }}</div>
       <div class="col-3 text-right">
         <span @click="changeOrderQuantity('dec', orderType)" class="minplus px-3">-</span>  <span class="text-orange">{{ quantity }}</span>  <span @click="changeOrderQuantity('inc', orderType)" class="minplus pl-3">+</span>
       </div>
