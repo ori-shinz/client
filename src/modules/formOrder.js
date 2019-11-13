@@ -49,7 +49,7 @@ export default {
   actions: {
     orderProduct ({ state }, payload) {
       console.log('YOU ARE ORDERING')
-      const { title, contactPerson, companyAddress, companyName, countryCode, deliveryAddress, email, contact, information} = state
+      const { title, contactPerson, companyAddress, companyName, countryCode, deliveryAddress, email, contact, information } = state
       let formData = {
         contactPerson,
         companyAddress,
@@ -60,7 +60,26 @@ export default {
         contact,
         information
       }
-      if(title === 'try-free-sample') {
+      let quantity, singlePrice
+      if (state.orderType === 'loose') {
+        if (state.productType === 'eco') {
+          quantity = state.ecoLooseQuantity
+          singlePrice = state.ecoLoosePrice
+        } else if (state.productType === 'gold') {
+          quantity = state.goldLooseQuantity
+          singlePrice = state.goldLoosePrice
+        }
+      } else if (state.orderType === 'bulk') {
+        if (state.productType === 'eco') {
+          quantity = state.ecoBulkQuantity
+          singlePrice = state.ecoBulkPrice
+        } else if (state.productType === 'gold') {
+          quantity = state.goldBulkQuantity
+          singlePrice = state.goldBulkPrice
+        }
+      }
+
+      if (title === 'try-free-sample') {
         formData = {
           ...formData,
           region: state.region,
@@ -68,26 +87,7 @@ export default {
           deliveryPrice: state.deliveryPrice,
           tankSize: state.tankSize
         }
-        
       } else if (title.includes('west') || title.includes('east')) {
-        let quantity, singlePrice
-        if(state.orderType === 'loose') {
-          if(state.productType === 'eco') {
-            quantity = state.ecoLooseQuantity
-            singlePrice = state.ecoLoosePrice
-          } else if (state.productType === 'gold') {
-            quantity = state.goldLooseQuantity
-            singlePrice = state.goldLoosePrice
-          }
-        } else if (state.orderType === 'bulk') {
-          if(state.productType === 'eco') {
-            quantity = state.ecoBulkQuantity
-            singlePrice = state.ecoBulkPrice
-          } else if (state.productType === 'gold') {
-            quantity = state.goldBulkQuantity
-            singlePrice = state.goldBulkPrice
-          }
-        }
         formData = {
           ...formData,
           orderType: state.orderType,
@@ -100,27 +100,27 @@ export default {
           totalPrice: state.deliveryPrice + state.productPrice
         }
       } else if (title.includes('outside')) {
-          formData = {
-            ...formData,
-            orderType: state.orderType,
-            productType: state.productType,
-            quantity,
-            region: state.region
-          }
+        formData = {
+          ...formData,
+          orderType: state.orderType,
+          productType: state.productType,
+          quantity,
+          region: state.region
+        }
       }
       axios({
         method: 'POST',
-        url: 'https://us-central1-firefun-orishinz.cloudfunctions.net/helloWorld', //route asli sendMail tapi belom gw publish
+        url: 'https://us-central1-firefun-orishinz.cloudfunctions.net/helloWorld', // route asli sendMail tapi belom gw publish
         data: {
           ...formData
         }
       })
         .then(({ data }) => {
-          console.log(data , "<<")
+          console.log(data, '<<')
         })
-        .catch(err =>{
-          console.log(err , ">><<")
+        .catch(err => {
+          console.log(err, '>><<')
         })
-    } 
+    }
   }
 }

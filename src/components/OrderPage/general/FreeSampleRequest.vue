@@ -79,7 +79,7 @@
                 class="region-btn"
                 @click="changeRegion('east')"
                 :class="active('east')"
-              >{{ ('East Malaysia') }}</span>
+              >{{ $t('East Malaysia') }}</span>
             </td>
           </tr>
           <tr>
@@ -139,7 +139,7 @@ export default {
       })
     }
   },
-  created() {
+  created () {
     this.changeProductType('eco')
     this.changeRegion('west')
   }

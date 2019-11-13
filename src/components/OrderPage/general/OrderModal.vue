@@ -123,21 +123,21 @@ export default {
   mounted () {
     this.changeModalTitle()
     this.changeOrderType()
-    if(this.regionType !== 'sample') {
+    if (this.regionType !== 'sample') {
       this.changeRegionType()
     }
-    if(this.cardTitle !== 'try') {
+    if (this.cardTitle !== 'try') {
       this.changeProductType()
     }
   },
   watch: {
     orderType: function (newVal, oldVal) {
-      this.changeModalTitle(),
+      this.changeModalTitle()
       this.changeOrderType()
-      if(this.regionType !== 'sample') {
+      if (this.regionType !== 'sample') {
         this.changeRegionType()
       }
-      if(this.cardTitle !== 'try') {
+      if (this.cardTitle !== 'try') {
         this.changeProductType()
       }
     }
