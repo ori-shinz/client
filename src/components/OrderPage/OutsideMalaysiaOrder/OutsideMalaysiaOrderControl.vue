@@ -4,23 +4,25 @@
     "Loose Order": "Loose Order",
     "Quantity": "Quantity",
     "drum(s)": "drum(s)",
+    "carton(s)": "carton(s)",
     "Order Now": "Order Now",
     "Bulk Order": "Bulk Order",
     "Best Price!": "Best Price!",
     "Bulk Order Now": "Bulk Order Now",
-    "Note :": "Note :",
+    "Note :": "Notes:",
     "Note1": "Maximum Quantity of Loose Order is 4 drums.",
-    "Note2": "Minimum Quantity for Bulk Order is 1 carton (1 carton = 6 drums)."
+    "Note2": "Minimum Quantity of Bulk Order is 1 carton (1 carton = 6 drums)."
   },
   "my": {
     "Loose Order": "Pesanan Kecil",
     "Quantity": "Kuantiti",
     "drum(s)": "dram",
+    "carton(s)": "karton",
     "Order Now": "Pesan Sekarang",
     "Bulk Order": "Pesanan Pukal",
     "Best Price!": "Harga Terbaik!",
     "Bulk Order Now": "Pesan Pukal Sekarang",
-    "Note :": "Nota :",
+    "Note :": "Nota:",
     "Note1": "Kuantiti Maksimum Pesanan Kecil adalah 4 dram.",
     "Note2": "Kuantiti Minimum Pesanan Pukal adalah 1 karton (1 karton = 6 dram)."
   },
@@ -28,11 +30,12 @@
     "Loose Order": "散订购",
     "Quantity": "数量",
     "drum(s)": "桶",
+    "carton(s)": "箱",
     "Order Now": "即刻订购",
     "Bulk Order": "批量订购",
     "Best Price!": "最佳价格！",
     "Bulk Order Now": "即刻批量订购",
-    "Note :": "注意 ：",
+    "Note :": "注意：",
     "Note1": "散订购的最大数量是4桶。",
     "Note2": "批量订购的最小数量是1箱 (1箱 = 6桶)。"
   }
@@ -69,7 +72,7 @@
         <div class="col-lg-2 text-center px-0">2</div>
         <div class="col-lg-1 text-center">+</div> -->
         <pre class="col-lg-5 text-center text-white mb-0 control-order-text"> <span @click="changeOrderQuantity('dec', 'bulk')" class="minplus">-</span>  <span class="text-orange">{{ bulkQuantity }}</span>  <span @click="changeOrderQuantity('inc', 'bulk')" class="minplus">+</span></pre>
-        <div class="col-lg-2 text-orange px-0">{{ $t('drum(s)') }}</div>
+        <div class="col-lg-2 text-orange px-0">{{ $t('carton(s)') }}</div>
       </div>
       <button @click="showOrderModal('bulk')" class="btn btn-bulk-order" data-toggle="modal" :data-target="'#'+cardTitle+'-bulk-outside-modal'">
         {{ $t('Bulk Order Now') }}

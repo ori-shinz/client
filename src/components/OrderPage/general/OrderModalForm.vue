@@ -14,7 +14,17 @@
     "Notes:": "Notes:",
     "note1": "Incomplete information will not be entertained.",
     "note2": "Free Samples may be discontinued at any time without prior notice.",
-    "note3": "Every company or individual is only entitled to make one-time Free Sample request."
+    "note3": "Every company or individual is only entitled to make one-time Free Sample request.",
+    "label": {
+      "text1": "I hereby confirm that I have read and understand the",
+      "text2": "Privacy Policy",
+      "text3": "and the",
+      "text4": "Terms of Service",
+      "text5": "and I agree and consent to the",
+      "text6": "Privacy Policy",
+      "text7": "and the",
+      "text8": "Terms of Service"
+    }
   },
   "my": {
     "Contact Person": "Orang untuk Dihubungi",
@@ -30,7 +40,17 @@
     "Notes:": "Notes:",
     "note1": "Butiran yang tidak lengkap tidak akan dilayan.",
     "note2": "Sampel Percuma akan dihentikan pada bila-bila masa tanpa notis terdahulu.",
-    "note3": "Permintaan sampel percuma adalah terhad untuk setiap syarikat atau individu sahaja."
+    "note3": "Permintaan sampel percuma adalah terhad untuk setiap syarikat atau individu sahaja.",
+    "label": {
+      "text1": "Saya dengan ini mengesahkan bahawa saya telah membaca dan memahami",
+      "text2": "Dasar Privasi",
+      "text3": "dan",
+      "text4": "Syarat Perkhidmatan",
+      "text5": "Saya menerima dan bersetuju untuk terikat dengan",
+      "text6": "Dasar Privasi",
+      "text7": "dan",
+      "text8": "Syarat Perkhidmatan"
+    }
   },
   "cn": {
     "Contact Person": "联系人",
@@ -46,7 +66,17 @@
     "Notes:": "注意:",
     "note1": "不完整的信息将不予受理。",
     "note2": "我们保留随时终止免费样本的权利，恕不另行通知。",
-    "note3": "每个公司或个人仅有权进行一次性免费样品申请。"
+    "note3": "每个公司或个人仅有权进行一次性免费样品申请。",
+    "label": {
+      "text1": "我在此确认已阅读并理解本",
+      "text2": "隐私政策",
+      "text3": "和本",
+      "text4": "服务条款",
+      "text5": "我同意并接受本",
+      "text6": "隐私政策",
+      "text7": "和本",
+      "text8": "服务条款"
+    }
   }
 }
 </i18n>
@@ -172,25 +202,25 @@
       </div>
     </div>
     <div class="form-row mb-3">
-      <div
-        class="col-10 mx-auto text-center disclaimer-text"
-      >{{ $t('After') }}</div>
-    </div>
-    <div class="form-row mb-3">
       <div class="col-11 mx-auto text-center disclaimer-text pl-3">
         <div class="form-check">
           <input class="form-check-input bg-brown" type="checkbox" id="defaultCheck1" required />
-          <label
-            class="form-check-label"
-            for="defaultCheck1"
-          >{{ $t('Hereby') }}</label>
+          <label class="form-check-label" for="defaultCheck1">
+            <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text2') }}</router-link>
+              {{ $t('label.text3') }}
+              <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>.
+              {{ $t('label.text5') }}
+              <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
+              {{ $t('label.text7') }}
+              <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
+          </label>
         </div>
       </div>
     </div>
     <div class="form-row mb-5">
       <button class="btn btn-lg btn-orange form-submit col-4 mx-auto">{{ $t('Submit') }}</button>
     </div>
-    <div class="form-row mb-4 disclaimer-text text-left">
+    <div class="form-row mb-4 disclaimer-text text-left" v-if="note">
       <p class="col-12">{{ $t('Notes:') }}</p>
       <ul>
         <li>{{ $t('note1') }}</li>
@@ -205,7 +235,7 @@
 import computedCreator from '@/helpers/computedCreator.js'
 export default {
   name: 'OrderModalForm',
-  props: ['isFree'],
+  props: ['isFree', 'note'],
   methods: {
     changeState (payload) {
       this.$store.commit('formOrder/SET_GENERAL_STATE', payload)
@@ -242,6 +272,14 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: #ffca65;
+}
+
+a:hover {
+  color: white;
+}
+
 .md-input {
   border: 0 !important;
   padding-left: 0;

@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "Order Instruction:": "Order Instruction:",
+    "Order Instruction:": "Order Instructions:",
     "Instruction1": "Please bank-in the Total Price to the following Bank Account.",
     "Instruction2": "Upload your bank-in slip using the following “Upload Bank-in Slip” field.",
     "Instruction3": "Fill in other required fields.",
@@ -34,7 +34,7 @@
 </i18n>
 
 <template>
-  <div class="row mb-2 instruction-text text-left">
+  <div class="row instruction-text text-left">
     <div class="col-6">
       {{ $t('Order Instruction:') }}
       <ol style="padding-left: 1.25rem">
@@ -59,6 +59,10 @@ export default {
 </script>
 
 <style scoped>
+p {
+  margin-bottom: 0px;
+}
+
 .instruction-text {
   font-size: 1rem;
   font-stretch: normal;

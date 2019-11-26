@@ -15,7 +15,7 @@
 <template>
   <section id="main-board">
     <Navbar />
-    <div class="container pb-5">
+    <div class="container pb-3">
       <!-- Snow wash shampoo text -->
       <Heading :message="$t('heading')"></Heading>
 

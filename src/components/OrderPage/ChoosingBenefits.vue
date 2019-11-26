@@ -40,7 +40,7 @@
 </i18n>
 
 <template>
-  <div class="container mbc-lg-150">
+  <div class="container pb-5">
     <div class="row justify-content-around">
       <div class="col-sm-12 col-md-5 text-left flex-column">
         <p class="choosing-title">

@@ -39,7 +39,7 @@
       <div class="col-3">{{ $t('Selected Region') }}</div>
       <div class="col-3">{{ $t(getRegionType) }}</div>
       <div class="col-3">{{ $t('Price') }}</div>
-      <div class="col-3 text-right">{{ productPrice }} RM</div>
+      <div class="col-3 text-right">RM {{ productPrice }}</div>
     </div>
     <div class="row text-content mb-3">
       <div class="col-3 ml-auto">{{ $t('Delivery Charges') }}</div>
@@ -47,7 +47,7 @@
     </div>
     <div class="row text-content mb-4">
       <div class="col-3 ml-auto total">{{ $t('Total Price') }}</div>
-      <div class="col-3 text-right total text-orange">{{ totalPrice }} RM</div>
+      <div class="col-3 text-right total text-orange"> RM {{ totalPrice }}</div>
     </div>
   </Fragment>
 </template>
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     deliveryPrice () {
-      return this.$store.state.formOrder.deliveryPrice ? this.$store.state.formOrder.deliveryPrice + ' RM' : this.$t('Free of Charge')
+      return this.$store.state.formOrder.deliveryPrice ? 'RM ' + this.$store.state.formOrder.deliveryPrice : this.$t('Free of Charge')
     },
     totalPrice () {
       return this.$store.getters['formOrder/getTotalPrice']

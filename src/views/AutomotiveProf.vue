@@ -3,7 +3,7 @@
     <MainBoard :bucket-img="bucketImg"/>
     <!-- free sample component -->
     <section id="free-sample">
-      <FreeSample />
+      <FreeSample :note="true" />
     </section>
     <!-- why choose us component -->
     <section id="why-us">
@@ -16,7 +16,7 @@
     </section>
     <!-- bottom sample component -->
     <section id="bottom">
-      <div class="container pb-5">
+      <div class="container pb-3">
         <CardBecomeAgent />
         <BottomCarShine />
         <Footer />
