@@ -126,14 +126,14 @@
         <p class="step-text-md">{{ $t('step4.desc1') }}</p>
       </div>
     </div>
-    <div class="row justify-content-center mbc-lg-100 text-left">
+    <!-- <div class="row justify-content-center mbc-lg-100 text-left">
       <div class="or-contain mx-auto">
         <p class="or-stir">
           <span class="content">{{ $t('step4.desc2') }}</span> <br/>
           {{ $t('step4.desc3') }}
         </p>
       </div>
-    </div>
+    </div> -->
   </Fragment>
 </template>
 

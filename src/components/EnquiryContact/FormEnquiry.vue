@@ -73,7 +73,7 @@
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
               <select class="form-control md-input text-content">
-                <option value="none" selected disable hidden>{{ $t('Select Enquery')}}</option>
+                <option value="none" selected disable hidden>{{ $t('Select Enquiry')}}</option>
                 <option>Enquiry</option>
                 <option>Contact</option>
               </select>
@@ -97,10 +97,12 @@
               />
             </div>
             <div class="col-md-2 pl-3 align-items-end d-flex justify-content-end">
-              <select class="form-control md-input text-content">
-                <option>( +60 ) MY</option>
-                <option>( +62 ) ID</option>
-              </select>
+              <input
+                type="email"
+                class="form-control md-input"
+                placeholder="+60"
+                required
+              />
             </div>
             <div class="col-md-4 pl-3">
               <input

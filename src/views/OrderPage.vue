@@ -34,7 +34,7 @@
       <section id="pricing-details">
         <div class="container-fluid">
 
-          <Heading>{{ $t('Pricing Details') }}</Heading>
+          <Heading :message="$t('Pricing Details')" />
 
           <!-- Select Region to Show Detail Price -->
           <div class="row mb-10 pricing-detail-card mx-3 py-4 justify-content-center">
@@ -69,6 +69,8 @@
             <div v-else-if="region === 'outsideMalaysia'">
               <OutsideMalaysiaOrderCard :card-title="'eco'"/>
               <OutsideMalaysiaOrderCard :card-title="'gold'"/>
+            </div>
+            <div v-else>
             </div>
           </Fragment>
 
@@ -105,7 +107,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: 'westMalaysia'
+      region: ''
     }
   },
   methods: {

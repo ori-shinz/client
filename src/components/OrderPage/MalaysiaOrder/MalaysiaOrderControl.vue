@@ -5,7 +5,7 @@
     "Quantity": "Quantity",
     "Price": "Price",
     "Delivery Charges": "Delivery Charges",
-    "drum": "drum",
+    "drum": "drum(s)",
     "Order": "Order",
     "Bulk Order": "Bulk Order",
     "Best Price!": "Best Price!",
@@ -17,7 +17,8 @@
     "Note2": "Maximum Quantity of Loose Order is 4 drums.",
     "Note3": "Minimum Quantity for Bulk Order is 1 carton",
     "Note32": "(1 carton = 6 drums).",
-    "Note4": "Orders will normally be delivered within 10 Working Days (West Malaysia) and 14 Working Days (East Malaysia) upon receipt of payment. Working Days exclude Fridays and Public Holidays in Malaysia."
+    "Note4": "Orders will normally be delivered within 10 Working Days (West Malaysia) upon receipt of payment. Working Days exclude Fridays and Public Holidays in Malaysia.",
+    "Note5": "Orders will normally be delivered within 14 Working Days (East Malaysia) upon receipt of payment. Working Days exclude Fridays and Public Holidays in Malaysia."
   },
   "my": {
     "Loose Order": "Pesanan Kecil",
@@ -36,7 +37,8 @@
     "Note2": "Kuantiti Maksimum Pesanan Kecil adalah 4 dram.",
     "Note3": "Kuantiti Minimum Pesanan Pukal adalah 1 karton",
     "Note32": "(1 karton = 6 dram).",
-    "Note4": "Pesanan biasanya akan dihantar dalam masa 10 Hari Bekerja (Semenanjung Malaysia) dan 14 Hari Bekerja (Sabah & Sarawak) setelah bayaran diterima. Hari Bekerja tidak termasuk Hari Jumaat dan Cuti Umum di Malaysia."
+    "Note4": "Pesanan biasanya akan dihantar dalam masa 10 Hari Bekerja (Semenanjung Malaysia) setelah bayaran diterima. Hari Bekerja tidak termasuk Hari Jumaat dan Cuti Umum di Malaysia.",
+    "Note5": "Pesanan biasanya akan dihantar dalam masa 14 Hari Bekerja (Sabah & Sarawak) setelah bayaran diterima. Hari Bekerja tidak termasuk Hari Jumaat dan Cuti Umum di Malaysia."
   },
   "cn": {
     "Loose Order": "散订购",
@@ -55,7 +57,8 @@
     "Note2": "散订购的最大数量是4桶。",
     "Note3": "批量订购的最小数量是1箱",
     "Note32": "(1箱 = 6桶)。",
-    "Note4": "订单通常会在收到付款后的10个工作日（西马）和14个工作日（东马）内交付。工作日不包括马来西亚的星期五和公众假期。"
+    "Note4": "订单通常会在收到付款后的10个工作日（西马）。工作日不包括马来西亚的星期五和公众假期。",
+    "Note5": "订单通常会在收到付款后的和14个工作日（东马）内交付。工作日不包括马来西亚的星期五和公众假期。"
   }
 }
 </i18n>
@@ -84,11 +87,23 @@
             <td>{{ tablePrice(3) }}.00</td>
             <td>{{ tablePrice(4) }}.00</td>
           </tr>
-          <tr>
-            <td>11.00</td>
+          <tr v-if="regionType === 'west'">
             <td>21.00</td>
-            <td>28.50</td>
-            <td>32.00</td>
+            <td>21.00</td>
+            <td>21.00</td>
+            <td>21.00</td>
+          </tr>
+          <tr v-if="regionType === 'east' && cardTitle === 'eco'">
+            <td>21.00</td>
+            <td>34.00</td>
+            <td>48.00</td>
+            <td>61.00</td>
+          </tr>
+          <tr v-if="regionType === 'east' && cardTitle === 'gold'">
+            <td>21.00</td>
+            <td>36.00</td>
+            <td>49.00</td>
+            <td>66.00</td>
           </tr>
           <tr>
             <td class="pr-0">
@@ -144,7 +159,8 @@
           <li>{{ $t('Note1') }}</li>
           <li>{{ $t('Note2') }}</li>
           <li>{{ $t('Note3') }} <br />{{ $t('Note32') }}</li>
-          <li>{{ $t('Note4') }}</li>
+          <li v-if="regionType === 'west'">{{ $t('Note4') }}</li>
+          <li v-if="regionType === 'east'">{{ $t('Note5') }}</li>
         </ul>
       </div>
     </div>

@@ -65,7 +65,7 @@
             <OrderModalInstruction v-if="regionType != 'outside'" />
 
             <!-- Form Customer -->
-            <OrderModalForm />
+            <OrderModalForm :note="note" />
 
           </div>
         </div>
@@ -85,7 +85,7 @@ import FreeSampleRequest from '@/components/OrderPage/general/FreeSampleRequest'
 
 export default {
   name: 'OrderModal',
-  props: ['cardTitle', 'orderType', 'regionType', 'titleModal', 'descModal'],
+  props: ['cardTitle', 'orderType', 'regionType', 'titleModal', 'descModal', 'note'],
   components: {
     OrderModalForm,
     OrderModalPriceTotal,

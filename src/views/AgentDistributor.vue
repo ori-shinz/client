@@ -18,7 +18,7 @@
   <div class="aboutus">
     <NavBar></NavBar>
 
-    <section id="title" class="mbc-lg-400">
+    <section id="title" class="mb-5">
       <div class="container my-5">
         <div class="row">
           <div class="col-sm-12 boxcontent mb-5">
@@ -35,7 +35,7 @@
 
     <div id="backgoundplay">
 
-      <section id="benefit" class="mbc-lg-200">
+      <section id="benefit" class="mb-5">
         <Benefit></Benefit>
       </section>
 

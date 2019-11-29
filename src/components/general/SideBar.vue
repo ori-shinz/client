@@ -42,7 +42,7 @@
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
       <router-link :to="`/${$i18n.locale}`">{{ $t('mainPage') }}</router-link>
       <router-link :to="`/${$i18n.locale}/automotive-professional`">{{ $t('automotiveProfessional') }}</router-link>
-      <router-link :to="`/${$i18n.locale}/product-detail`">{{ $t('productDetails') }}</router-link>
+      <router-link :to="`/${$i18n.locale}/product-details`">{{ $t('productDetails') }}</router-link>
       <router-link :to="`/${$i18n.locale}/order`">{{ $t('order') }}</router-link>
       <router-link :to="`/${$i18n.locale}/agent-distributor-oem`">{{ $t('agentDistributorOEM') }}</router-link>
       <router-link :to="`/${$i18n.locale}/about-us`">{{ $t('aboutUs') }}</router-link>
