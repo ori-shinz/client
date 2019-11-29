@@ -39,7 +39,7 @@
       {{ $t('Order Instruction:') }}
       <ol style="padding-left: 1.25rem">
         <li>{{ $t('Instruction1') }}</li>
-        <li>{{ $t('Instruction2') }}</li>
+        <!-- <li>{{ $t('Instruction2') }}</li> -->
         <li>{{ $t('Instruction3') }}</li>
         <li>{{ $t('Instruction4') }}</li>
       </ol>

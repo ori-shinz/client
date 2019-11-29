@@ -70,6 +70,8 @@
               <OutsideMalaysiaOrderCard :card-title="'eco'"/>
               <OutsideMalaysiaOrderCard :card-title="'gold'"/>
             </div>
+            <div v-else>
+            </div>
           </Fragment>
 
           <!-- Outside Malaysia Detail Pricing -->
@@ -105,7 +107,7 @@ export default {
   data () {
     return {
       bucketImg: 'no-text',
-      region: 'westMalaysia'
+      region: ''
     }
   },
   methods: {

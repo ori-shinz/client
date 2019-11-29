@@ -95,10 +95,24 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          {{ tankSize }}
+          {{ selectSize }}
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <ul class="dropdown-menu" aria-labelledby="dLabel" v-if="note">
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 100
+          })"
+          >100 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 0
+          })"
+          >Others Sizes of Snow Wash Tank/Machine</li>
+        </ul>
+        <ul class="dropdown-menu" aria-labelledby="dLabel" v-if="!note">
           <li
             @click="changeState({
             field: 'tankSize',
@@ -156,14 +170,16 @@
           required
         />
       </div>
-      <div class="col-md-2 align-items-end d-flex justify-content-end">
-        <select class="form-control md-input text-content" v-model="countryCode">
-          <option value="+60">(+60) MY</option>
-          <option value="+62">(+62) ID</option>
-          <option value="+86">(+86) CHI</option>
-        </select>
+      <div class="col-md-1 align-items-end d-flex justify-content-end">
+        <input
+          type="number"
+          v-model.lazy="countryCode"
+          class="form-control md-input"
+          placeholder="+62"
+          required
+        />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <input
           type="text"
           v-model.lazy="contact"
@@ -201,7 +217,7 @@
         />
       </div>
     </div>
-    <div class="form-row mb-3">
+    <div class="form-row mb-5">
       <div class="col-11 mx-auto text-center disclaimer-text pl-3">
         <div class="form-check">
           <input class="form-check-input bg-brown" type="checkbox" id="defaultCheck1" required />
@@ -260,6 +276,13 @@ export default {
     ]),
     title () {
       return this.$store.state.formOrder.title
+    },
+    selectSize () {
+      if (this.note) {
+        return 'Select Size of Your Snow Wash Tank'
+      } else {
+        return this.tankSize
+      }
     }
   },
   mounted () {
