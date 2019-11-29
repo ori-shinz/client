@@ -25,7 +25,7 @@
 </i18n>
 
 <template>
-  <div class="container mbc-lg-200">
+  <div class="container pb-5">
     <div class="row border mask">
       <div class="col-sm-9 text-left pl-5 pt-3 pb-2">
         <h5 class="free-title"><span class="text-orange">{{ $t('Get') }}</span>
@@ -40,7 +40,7 @@
         </button>
       </div>
     </div>
-    <OrderModal card-title="try" order-type="free" region-type="sample" title-modal="Free Sample Confirmation" desc-modal="Free Sample Requirements" />
+    <OrderModal card-title="try" order-type="free" region-type="sample" title-modal="Free Sample Confirmation" desc-modal="Free Sample Requirements" :note="note" />
   </div>
 </template>
 
@@ -48,6 +48,7 @@
 import OrderModal from '@/components/OrderPage/general/OrderModal'
 export default {
   name: 'FreeSample',
+  props: ['note'],
   components: {
     OrderModal
   }

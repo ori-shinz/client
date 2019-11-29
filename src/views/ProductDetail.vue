@@ -50,7 +50,7 @@
     <div class="bg-wrapper">
       <div class="container">
         <section id="key-benefit">
-          <div class="container mbc-lg-200">
+          <div class="container pb-3">
             <!-- why choose us -->
             <!-- key benefits -->
             <KeyBenefits />

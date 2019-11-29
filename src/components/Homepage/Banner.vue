@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "title": "Shampo Wash Shampoo <br> for Automotive <br> Professional Use",
+    "title": "Snow Wash Shampoo <br> for Automotive <br> Professional Use",
     "content": "Why Choose ORI-SHINZ? >>"
   },
   "my": {

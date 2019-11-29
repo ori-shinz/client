@@ -94,13 +94,16 @@
                 required
               />
             </div>
-            <div class="col-md-2 pl-3 align-items-end d-flex justify-content-end">
-              <select class="form-control md-input text-content">
-                <option>( +60 ) MY</option>
-                <option>( +62 ) ID</option>
-              </select>
+            <div class="col-md-1 pl-3 align-items-end d-flex justify-content-end">
+              <input
+                type="number"
+                v-model.lazy="countryCode"
+                class="form-control md-input"
+                placeholder="+62"
+                required
+              />
             </div>
-            <div class="col-md-4 pl-3">
+            <div class="col-md-5 pl-3">
               <input
                 type="text"
                 class="form-control md-input"
