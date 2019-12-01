@@ -48,7 +48,6 @@ export default {
   },
   actions: {
     orderProduct ({ state }, payload) {
-      console.log('YOU ARE ORDERING')
       const { title, contactPerson, companyAddress, companyName, countryCode, deliveryAddress, email, contact, information } = state
       let formData = {
         contactPerson,
@@ -85,7 +84,8 @@ export default {
           region: state.region,
           productType: state.productType,
           deliveryPrice: state.deliveryPrice,
-          tankSize: state.tankSize
+          tankSize: state.tankSize,
+          title: 'Free Sample'
         }
       } else if (title.includes('west') || title.includes('east')) {
         formData = {
@@ -105,7 +105,8 @@ export default {
           orderType: state.orderType,
           productType: state.productType,
           quantity,
-          region: state.region
+          region: state.region,
+          title: 'Outside Malaysia Order'
         }
       }
       axios({
