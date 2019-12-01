@@ -124,6 +124,9 @@ export default {
     Heading,
     CardBecomeAgent,
     Footer
+  },
+  created () {
+    this.changeRegion('westMalaysia')
   }
 }
 </script>
