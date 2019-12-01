@@ -42,9 +42,4 @@ export default {
 </script>
 
 <style scoped>
-.pricing-detail-card {
-  border-radius: 10px;
-  border: solid 1px #ffca65;
-  background-color: var(--black);
-}
 </style>

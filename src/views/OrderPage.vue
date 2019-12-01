@@ -73,11 +73,6 @@
             <div v-else>
             </div>
           </Fragment>
-
-          <!-- Outside Malaysia Detail Pricing -->
-          <Fragment >
-
-          </Fragment>
         </div>
       </section>
 
@@ -132,6 +127,11 @@ export default {
 </script>
 
 <style>
+.pricing-detail-card {
+  border-radius: 10px;
+  border: solid 1px #ffca65;
+  background-color: black;
+}
 .region-select {
   font-size: 25px;
   font-weight: 500;
