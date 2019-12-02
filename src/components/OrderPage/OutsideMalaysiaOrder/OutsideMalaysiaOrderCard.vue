@@ -33,17 +33,9 @@ export default {
     showModal (type) {
       this.orderType = type
     }
-  },
-  created () {
-    this.$store.commit('formOrder/RESET_ORDERS')
   }
 }
 </script>
 
 <style scoped>
-.pricing-detail-card {
-  border-radius: 10px;
-  border: solid 1px #ffca65;
-  background-color: var(--black);
-}
 </style>

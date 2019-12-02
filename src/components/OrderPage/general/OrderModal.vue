@@ -117,7 +117,6 @@ export default {
         field: 'orderType',
         value: `${this.orderType}`
       })
-      console.log('called', this.orderType)
     }
   },
   mounted () {
