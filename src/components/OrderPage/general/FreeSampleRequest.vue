@@ -118,8 +118,7 @@ export default {
   },
   methods: {
     changeRegion (value) {
-      let deliveryPrice = 0
-      value === 'west' ? (deliveryPrice = 9) : (deliveryPrice = 12)
+      let deliveryPrice = 21
       this.$store.commit('formOrder/SET_GENERAL_STATE', {
         field: 'region',
         value

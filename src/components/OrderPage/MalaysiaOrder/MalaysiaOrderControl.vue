@@ -107,22 +107,22 @@
           </tr>
           <tr>
             <td class="pr-0">
-              <button class="btn-loose-order" @click="looseOrderModal(11.00, tablePrice(1), 1)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
+              <button class="btn-loose-order" @click="looseOrderModal(deliveryCharges(1), tablePrice(1), 1)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 {{ $t('Order') }}
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order" @click="looseOrderModal(21.00, tablePrice(2), 2)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
+              <button class="btn-loose-order" @click="looseOrderModal(deliveryCharges(2), tablePrice(2), 2)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 {{ $t('Order') }}
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order" @click="looseOrderModal(28.50, tablePrice(3), 3)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
+              <button class="btn-loose-order" @click="looseOrderModal(deliveryCharges(3), tablePrice(3), 3)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 {{ $t('Order') }}
               </button>
             </td>
             <td class="pr-0">
-              <button class="btn-loose-order" @click="looseOrderModal(32.00, tablePrice(4), 4)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
+              <button class="btn-loose-order" @click="looseOrderModal(deliveryCharges(4), tablePrice(4), 4)" data-toggle="modal" :data-target="'#'+cardTitle+'-loose-'+regionType+'-modal'">
                 {{ $t('Order') }}
               </button>
             </td>
@@ -213,6 +213,23 @@ export default {
   methods: {
     showOrderModal (type) {
       this.$emit('show-modal', type)
+    },
+    deliveryCharges (n) {
+      if (this.regionType === 'west') {
+        return 21.00
+      } else if (this.regionType === 'east') {
+        if (n === 1) {
+          return 21.00
+        } else if (n === 2) {
+          return 34.00
+        } else if (n === 3) {
+          return 48.00
+        } else if (n === 4) {
+          return 61.00
+        }
+      } else {
+        return 0
+      }
     },
     tablePrice (qty) {
       return this.loosePrice * qty
