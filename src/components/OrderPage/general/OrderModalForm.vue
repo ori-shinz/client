@@ -102,20 +102,6 @@
           <li
             @click="changeState({
             field: 'tankSize',
-            value: 100
-          })"
-          >100 L</li>
-          <li
-            @click="changeState({
-            field: 'tankSize',
-            value: 0
-          })"
-          >Others Sizes of Snow Wash Tank/Machine</li>
-        </ul>
-        <ul class="dropdown-menu" aria-labelledby="dLabel" v-if="!note">
-          <li
-            @click="changeState({
-            field: 'tankSize',
             value: 60
           })"
           >60 L</li>
@@ -134,9 +120,29 @@
           <li
             @click="changeState({
             field: 'tankSize',
-            value: 200
+            value: 100
           })"
-          >200 L</li>
+          >100 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 0
+          })"
+          >Others Sizes of Snow Wash Tank/Machine</li>
+        </ul>
+        <ul class="dropdown-menu" aria-labelledby="dLabel" v-else-if="!note">
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 100
+          })"
+          >100 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 0
+          })"
+          >Others Sizes of Snow Wash Tank/Machine</li>
         </ul>
       </div>
     </div>
@@ -222,6 +228,7 @@
         <div class="form-check">
           <input class="form-check-input bg-brown" type="checkbox" id="defaultCheck1" required />
           <label class="form-check-label" for="defaultCheck1">
+             {{ $t('label.text1') }}
             <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text2') }}</router-link>
               {{ $t('label.text3') }}
               <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>.

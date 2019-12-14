@@ -9,7 +9,7 @@
       "buttonText": "See Product Details"
     },
     "bottomCardRight": {
-      "title": "Become Our Agent/ Distributor/ OEM",
+      "title": "Become Our Agent / Distributor / OEM",
       "content": "Be Your Own Boss",
       "buttonText": "Join Now"
     }
@@ -23,7 +23,7 @@
       "buttonText": "Lihat Butiran Produk"
     },
     "bottomCardRight": {
-      "title": "Menjadi Agen/ Pengedar Kami/ OEM",
+      "title": "Menjadi Agen / Pengedar Kami / OEM",
       "content": "Jadilah Boss Anda Sendiri <br><br>",
       "buttonText": "Sertai Sekarang"
     }
@@ -37,7 +37,7 @@
       "buttonText": "查看产品详情"
     },
     "bottomCardRight": {
-      "title": "成为我们的代理商/ <br> 经销商/ OEM",
+      "title": "成为我们的代理商 / <br> 经销商 / OEM",
       "content": "自己当老板",
       "buttonText": "即刻加入"
     }
