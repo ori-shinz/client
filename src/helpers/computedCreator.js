@@ -5,7 +5,7 @@ function computedCreator (origin, fields) {
   fields.forEach(field => {
     computed[field] = {
       get: function () {
-        return store.state.formOrder[field]
+        return store.state[origin][field]
       },
       set: function (value) {
         store.commit(origin + '/SET_GENERAL_STATE', {
