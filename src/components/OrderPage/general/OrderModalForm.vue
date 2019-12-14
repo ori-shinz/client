@@ -257,7 +257,6 @@ export default {
       this.$store.commit('formOrder/SET_GENERAL_STATE', payload)
     },
     sendMail () {
-      console.log('im here guys')
       this.$store.dispatch('formOrder/orderProduct')
     }
   },

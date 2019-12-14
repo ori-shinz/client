@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="row">
-        <form class="text-white text-content px-5" style="width: 100%">
+        <form @submit.prevent="inputEnquiry" class="text-white text-content px-5" style="width: 100%">
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
               <select class="form-control md-input text-content">
@@ -80,6 +80,7 @@
             </div>
             <div class="col-md-6 pl-3">
               <input
+                v-model.lazy="contactPerson"
                 type="text"
                 class="form-control md-input"
                 :placeholder="$t('Contact Person')"
@@ -90,7 +91,8 @@
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
               <input
-                type="email"
+                v-model.lazy="companyName"
+                type="text"
                 class="form-control md-input"
                 :placeholder="$t('Company Name')"
                 required
@@ -98,7 +100,8 @@
             </div>
             <div class="col-md-2 pl-3 align-items-end d-flex justify-content-end">
               <input
-                type="email"
+                v-model.lazy="countryCode"
+                type="text"
                 class="form-control md-input"
                 placeholder="+60"
                 required
@@ -106,6 +109,7 @@
             </div>
             <div class="col-md-4 pl-3">
               <input
+                v-model.lazy="contactNumber"
                 type="text"
                 class="form-control md-input"
                 :placeholder="$t('Contact Number')"
@@ -116,6 +120,7 @@
           <div class="form-row mb-4">
             <div class="col-md-12 pr-3">
               <textarea
+                v-model.lazy="message"
                 rows="4" cols="50"
                 type="text"
                 class="form-control md-input"
@@ -152,8 +157,25 @@
 </template>
 
 <script>
-export default {
+import computedCreator from '@/helpers/computedCreator.js'
 
+export default {
+  name: 'FormEnquiry',
+  methods: {
+    inputEnquiry () {
+      this.$store.dispatch('formEnquiry/sendMail')
+    }
+  },
+  computed: {
+    ...computedCreator('formEnquiry', [
+      'contactPerson',
+      'companyName',
+      'enquiryType',
+      'countryCode',
+      'contactNumber',
+      'message'
+    ]),
+  }
 }
 </script>
 
