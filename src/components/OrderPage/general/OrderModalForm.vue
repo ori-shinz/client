@@ -231,6 +231,14 @@
     <div class="form-row mb-4">
       <div class="col-md-12">
         <input
+          v-if="isfree"
+          type="text"
+          class="form-control md-input"
+          placeholder="Additional Information for Your Free Sample (if any)"
+          v-model.lazy="information"
+        />
+        <input
+          v-else
           type="text"
           class="form-control md-input"
           :placeholder="$t('Additional')"
@@ -273,7 +281,7 @@
 import computedCreator from '@/helpers/computedCreator.js'
 export default {
   name: 'OrderModalForm',
-  props: ['isFree', 'note'],
+  props: ['isfree', 'note'],
   methods: {
     changeState (payload) {
       this.$store.commit('formOrder/SET_GENERAL_STATE', payload)

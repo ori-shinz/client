@@ -56,7 +56,7 @@
     </section>
 
     <section id="freeSample">
-      <FreeSample :note="true"></FreeSample>
+      <FreeSample :note="true" :isfree="true"></FreeSample>
     </section>
 
     <section id="gallery">

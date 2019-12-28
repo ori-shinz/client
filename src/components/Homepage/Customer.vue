@@ -22,8 +22,15 @@
     <div class="row justify-content-center">
       <div class="col-sm-12">
         <VueperSlides :infinite="false" :bullets="false" class="no-shadow" :visible-slides="3" :slide-ratio="1/4" slideMultiple autoplay>
-          <v-icon slot="arrowLeft" large style="color: #ffca65"> ◀︎ </v-icon>
-          <v-icon slot="arrowRight" large style="color: #ffca65"> ▶︎ </v-icon>
+        <!-- <template v-slot:arrow-left>
+          <i class="icon icon-arrow-left"></i> -->
+          <!-- <i class="icon icon-arrow-left"></i> -->
+          <!-- <i large style="color: #ffca65"> ◀︎ </i> -->
+        <!-- </template> -->
+        <!-- <template v-slot:arrow-right>
+          <i class="icon icon-arrow-left"></i>
+        </template> -->
+          <!-- <v-icon slot="arrowRight" large style="color: #ffca65"> ▶︎ </v-icon> -->
           <VueperSlide v-for="(slide, index) in slides" :key="index" :title="slide.link" :content="slide.content"></VueperSlide>
         </VueperSlides>
       </div>
@@ -44,31 +51,31 @@ export default {
   data () {
     return {
       slides: [{
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Omar</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Cz</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Sam</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Omar</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Cz</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Sam</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Omar</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Cz</p>'
       }, {
-        link: '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>',
+        link: '',
         content: '<p style="color: white">Sam</p>'
       }]
     }
@@ -92,5 +99,11 @@ iframe {
   border-radius: 10px;
   border: solid 1px #ffca65;
   background-color: black;
+}
+/* .vueperslides__arrow svg {
+  color: white !important;
+} */
+svg {
+  color: white !important;
 }
 </style>
