@@ -9,7 +9,7 @@
       "buttonText": "See Product Details"
     },
     "bottomCardRight": {
-      "title": "Become Our Agent/ Distributor/ OEM",
+      "title": "Become Our Agent / Distributor / OEM",
       "content": "Be Your Own Boss",
       "buttonText": "Join Now"
     }
@@ -122,7 +122,7 @@ export default {
   methods: {
     triggerroute (page) {
       if (page === 'one') {
-        this.$router.push(`/${this.$i18n.locale}/product-detail`)
+        this.$router.push(`/${this.$i18n.locale}/product-details`)
       } else if (page === 'two') {
         this.$router.push(`/${this.$i18n.locale}/agent-distributor-oem`)
       }

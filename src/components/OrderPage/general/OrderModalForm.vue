@@ -102,6 +102,24 @@
           <li
             @click="changeState({
             field: 'tankSize',
+            value: 60
+          })"
+          >60 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 70
+          })"
+          >70 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
+            value: 80
+          })"
+          >80 L</li>
+          <li
+            @click="changeState({
+            field: 'tankSize',
             value: 100
           })"
           >100 L</li>
@@ -170,16 +188,19 @@
           required
         />
       </div>
+      <div class="col-md-1 align-items-center d-flex justify-content-end">
+        <label class="form-check-label">+</label>
+      </div>
       <div class="col-md-1 align-items-end d-flex justify-content-end">
         <input
           type="number"
           v-model.lazy="countryCode"
           class="form-control md-input"
-          placeholder="+62"
+          placeholder="62"
           required
         />
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
         <input
           type="text"
           v-model.lazy="contact"
@@ -222,13 +243,14 @@
         <div class="form-check">
           <input class="form-check-input bg-brown" type="checkbox" id="defaultCheck1" required />
           <label class="form-check-label" for="defaultCheck1">
+            {{ $t('label.text1') }}
             <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text2') }}</router-link>
-              {{ $t('label.text3') }}
-              <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>.
-              {{ $t('label.text5') }}
-              <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
-              {{ $t('label.text7') }}
-              <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
+            {{ $t('label.text3') }}
+            <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>
+            {{ $t('label.text5') }}
+            <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
+            {{ $t('label.text7') }}
+            <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
           </label>
         </div>
       </div>

@@ -134,13 +134,14 @@
               <div class="form-check">
                 <input class="form-check-input bg-brown" type="checkbox" value="true" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
+                  {{ $t('label.text1') }}
                   <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text2') }}</router-link>
-                    {{ $t('label.text3') }}
-                    <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>.
-                    {{ $t('label.text5') }}
-                    <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
-                    {{ $t('label.text7') }}
-                    <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
+                  {{ $t('label.text3') }}
+                  <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>
+                  {{ $t('label.text5') }}
+                  <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
+                  {{ $t('label.text7') }}
+                  <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
                 </label>
               </div>
             </div>
@@ -174,7 +175,7 @@ export default {
       'countryCode',
       'contactNumber',
       'message'
-    ]),
+    ])
   }
 }
 </script>
