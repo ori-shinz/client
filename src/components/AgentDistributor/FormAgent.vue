@@ -72,6 +72,7 @@
               <input
                 type="text"
                 class="form-control md-input"
+                v-model.lazy="contactPerson"
                 :placeholder="$t('Full Name')"
                 required
               />
@@ -80,6 +81,7 @@
               <input
                 type="text"
                 class="form-control md-input"
+                v-model.lazy="email"
                 :placeholder="$t('Email Address')"
                 required
               />
@@ -90,16 +92,20 @@
               <input
                 type="email"
                 class="form-control md-input"
+                v-model.lazy="companyName"
                 :placeholder="$t('Company Name')"
                 required
               />
             </div>
-            <div class="col-md-1 pl-3 align-items-end d-flex justify-content-end">
+            <div class="col-md-1 align-items-center d-flex justify-content-end">
+              <label class="form-check-label">+</label>
+            </div>
+            <div class="col-md-1 align-items-end d-flex justify-content-end">
               <input
                 type="number"
                 v-model.lazy="countryCode"
                 class="form-control md-input"
-                placeholder="+62"
+                placeholder="62"
                 required
               />
             </div>
@@ -107,6 +113,7 @@
               <input
                 type="text"
                 class="form-control md-input"
+                v-model.lazy="contactPerson"
                 :placeholder="$t('Contact Number')"
                 required
               />
@@ -141,8 +148,20 @@
 </template>
 
 <script>
-export default {
+import computedCreator from '@/helpers/computedCreator.js'
 
+export default {
+  name: 'FormAgent',
+  computed: {
+    ...computedCreator('formOrder', [
+      'contactPerson',
+      'companyName',
+      'email',
+      'contact',
+      'countryCode',
+      'consent'
+    ])
+  }
 }
 </script>
 

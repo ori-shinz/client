@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "content": "Our commitment to quality defines us.<br><br>We have been established since 1999 and have dedicated many years inventing and improving a unique and proprietary snow wash shampoo formula for Automotive Professional Use such as car care centres, car detailers, second hand car dealers and car manufacturers.<br><br>In 1999, we made a humble beginning in the car wash products manufacturing arena. With our dedication, we have come out with a snow wash shampoo formula with top notch quality at competitive price, that made \"NOW EVERYCAR CAN SHINE\" possible today.<br><br>We tailor-make our products to Automotive Professionals' needs and distribute our products via various channels including OEM, authorised distributorship, car wash centres, car detailers, car care products and car accessories suppliers.<br><br>",
+    "content": "Our commitment to quality defines us.<br><br>We have been established since 1999 and have dedicated many years inventing and improving a unique and proprietary snow wash shampoo formula for Automotive Professional Use such as car care centres, car detailers, second hand car dealers and car manufacturers.<br><br>In 1999, we made a humble beginning in the car care products manufacturing arena. With our dedication, we have come out with a snow wash shampoo formula with top notch quality at competitive price, that made \"NOW EVERYCAR CAN SHINE\" possible today.<br><br>We tailor-make our products to Automotive Professionals' needs and distribute our products via various channels including OEM, authorised distributorship, car wash centres, car detailers, car care products and car accessories suppliers.<br><br>",
     "Enquiry & Contact": "Enquiry & Contact",
     "bottomCardLeft": {
       "title": "Key Benefits for Automotive Professional",
@@ -9,7 +9,7 @@
       "buttonText": "See Product Details"
     },
     "bottomCardRight": {
-      "title": "Become Our Agent /Distributor / OEM",
+      "title": "Become Our Agent / Distributor / OEM",
       "content": "Be Your Own Boss",
       "buttonText": "Join Now"
     }
@@ -67,8 +67,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 Enquiry-Contact mx-5">
-            {{ $t('Enquiry & Contact') }}
+          <div class="col-sm-12 Enquiry-Contact">
+            <div class="content">
+              <router-link :to="`/${$i18n.locale}/enquiry-and-contact`">{{ $t('Enquiry & Contact') }} >></router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -82,12 +84,14 @@
             :title="$t('bottomCardLeft.title')"
             :content="$t('bottomCardLeft.content')"
             :buttonText="$t('bottomCardLeft.buttonText')"
+            directPage='one'
             @triggerroute="triggerroute"
           />
           <BottomCard
             :title="$t('bottomCardRight.title')"
             :content="$t('bottomCardRight.content')"
             :buttonText="$t('bottomCardRight.buttonText')"
+            directPage='two'
             @triggerroute="triggerroute"
           />
         </div>
@@ -116,10 +120,9 @@ export default {
   },
   methods: {
     triggerroute (page) {
-      console.log(page)
-      if (page === 'See Product Details') {
-        this.$router.push(`/${this.$i18n.locale}/product-detail`)
-      } else if (page === 'Join Now') {
+      if (page === 'one') {
+        this.$router.push(`/${this.$i18n.locale}/product-details`)
+      } else if (page === 'two') {
         this.$router.push(`/${this.$i18n.locale}/agent-distributor-oem`)
       }
     }
@@ -128,15 +131,24 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: #ffca65;
+}
+
+a:hover {
+  color: white;
+}
+
 .Enquiry-Contact {
+  width: 261px;
   height: 38px;
+  text-align: justify;
   font-size: 30px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: left;
   color: #ffca65;
 }
 

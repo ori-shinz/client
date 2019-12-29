@@ -24,7 +24,9 @@
       </div>
       <div class="col-sm-3">
         <img src="~@/assets/images/icons/cont2.svg" class="img-fluid mb-5">
-        <div class="free-content">+60 4 4582 888</div>
+        <div class="free-content">
+          <a href="tel:60-4-4582-888">+60 4 4582 888</a>
+        </div>
       </div>
       <div class="col-sm-3">
         <img src="~@/assets/images/icons/cont3.svg" class="img-fluid mb-5">

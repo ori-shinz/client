@@ -2,13 +2,13 @@
 {
   "en": {
     "Order Instruction:": "Order Instructions:",
-    "Instruction1": "Please bank-in the Total Price to the following Bank Account.",
+    "Instruction1": "Please bank-in the Delivery Charges to the following Bank Account.",
     "Instruction2": "Upload your bank-in slip using the following “Upload Bank-in Slip” field.",
     "Instruction3": "Fill in other required fields.",
     "Instruction4": "Click “Submit” to complete your Order.",
     "Bank": "Bank: CIMB Bank Berhad",
     "Name": "Name: Diamond King (M) Sdn. Bhd.",
-    "Account": "Account Number: 8006574415"
+    "Account": "Account Number: 8603857862"
   },
   "my": {
     "Order Instruction:": "Cara Membuat Permintaan Sampel:",
@@ -18,7 +18,7 @@
     "Instruction4": "Klik “Hantar” untuk melengkapkan Permintaan Sampel anda.",
     "Bank": "Bank: CIMB Bank Berhad",
     "Name": "Nama Penerima: Diamond King (M) Sdn. Bhd.",
-    "Account": "Nombor Akaun: 8006574415"
+    "Account": "Nombor Akaun: 8603857862"
   },
   "cn": {
     "Order Instruction:": "样品申请说明:",
@@ -28,7 +28,7 @@
     "Instruction4": "单击 “提交” 以完成您的样品申请。",
     "Bank": "银行: CIMB Bank Berhad",
     "Name": "户名: Diamond King (M) Sdn. Bhd.",
-    "Account": "户号: 8006574415"
+    "Account": "户号: 8603857862"
   }
 }
 </i18n>

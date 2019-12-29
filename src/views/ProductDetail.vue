@@ -7,7 +7,7 @@
       "buttonText": "See Product Details"
     },
     "bottomCardRight": {
-      "title": "Become Our Agent /Distributor / OEM",
+      "title": "Become Our Agent / Distributor / OEM",
       "content": "Be Your Own Boss",
       "buttonText": "Join Now"
     }
@@ -71,12 +71,14 @@
             :title="$t('bottomCardLeft.title')"
             :content="$t('bottomCardLeft.content')"
             :buttonText="$t('bottomCardLeft.buttonText')"
+            directPage='one'
             @triggerroute="triggerroute"
           />
           <BottomCard
             :title="$t('bottomCardRight.title')"
             :content="$t('bottomCardRight.content')"
             :buttonText="$t('bottomCardRight.buttonText')"
+            directPage='two'
             @triggerroute="triggerroute"
           />
         </div>
@@ -116,10 +118,9 @@ export default {
   },
   methods: {
     triggerroute (page) {
-      console.log(page)
-      if (page === 'See Product Details') {
-        this.$router.push(`/${this.$i18n.locale}/product-detail`)
-      } else if (page === 'Join Now') {
+      if (page === 'one') {
+        this.$router.push(`/${this.$i18n.locale}/product-details`)
+      } else if (page === 'two') {
         this.$router.push(`/${this.$i18n.locale}/agent-distributor-oem`)
       }
     }

@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="row">
-        <form class="text-white text-content px-5" style="width: 100%">
+        <form @submit.prevent="inputEnquiry" class="text-white text-content px-5" style="width: 100%">
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
               <select class="form-control md-input text-content">
@@ -80,6 +80,7 @@
             </div>
             <div class="col-md-6 pl-3">
               <input
+                v-model.lazy="contactPerson"
                 type="text"
                 class="form-control md-input"
                 :placeholder="$t('Contact Person')"
@@ -90,22 +91,28 @@
           <div class="form-row mb-4">
             <div class="col-md-6 pr-3">
               <input
-                type="email"
+                v-model.lazy="companyName"
+                type="text"
                 class="form-control md-input"
                 :placeholder="$t('Company Name')"
                 required
               />
             </div>
-            <div class="col-md-2 pl-3 align-items-end d-flex justify-content-end">
+            <div class="col-md-1 align-items-center d-flex justify-content-end">
+              <label class="form-check-label">+</label>
+            </div>
+            <div class="col-md-1 align-items-end d-flex justify-content-end">
               <input
-                type="email"
+                type="number"
+                v-model.lazy="countryCode"
                 class="form-control md-input"
-                placeholder="+60"
+                placeholder="62"
                 required
               />
             </div>
             <div class="col-md-4 pl-3">
               <input
+                v-model.lazy="contactNumber"
                 type="text"
                 class="form-control md-input"
                 :placeholder="$t('Contact Number')"
@@ -116,6 +123,7 @@
           <div class="form-row mb-4">
             <div class="col-md-12 pr-3">
               <textarea
+                v-model.lazy="message"
                 rows="4" cols="50"
                 type="text"
                 class="form-control md-input"
@@ -129,13 +137,14 @@
               <div class="form-check">
                 <input class="form-check-input bg-brown" type="checkbox" value="true" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
+                  {{ $t('label.text1') }}
                   <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text2') }}</router-link>
-                    {{ $t('label.text3') }}
-                    <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>.
-                    {{ $t('label.text5') }}
-                    <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
-                    {{ $t('label.text7') }}
-                    <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
+                  {{ $t('label.text3') }}
+                  <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text4') }}</router-link>
+                  {{ $t('label.text5') }}
+                  <router-link :to="`/${$i18n.locale}/privacy-policy`">{{ $t('label.text6') }}</router-link>
+                  {{ $t('label.text7') }}
+                  <router-link :to="`/${$i18n.locale}/terms-of-service`">{{ $t('label.text8') }}</router-link>.
                 </label>
               </div>
             </div>
@@ -152,8 +161,25 @@
 </template>
 
 <script>
-export default {
+import computedCreator from '@/helpers/computedCreator.js'
 
+export default {
+  name: 'FormEnquiry',
+  methods: {
+    inputEnquiry () {
+      this.$store.dispatch('formEnquiry/sendMail')
+    }
+  },
+  computed: {
+    ...computedCreator('formEnquiry', [
+      'contactPerson',
+      'companyName',
+      'enquiryType',
+      'countryCode',
+      'contactNumber',
+      'message'
+    ])
+  }
 }
 </script>
 
