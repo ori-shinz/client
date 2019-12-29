@@ -97,7 +97,7 @@
                 required
               />
             </div>
-            <div class="col-md-1 align-items-center d-flex justify-content-end">
+            <div class="col-md-1 align-items-center d-flex justify-content-center">
               <label class="form-check-label">+</label>
             </div>
             <div class="col-md-1 align-items-end d-flex justify-content-end">
@@ -109,7 +109,7 @@
                 required
               />
             </div>
-            <div class="col-md-5 pl-3">
+            <div class="col-md-4 pl-3">
               <input
                 type="text"
                 class="form-control md-input"

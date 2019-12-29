@@ -188,7 +188,7 @@
           required
         />
       </div>
-      <div class="col-md-1 align-items-center d-flex justify-content-end">
+      <div class="col-md-1 align-items-center d-flex justify-content-center">
         <label class="form-check-label">+</label>
       </div>
       <div class="col-md-1 align-items-end d-flex justify-content-end">
