@@ -98,12 +98,15 @@
                 required
               />
             </div>
-            <div class="col-md-2 pl-3 align-items-end d-flex justify-content-end">
+            <div class="col-md-1 align-items-center d-flex justify-content-end">
+              <label class="form-check-label">+</label>
+            </div>
+            <div class="col-md-1 align-items-end d-flex justify-content-end">
               <input
+                type="number"
                 v-model.lazy="countryCode"
-                type="text"
                 class="form-control md-input"
-                placeholder="+60"
+                placeholder="62"
                 required
               />
             </div>
