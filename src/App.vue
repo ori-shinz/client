@@ -42,4 +42,7 @@
 .mb-10 {
   margin-bottom: 6rem !important;
 }
+svg {
+  color: white !important;
+}
 </style>

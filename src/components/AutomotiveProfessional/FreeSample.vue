@@ -40,7 +40,7 @@
         </button>
       </div>
     </div>
-    <OrderModal card-title="try" order-type="free" region-type="sample" title-modal="Free Sample Confirmation" desc-modal="Free Sample Requirements" :note="note" />
+    <OrderModal card-title="try" order-type="free" region-type="sample" title-modal="Free Sample Confirmation" desc-modal="Free Sample Requirements" :note="note" :isfree="isfree" />
   </div>
 </template>
 
@@ -48,7 +48,7 @@
 import OrderModal from '@/components/OrderPage/general/OrderModal'
 export default {
   name: 'FreeSample',
-  props: ['note'],
+  props: ['note', 'isfree'],
   components: {
     OrderModal
   }
